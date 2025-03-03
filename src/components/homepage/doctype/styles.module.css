@@ -1,0 +1,53 @@
+.types {
+  display: flex;
+  padding: 5rem 0;
+  width: 100%;
+}
+
+.typeSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.centeredFlexbox {
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  position: relative;
+  min-width: 250px;
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid grey; /* Grey outline */
+  overflow: hidden; /* Ensures pseudo-element stays inside */
+  transition: border 0.3s ease-in-out;
+}
+
+/* Gradient border effect on hover */
+.box::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* Expands slightly to cover the border */
+  border-radius: inherit; /* Keeps rounded corners */
+  background: linear-gradient(125deg, #f86ab9, #190dc0);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box:hover::before {
+  opacity: .7; /* Show gradient on hover */
+}
+
+.box:hover {
+  border-color: transparent; /* Hide the solid border */
+}
+
+.noHyperlinkDecoration {
+  color: inherit;
+}
+
+.noHyperlinkDecoration:hover {
+  text-decoration: none;
+  color: inherit;
+}

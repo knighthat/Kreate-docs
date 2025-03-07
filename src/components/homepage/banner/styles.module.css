@@ -9,7 +9,6 @@
 .image {
   position: absolute;
   transition: transform 0.3s ease-in-out;
-  border-radius: 50px; /* Optional for rounded corners */
 }
 
 .main {
@@ -24,9 +23,9 @@
 }
 
 .left {
-  transform: translateX(-220px) scale(0.95); /* Move left */
+  transform: translateX(-180px) scale(0.95) rotate(-15deg); /* Move left */
 }
 
 .right {
-  transform: translateX(220px) scale(0.95); /* Move right */
+  transform: translateX(180px) scale(0.95) rotate(15deg); /* Move right */
 }

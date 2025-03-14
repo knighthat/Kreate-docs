@@ -5,7 +5,7 @@ slug: /usr/how-to-migrate
 sidebar_position: 1
 ---
 
-## What is this
+## ❓ What is this?
 
 [knighthat](https://github.com/knighthat) releases a feature on old Kreate (improvised and upstream flavor) that allows user to seamlessly move their caches, database(s), and settings to new Kreate without breaking sweat.
 
@@ -24,7 +24,7 @@ But external API such as YouTube Music API **will** stop working one day, we can
 :::
 
 
-## Should I migrate my data?
+## 🤔 Should I migrate my data?
 
 If you have more than a few dozens of songs cached or downloaded, or you have all settings setup to your need and you don't feel like setting them up again, then the answer is **YES**!
 
@@ -36,7 +36,7 @@ If you are not on `improvised` or `upstream` build, you are not required to migr
 
 :::
 
-## Create migration file
+## 🛠️ Create migration file
 
 1. Go to  **Settings** > **Data** and look for **Create backup for migration**.
 
@@ -68,7 +68,7 @@ If you are not on `improvised` or `upstream` build, you are not required to migr
 
     ![Select backup location illustration](./img/select-backup-location.webp)
 
-## Import migration file
+## 📥 Import migration file
 
 1. Install new Kreate
 
@@ -100,7 +100,7 @@ If you are not on `improvised` or `upstream` build, you are not required to migr
 
     ![Restart you app prompt](./img/restart-your-app.webp)
 
-## Delete old Kreate (optional)
+## 🗑️ Delete old Kreate (optional)
 
 You can safely delete your old Kreate and move on to new app. 
 

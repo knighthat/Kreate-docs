@@ -27,7 +27,7 @@ have the ability to use [Android emulator](https://developer.android.com/studio/
 
 Now that we have that out of the way, let's get really started!
 
-## Fork the repository
+## 📋 Fork the repository
 
 The first step is not to clone the repo, but to fork it. Without forking, you can't make pull request (PR).
 
@@ -67,7 +67,7 @@ Now all you have to do is **wait** until the forking process is completed.
 
 ![Forked repo illustration](./img/forked_repo.webp)
 
-## Clone remote repo to your machine
+## 📥 Clone remote repo to your machine
 
 ### Cloning via HTTPS 
 
@@ -98,7 +98,7 @@ git clone git@github.com:knighthat/Kreate
 
 This [article](https://gitscripts.com/how-to-git-clone-with-ssh) goes through the process in details. Check it out!
 
-## Making changes to your local repository
+## ✏️ Making changes to your local repository
 
 From now on, you can start applying changes to the repo you just cloned. 
 This won't affect remote repositories in any way until you commit and publish them.
@@ -149,7 +149,7 @@ Author: knighthat <git@knighthat.me>
     my first change
 ```
 
-## Pushing commits to remote repository
+## ☁️⬆️ Pushing commits to remote repository
 
 To publish your changes to the public, you must push all commited chanegs to a remote repo.
 
@@ -162,7 +162,7 @@ Git will ask for your credentials if you cloned it via HTTPS.
 If you followed SSH guide, you may have to enter your SSH key passphrase (if applicable),
 but it'll only ask once until you restart your computer (or log out)
 
-## Make a pull request
+## 🙏 Make a pull request
 
 To let upstream ([knighthat/Kreate](https://github.com/knighthat/Kreate)) acknowledge your changes
 you must create a request for maintainers to review.
@@ -193,7 +193,7 @@ Click on `compare across forks` if you can't select which repo
 **_base repository_** is the upstream repo and branch. Usually `knighthat/Kreate` and `kbuild`.\
 **_head repository_** is your own remote repo
 
-## What to write in PR
+## 🗒️ What to write in PR
 
 Wrting description can be difficult, especially when you are not fluent in English.\
 But worry not, this section will break it down to you.

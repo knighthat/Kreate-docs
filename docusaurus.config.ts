@@ -78,16 +78,7 @@ const config: Config = {
         {
           label: 'Download',
           position: 'right',
-          items: [
-            {
-              label: 'Upstream',
-              href: `${GITHUB_URL}/${APP_REPO_PATH}/releases/download/weekly-kbuild/RiMusic-upstream-minified.apk`
-            },
-            {
-              label: 'Improvised',
-              href: `${GITHUB_URL}/${APP_REPO_PATH}/releases/download/weekly-kbuild/RiMusic-improvised-minified.apk`
-            }, 
-          ],
+          href: "https://github.com/knighthat/Kreate/releases/latest"
         },
         {
           label: 'App source',

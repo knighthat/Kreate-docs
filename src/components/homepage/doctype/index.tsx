@@ -15,12 +15,12 @@ const types: DocumentType[] = [
   {
     title: 'I\'m a developer',
     Svg: require('@site/static/img/developer-doctype-transparent.svg').default,
-    to: '/docs/dev/'
+    to: '/dev/'
   },
   {
     title: 'I\'m a user',
     Svg: require('@site/static/img/user-doctype-transparent.svg').default,
-    to: '/docs/usr/'
+    to: '/usr/'
   }
 ]
 

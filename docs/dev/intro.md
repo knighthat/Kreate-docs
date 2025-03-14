@@ -9,7 +9,7 @@ sidebar_position: 0
 
 This page is dedicated to help new developers as well as people who already contributed to this project.
 
-## What can I expect from this page?
+## 🤔 What can I expect from this page?
 
 Documents. Lots of them. We intend to log as many things as possible so new comers don't have
 to figure things out _one by one_ (like we did).

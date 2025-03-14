@@ -7,19 +7,19 @@ sidebar_position: 1
 
 ## ❓ What is this?
 
-[knighthat](https://github.com/knighthat) releases a feature on old Kreate (improvised and upstream flavor) that allows user to seamlessly move their caches, database(s), and settings to new Kreate without breaking sweat.
+[@knighthat](https://github.com/knighthat) releases a feature on old Kreate (`improvised` and `upstream` flavor) that allows user to seamlessly move their caches, database(s), and settings to new Kreate without breaking a sweat.
 
-> Old Kreate will stop receving updates Mar 16 2025, unless it's related to migration issue.
+> Old Kreate will stop receving updates after Mar 16 2025, unless it's related to migration issue.
 
 :::note
 
-Old Kreate will works, we don't break software to force update.
+Old Kreate will work, we don't break software to force update.
 
 :::
 
 :::warning
 
-But external API such as YouTube Music API **will** stop working one day, we can't do nothing about it, updating software to new version is the only way.
+External API such as YouTube Music API **will** stop working one day, we can't do nothing about it, updating software to new version is the only way.
 
 :::
 
@@ -28,7 +28,7 @@ But external API such as YouTube Music API **will** stop working one day, we can
 
 If you have more than a few dozens of songs cached or downloaded, or you have all settings setup to your need and you don't feel like setting them up again, then the answer is **YES**!
 
-If you are trying out the app and have not many to loose, I'd advise against it.
+If you are trying out the app and have not many to lose, I'd advise against it.
 
 :::note
 

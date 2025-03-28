@@ -19,7 +19,7 @@ Before we get into the bits and pieces, you must meet the following requirements
 
 :::warning[If you have less than **16GB** of RAM]
 
-Is it not ideal to run [Android Studio](https://developer.android.com/studio) when you only have **16GB** of RAM or less.
+Is it not ideal to run [Android Studio](https://developer.android.com/studio) when you only have less than **16GB** of RAM.
 
 You can use alternative IDE/text editor such as [VSCodium](https://vscodium.com/) (VSCode with no telemetry), but you will not
 have the ability to use [Android emulator](https://developer.android.com/studio/run/managing-avds).

@@ -5,10 +5,6 @@ slug: /usr/how-to-verify-signatures
 sidebar_position: 2
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
 Each APK published is signed by a set of signature. **ONLY INSTALL** from signatures listed in the post.
 
 It is **extremely important** to verify signatures of each download you obtain from the internet.
@@ -73,44 +69,7 @@ But Android Studio is not something you need for verifying signature of an APK f
 
 #### 1. Download "Command line tools only"
 
-Firstly, visit [Android Developers](https://developer.android.com/studio) website. Then scroll down until you see `Command line tools only` section
-
-![Command line tools only illustration](./img/gg_dev_cmd_tools_only.webp)
-
-:::tip
-
-_Download_ and _extract_ the one that **matches your operating system**.
-
-:::
-
-This is the file stucture after extraction
-
-![cmdline-tools structure illustration 1](./img/cmdline_tools_file_structure_1.webp)
-
-![cmdline-tools structure illustration 2](./img/cmdline_tools_file_structure_2.webp)
-
-#### 2. Install "apksigner"
-
-> The file you just extracted only the manager, which we need install `apksigner`.
-
-To install `apksigner`, open your terminal (command prompt on Windows) and type in:
-
-* Linux/Mac
-  ```sh
-  /path/to/cmdline-tools/bin/sdkmanager --sdk_root=/path/to/cmdline-tools/android-35 "build-tools;35.0.0"
-  ```
-
-* Windows
-  ```
-  C:\Users\yourname\Downloads\cmdline-tools\bin\sdkmanager --sdk_root=C:\Users\yourname\Downloads\cmdline-tools\android-35 "build-tools;35.0.0"
-  ```
-
-You have to change `/path/to/cmdline-tool` on **Linux** and **Mac**, `C:\Users\yourname\Downloads\cmdline-tools` on **Windows**
-to wherever you extracted the folder to.
-
-`/path/to/cmdline-tools/android-35` and `C:\Users\yourname\Downloads\cmdline-tools\android-35` can be anywhere, you just have to remember it.
-
-> _During the installation, one or several Term of Services (ToS) will be prompted to you, and you'll have to agree every single of them to continue._
+We have separate instructions on how to install "buildtools", [read it](/dev/guides/how-to-install-buildtools).
 
 #### 3. Verify signature
 
@@ -187,58 +146,7 @@ Go to [step 2](#)
 
 #### 1. Install "Java"
 
-> You can install Java from any distributor. 
-
-Here are some reccomendation:
-
-| Distributor                | Note                                | Link to download                                    |
-|----------------------------|-------------------------------------|-----------------------------------------------------|
-| OpenJDK                    | Worst WebUI                         | https://jdk.java.net/archive/                       |
-| Adoptium (Eclipse Temurin) | More options                        | https://adoptium.net/temurin/releases/              |
-| Oracle                     | Featuristic; Support latest version | https://www.oracle.com/java/technologies/downloads/ |
-
-In this tutorial, **Oracle**'s version will be used because of their minimal design.
-
-![Oracle Java download page](./img/oracle_java_download_page.webp)
-
-Download page contains just enough information about the version you're about to download:
-
-* Version of Java\
-  ![Oracle Java versions](./img/oracle_java_download_version.webp)
-
-* Operating system\
-  ![Oracle Java OS](./img/oracle_java_download_os.webp)
-
-You should install latest version of Java for better compatibility and to avoid any complication later on.
-
-:::tip[Chosing the right package]
-
-Oracle offers various method to install Java on your machine from executable file to compressed archive.
-
-<Tabs>
-  <TabItem value="linux" label="Linux">
-    * Better to install by your package manager
-    * Use compressed archive if you now what you're doing.
-  </TabItem>
-  <TabItem value="mac" label="Mac">
-    * Intel chips use x64 package, M chips use ARM64
-    * Use compressed archive if you now what you're doing.
-  </TabItem>
-  <TabItem value="Windows" label="Windows">
-    * You should download `Installer` package. `MSI Installer` is for older machines.
-    * Use compressed archive if you now what you're doing.
-  </TabItem>
-</Tabs>
-
-:::
-
-Installing Java is a very common process, please consult videos on YouTube for details. 
-
-:::note
-
-In the future, this section will be replaced with actual video going through the installation process.
-
-:::
+We have separate instructions on how to install Java 21, [read it](/dev/guides/how-to-install-java-21).
 
 #### 2. Verify certificate
 

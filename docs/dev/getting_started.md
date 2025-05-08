@@ -83,7 +83,7 @@ As mentioned before, you can use SSH key pair to clone & push your changes witho
 To clone the repo using SSH, open your terminal (or command prompt in Windows) and execute this command:
 
 ```shell
-git clone git@github.com:[username]/[repo_name]
+git clone --recurse-submodules git@github.com:[username]/[repo_name]
 ```
 
 **_username_** is what your account when you register for a Github acccount.\
@@ -93,7 +93,7 @@ For example, if my username is **knighthat** and I name my fork **Kreate**.
 The command will be:
 
 ```shell
-git clone git@github.com:knighthat/Kreate
+git clone --recurse-submodules git@github.com:knighthat/Kreate
 ```
 
 This [article](https://gitscripts.com/how-to-git-clone-with-ssh) goes through the process in details. Check it out!

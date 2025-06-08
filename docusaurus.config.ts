@@ -114,6 +114,10 @@ const config: Config = {
             {
               label: 'Github Discussion',
               href: `${GITHUB_URL}/${APP_REPO_PATH}/discussions`
+            },
+            {
+              label: 'Discord Server',
+              href: 'https://discord.gg/WYr9ZgJzpx'
             }
           ],
         },

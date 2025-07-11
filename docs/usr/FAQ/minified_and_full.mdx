@@ -1,13 +1,13 @@
 ---
 id: minified_and_full
-title: Minified and Full
+title: Release and Uncompressed
 slug: /usr/faq/minified_and_full
 sidebar_position: 0
 ---
 
 ## 📏 Short answer
 
-There's **NO DIFFERENCE** between `full` and `minified` versions of the app.
+There's **NO DIFFERENCE** between `uncompressed` and `release` versions of the app.
 
 The only difference is their sizes.
 
@@ -17,7 +17,7 @@ The only difference is their sizes.
 As you may know, compiler takes current state of the code and translates it 
 into something a machine can understand.
 
-`full` version is the direct translation of the source code to APK with little
+`uncompressed` version is the direct translation of the source code to APK with little
 to no change.
 
 ```mermaid
@@ -25,9 +25,9 @@ flowchart LR
   A[Source code] --> B[Compiler] --> C[APK]
 ```
 
-`minified` version has an extra step executed during compilation. This step removes
-all unused code, resources before finalizing the APK. Thus, making size of `minified`
-smaller than `full`.
+`release` version has an extra step executed during compilation. This step removes
+all unused code, resources before finalizing the APK. Thus, making size of `release`
+smaller than `uncompressed`.
 
 ```mermaid
 flowchart LR
@@ -37,10 +37,10 @@ flowchart LR
 
 ## 🤔 Which one should I use?
 
-Always `minified`
+Always `release`
 
 
-## 🔄 I installed `full` version, can I switch?
+## 🔄 I installed `uncompressed` version, can I switch?
 
 Yes, you can switch between versions with no hassle.
 
@@ -53,8 +53,8 @@ Report it [here](https://github.com/knighthat/Kreate/issues/new?template=bug_rep
 :::warning[always backup your data before attempting to update]
 :::
 
-## ❓ Why `full` version exists?
+## ❓ Why `uncompressed` version exists?
 
-Nothing is perfect, sometimes `minified` can cause trouble during installation.
-Therefore, `full` version is still included in release post to help those having
+Nothing is perfect, sometimes `release` can cause trouble during installation.
+Therefore, `uncompressed` version is still included in release post to help those having
 problems continue to use app.

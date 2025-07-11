@@ -62,18 +62,27 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'devDocSidebar',
+          label: 'I\'m a',
           position: 'left',
-          label: 'Developers',
-          to: '/dev'
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'devDocSidebar',
+              label: 'Developers',
+              to: '/dev'
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'usrDocSidebar',
+              label: 'Users',
+              to: '/usr'
+            }
+          ]
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'usrDocSidebar',
-          position: 'left',
-          label: 'Users',
-          to: '/usr'
+          label: 'Discord',
+          position: 'right',
+          href: "https://kreate.knighthat.me/discord"
         },
         {
           label: 'Download',
@@ -81,15 +90,20 @@ const config: Config = {
           href: "https://github.com/knighthat/Kreate/releases/latest"
         },
         {
-          label: 'App source',
-          href: `${GITHUB_URL}/${APP_REPO_PATH}`,
-          position: 'right'
-        },
-        {
-          label: 'Docs source',
-          href: `${GITHUB_URL}/${DOC_REPO_PATH}`,
-          position: 'right'
-        },
+          label: 'Sources',
+          position: 'right',
+          items: [
+            {
+              label: 'App source',
+              href: `${GITHUB_URL}/${APP_REPO_PATH}`
+            },
+            {
+              label: 'Docs source',
+              href: `${GITHUB_URL}/${DOC_REPO_PATH}`
+            },
+          ]
+        }
+        
       ],
     },
     footer: {
@@ -117,7 +131,7 @@ const config: Config = {
             },
             {
               label: 'Discord Server',
-              href: 'https://discord.gg/WYr9ZgJzpx'
+              href: 'https://kreate.knighthat.me/discord'
             }
           ],
         },

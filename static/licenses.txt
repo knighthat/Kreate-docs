@@ -4,3 +4,5 @@ Ion icons - https://opensource.org/license/mit
 
 https://www.svgrepo.com
 https://icon-icons.com
+https://svglogo.co
+https://yesicon.app

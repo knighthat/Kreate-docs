@@ -44,6 +44,19 @@ const config: Config = {
           path: 'docs',
           routeBasePath: '/',
         },
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          editUrl: 'https://github.com/knighthat/Kreate-docs/blog',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+          routeBasePath: '/blog'
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -79,6 +92,7 @@ const config: Config = {
             }
           ]
         },
+        { label: 'Blog', position: 'left', to: 'blog' },
         {
           label: 'Discord',
           position: 'right',
@@ -149,6 +163,10 @@ const config: Config = {
             {
               label: 'Source code',
               href: `${GITHUB_URL}/${DOC_REPO_PATH}`,
+            },
+            {
+              label: 'Blogs',
+              to: 'blog'
             },
           ],
         },

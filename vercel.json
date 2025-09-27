@@ -9,6 +9,11 @@
       "source": "/translate",
       "destination": "https://translate.kreate.knighthat.me",
       "permanent": true
+    }, 
+    {
+      "source": "/donate",
+      "destination": "https://www.patreon.com/knighthat",
+      "permanent": true
     }
   ]
 }

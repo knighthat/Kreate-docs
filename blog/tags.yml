@@ -1,0 +1,4 @@
+update-progress:
+  label: Update progress
+  permalink: /update-progress
+  description: Announcements about upcoming changes in the next release

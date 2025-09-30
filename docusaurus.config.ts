@@ -40,7 +40,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: `${GITHUB_URL}/${DOC_REPO_PATH}`,
+          editUrl: `${GITHUB_URL}/${DOC_REPO_PATH}/tree/main`,
           path: 'docs',
           routeBasePath: '/',
         },
@@ -50,7 +50,9 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/knighthat/Kreate-docs/blog',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: `${GITHUB_URL}/${DOC_REPO_PATH}/tree/main`,
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',

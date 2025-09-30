@@ -2,3 +2,8 @@ update-progress:
   label: Update progress
   permalink: /update-progress
   description: Announcements about upcoming changes in the next release
+
+news:
+  label: News
+  permalink: /news
+  description: Related information about the project

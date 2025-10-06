@@ -41,14 +41,14 @@ function DocType({title, Svg, to}: DocumentType) {
 
 export default function HomepageDoctype(): ReactNode {
     return (
-        <section className={styles.types}>
-          <div className="container">
-            <div className={clsx('row', styles.centeredFlexbox)}>
-              {types.map((props, idx) => (
-                <DocType key={idx} {...props} />
-              ))}
-            </div>
+      <section className={styles.types}>
+        <div className="container">
+          <div className={clsx('row', styles.centeredFlexbox)}>
+            {types.map((props, idx) => (
+              <DocType key={idx} {...props} />
+            ))}
           </div>
-        </section>
-      );
+        </div>
+      </section>
+    );
 }

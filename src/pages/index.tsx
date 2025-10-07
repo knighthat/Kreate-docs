@@ -2,8 +2,8 @@ import type {ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
-import HomepageDoctype from '@site/src/components/homepage/doctype';
-import Banner from '../components/homepage/banner';
+import HomepageDoctype from '@site/src/components/homepage/Doctype';
+import Banner from '../components/homepage/Banner';
 
 
 export default function Home(): ReactNode {

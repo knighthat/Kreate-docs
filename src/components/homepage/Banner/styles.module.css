@@ -50,11 +50,3 @@
   align-items: center; 
   justify-content: left; 
 }
-
-.badge {
-  transition: transform 0.3s ease-in-out;
-}
-
-.badge:hover {
-  transform: scale(1.05); 
-}

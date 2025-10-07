@@ -8,6 +8,11 @@ function getWindowDimensions() {
   };
 }
 
+/**
+ * This component must be executed inside @docusaurus/BrowserOnly
+ * 
+ * @returns window's dimensions reacted to resizing
+ */
 export function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 

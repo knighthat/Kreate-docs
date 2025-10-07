@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import type {ReactNode} from 'react';
 
 import styles from './styles.module.css'
-import { APP_PACKAGE, APP_REPO_PATH, GITHUB_URL } from '@site/constants';
+import { APP_REPO_PATH, GITHUB_URL } from '@site/constants';
 
 
 type BadgeProps = {
@@ -12,7 +12,7 @@ type BadgeProps = {
 }
 
 function Badge( { platform, className, to }: BadgeProps ): ReactNode {
-  const source = `${GITHUB_URL}/${APP_REPO_PATH}/blob/main/assets/get-it-on/${platform}.png?raw=true`
+  const source = `/img/get-it-on/${platform}.webp`
   return(
     <a className={clsx('col padding--none', className || '')} href={`/download/${to}`} >
       <img className={styles.badge} src={source} alt={`${platform}'s download page`} />
@@ -58,7 +58,7 @@ export default function Banner(): ReactNode {
           </div>
 
           <div id={styles.right} className='col col--4'>
-            <img className='col' src='https://github.com/knighthat/Kreate/blob/main/assets/design/app_banner.png?raw=true' />
+            <img className='col' src='/img/banner-slogan.webp' />
           </div>
 
         </div>

@@ -1,8 +1,9 @@
 import clsx from 'clsx';
 import type {ReactNode} from 'react';
+import {useRef} from 'react';
 
 import styles from './styles.module.css'
-import { APP_REPO_PATH, GITHUB_URL } from '@site/constants';
+import { useWindowDimensions } from '@site/src/util/DimensionUtils';
 
 
 type BadgeProps = {
@@ -44,26 +45,29 @@ function DownloadBadges(): ReactNode {
 }
 
 export default function Banner(): ReactNode {
+  const {width} = useWindowDimensions();
+
   return(
     <div className={clsx(styles.container, styles.bannerHeight)}>
 
       <img src='/img/banner.webp' alt='banner' className={clsx(styles.image)} />
-      
-      <div className={clsx(styles.content, 'container')}>
 
-        <div className='row'>
-
-          <div id={styles.left} className='col col--8'>
-            <DownloadBadges />
+      {
+        width <= 996 
+        ? <></>
+        : (
+          <div className={clsx(styles.content, 'container')}>
+            <div className='row'>
+              <div id={styles.left} className='col col--8'>
+                <DownloadBadges />
+              </div>
+              <div id={styles.right} className='col col--4'>
+                <img className='col' src='/img/banner-slogan.webp' />
+              </div>
+            </div>
           </div>
-
-          <div id={styles.right} className='col col--4'>
-            <img className='col' src='/img/banner-slogan.webp' />
-          </div>
-
-        </div>
-
-      </div>
+        )
+      }
 
     </div>
   );

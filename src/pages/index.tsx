@@ -1,10 +1,17 @@
 import type {ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 import HomepageDoctype from '@site/src/components/homepage/Doctype';
 import Banner from '../components/homepage/Banner';
+import { useWindowDimensions } from '../util/DimensionUtils';
+import { VerticalBadges } from '../components/homepage/Banner/DownloadBadges';
 
+
+function Badges() {
+  
+}
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
@@ -17,6 +24,19 @@ export default function Home(): ReactNode {
       
       <main>
         <HomepageDoctype />
+
+        <BrowserOnly>
+          { 
+            () => {
+              const {width} = useWindowDimensions()
+
+              if( width > 996 )
+                return <></>
+              else
+                return <VerticalBadges />
+            } 
+          }
+        </BrowserOnly>
       </main>
     </Layout>
   );

@@ -4,7 +4,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 import styles from './styles.module.css'
 import { useWindowDimensions } from '@site/src/util/DimensionUtils';
-import DownloadBadges from './DownloadBadges';
+import { HorizontalBagdes } from './DownloadBadges';
 
 
 function Content(): ReactNode {
@@ -15,7 +15,7 @@ function Content(): ReactNode {
       <div className={clsx(styles.content, 'container')}>
         <div className='row'>
           <div id={styles.left} className='col col--8'>
-            <DownloadBadges />
+            <HorizontalBagdes />
           </div>
           <div id={styles.right} className='col col--4'>
             <img className='col' src='/img/banner-slogan.webp' />

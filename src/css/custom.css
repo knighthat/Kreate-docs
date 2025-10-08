@@ -28,3 +28,7 @@
   --ifm-color-primary-lightest: #ffa9db;
   --docusaurus-highlighted-code-line-bg: rgba(25, 13, 192, 0.3);
 }
+
+.flex-justc--center {
+  justify-content: center;
+}

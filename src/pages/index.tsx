@@ -10,7 +10,16 @@ import { VerticalBadges } from '../components/homepage/Banner/DownloadBadges';
 
 
 function Badges() {
-  
+  const {width} = useWindowDimensions()
+
+  if( width > 996 )
+    return <></>
+  else
+    return(
+      <section className='padding-vert--xl'>
+        <VerticalBadges />
+      </section>
+    )
 }
 
 export default function Home(): ReactNode {
@@ -26,16 +35,7 @@ export default function Home(): ReactNode {
         <HomepageDoctype />
 
         <BrowserOnly>
-          { 
-            () => {
-              const {width} = useWindowDimensions()
-
-              if( width > 996 )
-                return <></>
-              else
-                return <VerticalBadges />
-            } 
-          }
+          { () => <Badges /> }
         </BrowserOnly>
       </main>
     </Layout>

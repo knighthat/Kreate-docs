@@ -41,7 +41,7 @@ function DocType({title, Svg, to}: DocumentType) {
 
 export default function HomepageDoctype(): ReactNode {
     return (
-      <section className={styles.types}>
+      <section className={clsx(styles.types, 'padding-vert--xl')}>
         <div className="container">
           <div className={clsx('row', styles.centeredFlexbox)}>
             {types.map((props, idx) => (

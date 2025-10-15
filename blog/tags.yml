@@ -7,3 +7,8 @@ news:
   label: News
   permalink: /news
   description: Related information about the project
+
+release:
+  label: release
+  permalink: /release
+  description: New version announcements

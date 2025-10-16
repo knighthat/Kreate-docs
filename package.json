@@ -17,6 +17,7 @@
   "dependencies": {
     "@docusaurus/core": "3.9.1",
     "@docusaurus/preset-classic": "3.9.1",
+    "@docusaurus/theme-common": "3.9.1",
     "@docusaurus/theme-mermaid": "^3.9.1",
     "@ionic/react": "^8.7.5",
     "@mdx-js/react": "^3.1.1",

@@ -95,30 +95,19 @@ const config: Config = {
         },
         { label: 'Blog', position: 'left', to: 'blog' },
         {
-          label: 'Discord',
           position: 'right',
-          href: "https://kreate.knighthat.me/discord"
+          href: "https://kreate.knighthat.me/discord",
+          icon: {
+            name: 'bi:discord'
+          }
         },
         {
-          label: 'Download',
           position: 'right',
-          href: "https://github.com/knighthat/Kreate/releases/latest"
+          href: `${GITHUB_URL}/${APP_REPO_PATH}`,
+          icon: {
+            name: 'mdi:github'
+          }
         },
-        {
-          label: 'Sources',
-          position: 'right',
-          items: [
-            {
-              label: 'App source',
-              href: `${GITHUB_URL}/${APP_REPO_PATH}`
-            },
-            {
-              label: 'Docs source',
-              href: `${GITHUB_URL}/${DOC_REPO_PATH}`
-            },
-          ]
-        }
-        
       ],
     },
     footer: {

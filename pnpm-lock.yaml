@@ -20,6 +20,9 @@ importers:
       '@docusaurus/theme-mermaid':
         specifier: ^3.9.1
         version: 3.9.1(@docusaurus/plugin-content-docs@3.9.1(@mdx-js/react@3.1.1(@types/react@19.1.13)(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.6.3))(@mdx-js/react@3.1.1(@types/react@19.1.13)(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.6.3)
+      '@iconify/react':
+        specifier: ^6.0.2
+        version: 6.0.2(react@19.1.1)
       '@ionic/react':
         specifier: ^8.7.5
         version: 8.7.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1220,6 +1223,11 @@ packages:
 
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
+
+  '@iconify/react@6.0.2':
+    resolution: {integrity: sha512-SMmC2sactfpJD427WJEDN6PMyznTFMhByK9yLW0gOTtnjzzbsi/Ke/XqsumsavFPwNiXs8jSiYeZTmLCLwO+Fg==}
+    peerDependencies:
+      react: '>=16'
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7405,6 +7413,11 @@ snapshots:
   '@hapi/topo@5.1.0':
     dependencies:
       '@hapi/hoek': 9.3.0
+
+  '@iconify/react@6.0.2(react@19.1.1)':
+    dependencies:
+      '@iconify/types': 2.0.0
+      react: 19.1.1
 
   '@iconify/types@2.0.0': {}
 

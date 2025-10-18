@@ -174,6 +174,12 @@ Android Studio, which is shown in [Custom assets](./custom-assets)
 
 Name it `ic_launcher_background.xml` because... standard, duh!
 
+Put it to this folder:
+
+```
+composeApp/src/androidMain/res/drawable/
+```
+
 ### Foreground
 
 :::info
@@ -188,6 +194,12 @@ Similar to [background](#background), you need to export **ONLY** the foreground
 it to Kreate project using Android Studio as shown in [Custom assets](./custom-assets)
 
 Name it `ic_launcher_foreground.xml`
+
+Put it to this folder:
+
+```
+composeApp/src/androidMain/res/drawable/
+```
 
 ### Monochrome
 
@@ -214,6 +226,8 @@ Here's an example:
 
 <details>
   <summary>Demo SVG</summary>
+
+  As you can see, the icon has nothing but a simple logo.
   
   ![Demo app icon](./img/demo-app-icon-monochrome.svg)
 
@@ -244,7 +258,13 @@ Here's an example:
   ```
 </details>
 
-As you can see, the icon has nothing but a simple logo
+Export it to SVG file and import under name `ic_launcher_monochrome.xml`
+
+Put it to this folder:
+
+```
+composeApp/src/androidMain/res/drawable/
+```
 
 ### Adaptive icon
 
@@ -285,6 +305,65 @@ With:
 These files are generally not required update every time icons are updated
 because they contain references to different parts. Updating those parts
 is enough.
+:::
+
+## Miscellanous icons
+
+Kreate uses more than what descibed above, especially the monochrome version.
+
+### Inverted monochrome
+
+This file is used in area such as notification, and player. 
+We can use [ic_launcher_monochrome.xml](#monochrome) but the vectos is too
+small for the job.
+
+<details>
+  <summary>app_icon_monochrome.xml</summary>
+
+  ![App icon monochrome](./img/demo-app-icon-monochrome-inverted.svg)
+  
+  ```xml
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    version="1.1"
+    id="svg1"
+    xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg"><defs
+      id="defs1" /><path
+      id="path28"
+      style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.355963;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+      d="M 12,0 A 12,12 0 0 0 0,12 12,12 0 0 0 12,24 12,12 0 0 0 24,12 12,12 0 0 0 12,0 Z m 3.783333,6 C 16.33,5.96333 16.836667,6.436667 16.91,6.983333 c 0,2.946667 0,5.926667 0,8.873334 0,0.51 0.07333,1.053333 -0.07333,1.563333 -0.183333,0.726667 -1.236667,0.98 -1.783333,0.433333 -1.490001,-1.6 -2.943334,-3.236666 -4.436667,-4.836666 -0.47,-0.4 -0.616667,-1.163334 -0.18,-1.67 1.31,-1.456667 2.616666,-2.91 3.963333,-4.33 C 14.8,6.616667 15.126667,6 15.783333,6 Z M 8.33,6 c 0.69,-0.03667 1.163333,0.69 1.09,1.31 0,3.273333 0,6.51 0,9.783333 -0.03667,0.76 -0.946667,1.306667 -1.636667,0.87 C 7.273333,17.71 7.2,17.126667 7.236667,16.616667 c 0,-3.2 -0.03667,-6.4 0,-9.6 C 7.273337,6.473333 7.746667,6 8.326667,6 Z" /></svg>
+  ```
+</details>
+
+Since this icon isn't under icon's constraints, it's counted as a normal icon.
+Meaning, its canvas must be 24 x 24 and content should be as big.
+
+The most common way of drawing inverted icon is to draw a circle as the background,
+then create cut-out in the middle with the icon. The cut-out part becomes transparent.
+
+Here's a video going through this feature: https://youtu.be/tdbQXUnLSVw
+
+### Assets
+
+The final place you need to put your designs is `assets/degisn`.
+
+This is where all of your SVGs go. Uploading original works here
+will allow people to use them to create variant in the future.
+
+Files that are required:
+
+- ic_launcher_background.svg
+- ic_launcher_background_round.svg
+- ic_launcher_foreground.svg
+- ic_launcher_monochrome.svg
+- app_icon_monochrome.xml
+
+:::warning
+Please don't add rasterized images (PNGs) to this folder
 :::
 
 ## 👨🏻‍💻 Commit & open pull request

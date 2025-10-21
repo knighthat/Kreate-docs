@@ -115,7 +115,7 @@ There are 2 main types of an icon: **Square** and **Round**
 ## 🏷️ Naming scheme
 
 For app's icons, naming them either `ic_laucher` or `ic_launcher_round`
-depends on the [type](#icon-types) with extension
+depends on the [type](#-icon-types) with extension
 
 ## 🧩 Icon parts
 

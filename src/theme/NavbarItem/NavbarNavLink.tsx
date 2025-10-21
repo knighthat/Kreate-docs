@@ -36,7 +36,7 @@ function NavLinkIcon({ icon: { name, color, colorDark } }: { icon: IconProps }):
       <Icon 
         icon={name} 
         className='col' 
-        width='2rem' 
+        width='1.7rem' 
         color={iconColor} />
     </div>
   )

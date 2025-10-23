@@ -194,6 +194,10 @@ const config: Config = {
   },
 
   themes: ['@docusaurus/theme-mermaid'],
+
+  plugins: [
+    './custom-paths-plugin.js'
+  ]
 };
 
 export default config;

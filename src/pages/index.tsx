@@ -3,10 +3,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-import HomepageDoctype from '@site/src/components/homepage/Doctype';
-import Banner from '../components/homepage/Banner';
-import { useWindowDimensions } from '../util/DimensionUtils';
-import { VerticalBadges } from '../components/homepage/Banner/DownloadBadges';
+import HomepageDoctype from '@components/homepage/Doctype';
+import Banner from '@components/homepage/Banner';
+import { useWindowDimensions } from '@utils/DimensionUtils';
+import { VerticalBadges } from '@components/homepage/Banner/DownloadBadges';
 
 
 function Badges() {

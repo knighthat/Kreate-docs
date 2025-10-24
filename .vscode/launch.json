@@ -10,6 +10,13 @@
             "request": "launch",
             "command": "pnpm start",
             "cwd": "${workspaceFolder}"
-        }
+        },
+        {
+            "name": "Vercel dev",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "vercel dev",
+            "cwd": "${workspaceFolder}"
+        },
     ]
 }

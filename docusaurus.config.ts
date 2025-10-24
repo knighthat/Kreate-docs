@@ -163,7 +163,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ${APP_NAME}. Built with <a href='https://docusaurus.io/' target="_blank">Docusaurus</a>.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${APP_NAME}. Built with <a href='https://docusaurus.io/' target="_blank">Docusaurus</a>. Powered by <a href='https://vercel.com/' target="_blank">Vercel</a>`,
     },
     prism: {
       theme: prismThemes.github,

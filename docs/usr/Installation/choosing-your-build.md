@@ -5,10 +5,16 @@ slug: /usr/choosing-your-build
 sidebar_position: 0
 ---
 
+import Icon from '@components/Icon';
+import FDroidLogo from '@components/Icon/FDroid';
+import IzzyOnDroidLogo from '@components/Icon/IzzyOnDroid';
+import ObtainiumLogo from '@components/Icon/Obtainium';
+import OpenAPKLogo from '@components/Icon/OpenAPK';
+
 Kreate is available on multiple platforms,
 each platform has their own *pros* and *cons*.
 
-## <img src="/vector/logo-github.svg" alt="GitHub Logo" width="32px" /> GitHub
+## <Icon icon='mdi:github' /> GitHub
 
 GitHub builds are the most up-to-date version, always.
 
@@ -24,7 +30,7 @@ Which makes this version of Kreate most desireable.
 | Most up-to-date | Require running app to check for update |
 | Has auto-update | |
 
-## <img src="/vector/logo-fdroid.svg" alt="FDroid Logo" width="32px" /> F-Droid
+## <FDroidLogo width='32px' /> F-Droid
 
 F-Droid is a well-known platform to donwload open-source app.
 
@@ -38,7 +44,7 @@ and delivering by themselves, and this process happens in cycles.
 As steps are done behind the scene and are mostly automatic;
 all the submitter needs to do is to wait for it to finish."*
 
-- [Inclusion How-To](https://f-droid.org/docs/Inclusion_How-To/) | F-Droid
+\- [Inclusion How-To](https://f-droid.org/docs/Inclusion_How-To/) | F-Droid
 
 :::
 
@@ -50,7 +56,7 @@ This process can take anywhere from a few days to a week (or even more occasiona
 | Easy to install | Latecomer |
 | Updated in the background | |
 
-## <img src="/vector/logo-izzy-on-droid.svg" alt="Izzy Logo" width="32px" /> IzzyOnDroid
+## <IzzyOnDroidLogo width='32px' /> IzzyOnDroid
 
 This version of Kreate is the balance between GitHub and F-Droid builds.
 
@@ -66,7 +72,7 @@ it requires some knowledge to add it into F-Droid
 | New version avaiable after short time | Harder to setup |
 | Background update | |
 
-## <img src="/vector/logo-obtainium.svg" alt="Obtainium Logo" width="32px" /> Obtainium
+## <ObtainiumLogo width='32px' /> Obtainium
 
 :::info[Obtainium]
 [Obtainium](https://obtainium.imranr.dev/) allows you to install
@@ -89,7 +95,7 @@ if you want to be notified when new version drops.
 | Perks of GitHub builds | Require 3rd party app |
 | Notify when new version drops | Battery usage when check for new updates |
 
-## <img src="/vector/logo-openapk.svg" alt="OpenAPK Logo" width="32px" /> OpenAPK
+## <OpenAPKLogo width="32px" /> OpenAPK
 
 OpenAPK is a web-based APK distributor. They don't actually have an official
 Android app for you to install, instead, you donwload and install your desired

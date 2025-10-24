@@ -1,45 +1,16 @@
-import React, {type ReactNode, useState, useEffect } from 'react';
+import React, { type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/NavbarItem/NavbarNavLink';
-import { useColorMode } from '@docusaurus/theme-common';
 
-import { Icon } from '@iconify/react';
+import Icon, { IconProps } from '@components/Icon';
 
-
-interface IconProps {
-  name: string
-  color?: string
-  colorDark?: string
-}
 
 interface NavItenProps extends Props {
   icon?: IconProps
-}
-
-function NavLinkIcon({ icon: { name, color, colorDark } }: { icon: IconProps }): ReactNode {
-  const { colorMode } = useColorMode();
-  const [iconColor, setIconColor] = useState('var(--ifm-color-emphasis-1000)')
-  useEffect(() => {
-      const newColor = colorMode == 'dark' && colorDark
-        ? colorDark
-        : color || 'var(--ifm-color-emphasis-1000)';
-
-      setIconColor(newColor);
-  }, [colorMode]);
-
-  return (
-    <div className="row">
-      <Icon 
-        icon={name} 
-        className='col' 
-        width='1.7rem' 
-        color={iconColor} />
-    </div>
-  )
 }
 
 export default function NavbarNavLink({
@@ -66,7 +37,13 @@ export default function NavbarNavLink({
   const linkContentProps = icon
     ? {
       children: (
-        <NavLinkIcon icon={icon} />
+        <div className="row">
+          <Icon 
+            icon={icon.icon} 
+            className='col' 
+            width='1.7rem' 
+            color={icon.color} />
+        </div>
       )
     }
     : html

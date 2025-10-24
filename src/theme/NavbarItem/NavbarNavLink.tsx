@@ -8,6 +8,7 @@ import type {Props} from '@theme/NavbarItem/NavbarNavLink';
 
 import Icon, { IconProps } from '@components/Icon';
 import { isWideScreen } from '@site/src/util/DimensionUtils';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
 interface NavItenProps extends Props {
@@ -32,34 +33,39 @@ export default function NavbarNavLink({
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
   const isExternalLink = label && href && !isInternalUrl(href);
-  const wideScreen = isWideScreen()
-
 
   // Link content is set through html, icon, XOR label
-  const linkContentProps = icon && wideScreen
-    ? {
-      children: (
-        <div className="row">
-          <Icon 
-            icon={icon.icon} 
-            className='col' 
-            width='1.7rem' 
-            color={icon.color} />
-        </div>
-      )
-    }
-    : html
+  const linkContentProps = html
+    // When html is declared, ignore all other properties
     ? {dangerouslySetInnerHTML: {__html: html}}
     : {
         children: (
-          <>
-            {label}
-            {isExternalLink && (
-              <IconExternalLink
-                {...(isDropdownLink && {width: 12, height: 12})}
-              />
-            )}
-          </>
+          <BrowserOnly>
+            {() => icon && isWideScreen()
+              ? (
+                // Only show icons if icon property is defined
+                // and screen is wide enough that it doesn't
+                // hamburger menu.
+                <div className="row">
+                  <Icon 
+                    icon={icon.icon} 
+                    className='col' 
+                    width='1.7rem' 
+                    color={icon.color} />
+                </div>
+              )
+              : (
+                <>
+                  {label}
+                  {isExternalLink && (
+                    <IconExternalLink
+                      {...(isDropdownLink && {width: 12, height: 12})}
+                    />
+                  )}
+                </>
+              )
+            }
+          </BrowserOnly>
         ),
       };
 

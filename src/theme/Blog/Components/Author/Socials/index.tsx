@@ -49,10 +49,10 @@ function getSocialPlatformConfig(platformKey: string): SocialPlatformConfig {
   );
 }
 
-function SocialLink({platform, link}: {platform: string; link: string}) {
+function SocialLink({key, platform, link}: {key: string, platform: string; link: string}) {
   const {Icon, label} = getSocialPlatformConfig(platform);
   return (
-    <Link className={styles.authorSocialLink} href={link} title={label}>
+    <Link key={key} className={styles.authorSocialLink} href={link} title={label}>
       <Icon className={clsx(styles.authorSocialLink)} />
     </Link>
   );

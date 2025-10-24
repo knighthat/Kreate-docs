@@ -99,14 +99,16 @@ const config: Config = {
           href: "https://kreate.knighthat.me/discord",
           icon: {
             icon: 'bi:discord'
-          }
+          },
+          label: 'Discord'
         },
         {
           position: 'right',
           href: `${GITHUB_URL}/${APP_REPO_PATH}`,
           icon: {
             icon: 'mdi:github'
-          }
+          },
+          label: 'Github'
         },
       ],
     },

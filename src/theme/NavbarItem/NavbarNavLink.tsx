@@ -7,6 +7,7 @@ import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/NavbarItem/NavbarNavLink';
 
 import Icon, { IconProps } from '@components/Icon';
+import { isWideScreen } from '@site/src/util/DimensionUtils';
 
 
 interface NavItenProps extends Props {
@@ -31,10 +32,11 @@ export default function NavbarNavLink({
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
   const isExternalLink = label && href && !isInternalUrl(href);
+  const wideScreen = isWideScreen()
 
 
   // Link content is set through html, icon, XOR label
-  const linkContentProps = icon
+  const linkContentProps = icon && wideScreen
     ? {
       children: (
         <div className="row">

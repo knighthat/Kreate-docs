@@ -27,3 +27,8 @@ export function useWindowDimensions() {
 
   return windowDimensions;
 }
+
+export function isWideScreen() {
+  const windowDimensions = useWindowDimensions()
+  return windowDimensions.width > 996;
+}

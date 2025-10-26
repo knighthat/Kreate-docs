@@ -187,7 +187,14 @@ const config: Config = {
   themes: ['@docusaurus/theme-mermaid'],
 
   plugins: [
-    './custom-paths-plugin.js'
+    './custom-paths-plugin.js',
+    [
+      'vercel-analytics',
+      {
+        debug: false,
+        mode: 'auto',
+      },
+    ],
   ]
 };
 

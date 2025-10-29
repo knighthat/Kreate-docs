@@ -32,3 +32,7 @@
 .flex-justc--center {
   justify-content: center;
 }
+
+.visibility--none {
+  visibility: hidden !important;
+}

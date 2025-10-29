@@ -162,6 +162,15 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Special thanks',
+          items: [
+            {
+              label: 'Translators',
+              to: 'translators',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} ${APP_NAME}. Built with <a href='https://docusaurus.io/' target="_blank">Docusaurus</a>. Powered by <a href='https://vercel.com/' target="_blank">Vercel</a>`,
     },

@@ -1,0 +1,67 @@
+table {
+  display: table;
+  overflow: hidden;
+}
+
+td {
+  height: 96px;
+}
+
+td.centerCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userCell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.userNameFont {
+  font-size: 1.2em;
+}
+
+.userName {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  /* Prevent text from running over the fully opaque part of the image */
+  width: calc(100% - 150px);
+}
+
+.avatarContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 150px;
+  z-index: 1;
+}
+
+.avatarImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  mask-image: linear-gradient(
+    to right, 
+    transparent 0%,
+    transparent 20%,
+    black 80%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    transparent 0%,
+    transparent 20%,
+    black 80%
+  );
+}
+
+.joinDate {
+  width: fit-content;
+  margin: 0 auto;
+}

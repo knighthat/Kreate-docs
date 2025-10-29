@@ -24,3 +24,8 @@ yarn-error.log*
 .vercel
 
 swizzle.txt
+.ignore.d
+
+# nektos/act
+.secrets
+.vars

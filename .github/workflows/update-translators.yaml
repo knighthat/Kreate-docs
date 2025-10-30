@@ -1,0 +1,284 @@
+name: Update translators
+
+
+on:
+  schedule:
+    - cron: '0 13 3 * *'   # Every 3rd day of the month at 1 PM
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+
+# Prevent multiple jobs from running at the same time
+concurrency:
+  group: 'update-translators'
+  cancel-in-progress: false  # Don't cancel any in-progress runs in this group
+  
+
+jobs:
+  # This step sends requests to Crowdin and ask for a new report,
+  # then waits for the report to be successfully created to extract
+  # download url and puts it in job's output.
+  generate-report:
+    name: Generate report
+    runs-on: ubuntu-latest
+
+    env:
+      CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
+      API_ENDPOINT: https://api.crowdin.com/api/v2/projects/${{ vars.CROWDIN_PROJECT_ID }}
+      GENERATE_REPORT_FILENAME: generate_report_response.json
+      DOWNLOAD_URL_FILENAME: download_url.json
+
+    outputs:
+      DOWNLOAD_URL: ${{ steps.download.outputs.url }}
+
+    # Each command is run on separated step for debug purpose
+    steps:
+      - name: Request new report
+        env:
+          GENERATE_REPORT_ENDPOINT: ${{ env.API_ENDPOINT }}/reports
+        run: |
+          curl -s -X POST \
+          -H "Authorization: Bearer $CROWDIN_TOKEN" \
+          -H 'Content-Type: application/json' \
+          -d '{ "name": "top-members", "schema": { "unit": "words", "format": "json" } }' \
+          "$GENERATE_REPORT_ENDPOINT" > "$GENERATE_REPORT_FILENAME"
+
+      - name:  "DEBUG: Print $GENERATE_REPORT_FILENAME"
+        run: cat "$GENERATE_REPORT_FILENAME"
+
+      - name: Upload report generator response
+        uses: actions/upload-artifact@v5
+        with:
+          name: report_generator
+          path: ${{ env.GENERATE_REPORT_FILENAME }}
+
+      # {
+      # 	"data": {
+      # 		"identifier": "10c31471-dfdf-425a-b3e5-d4be47ec10e2",
+      #     ...
+      #   }
+      # }
+      - name: Extract identifier
+        id: extract
+        run: |
+          IDENTIFIDER=$(jq -r '.data.identifier' "$GENERATE_REPORT_FILENAME")
+          echo "report_identifier=$IDENTIFIDER" >> $GITHUB_OUTPUT
+
+      - name:  "DEBUG: Print identifier"
+        run: echo "${{ steps.extract.outputs.report_identifier }}"
+
+      - name: Wait for report to be generated
+        # Only run when identifier was successfully extracted
+        if: ${{ steps.extract.outputs.report_identifier != '' }}
+        env:
+          REPORT_STATUS_ENDPOINT: ${{ env.API_ENDPOINT }}/reports/${{ steps.extract.outputs.report_identifier }}
+          MAX_CHECKS: 4   # Step will fail after this amount of checks
+          SLEEP_SECONDS: 5   # How long to wait beforing next retry
+          REPORT_STATUS_FILENAME: status.json
+        # This is a very long group of commands.
+        # Topology:
+        # Spin up an infinite loop.
+        # On every loop, get a response from REPORT_STATUS_ENDPOINT,
+        # The response should look like this:
+        # {
+        # 	"data": {
+        # 		"identifier": "10c31471-dfdf-425a-b3e5-d4be47ec10e2",
+        #     "status": "finished",
+        #     "progress": 100,
+        #     ...
+        #   }
+        # }
+        # Extract .data.progress using jq and compare it.
+        # If it's 100 then break from the loop and move on to next step.
+        # Otherwise, wait for SLEEP_SECONDS seconds and restart.
+        # After MAX_CHECKS retries, exit the step with code 1
+        # To cancel workflow
+        run: |
+          LOOP_COUNT=0
+          
+          while true; do
+            # Sleep first because it always take some time
+            # to generate report
+            sleep $SLEEP_SECONDS
+            
+            curl -s -o "$REPORT_STATUS_FILENAME" \
+            -H "Authorization: Bearer $CROWDIN_TOKEN" \
+            "$REPORT_STATUS_ENDPOINT"
+
+            if [ $? -ne 0 ]; then
+              echo "Error: curl command failed."
+
+              # Treat network failure as a failed check for the counter
+              PROGRESS="0"
+            else
+              # Use // 0 to default to 0 if .data.progress is missing
+              PROGRESS=$(jq -r '.data.progress // 0' $REPORT_STATUS_FILENAME)
+            fi
+            
+            echo "Current progress: $PROGRESS"
+            
+            if [ "$PROGRESS" == "100" ]; then
+              echo "Report generation completed"
+              break
+            fi
+            
+            # Check for max attempts
+            if [ "$LOOP_COUNT" -ge "$MAX_CHECKS" ]; then
+              echo "Failed to get status after $MAX_CHECKS retries. Exiting..."
+              exit 1
+            fi
+            
+            echo "Progress not complete. Waiting ${SLEEP_SECONDS} seconds before retry..."
+
+            LOOP_COUNT=$((LOOP_COUNT + 1))
+          
+          done
+
+      - name: Generate download url
+        # Only run when identifier was successfully extracted
+        if: ${{ steps.extract.outputs.report_identifier != '' }}
+        env:
+          REPORT_DOWNLOAD_ENDPOINT: ${{ env.API_ENDPOINT }}/reports/${{ steps.extract.outputs.report_identifier }}/download
+        run: |
+          curl -s -o "$DOWNLOAD_URL_FILENAME" \
+          -H "Authorization: Bearer $CROWDIN_TOKEN" \
+          "$REPORT_DOWNLOAD_ENDPOINT"
+        
+      - name:  "DEBUG: Print $DOWNLOAD_URL_FILENAME"
+        run: cat "$DOWNLOAD_URL_FILENAME"
+
+      - name: Extract download url
+        id: download
+        run: |
+          DOWNLOAD_URL=$(jq -r '.data.url' $DOWNLOAD_URL_FILENAME)
+          echo "url=$DOWNLOAD_URL" >> $GITHUB_OUTPUT
+
+      - name:  "DEBUG: Print download url"
+        run: echo "${{ steps.download.outputs.url }}"
+
+  # This step downloads the report using url extracted from [generate-report].
+  # The report will be then converted into something readable by /translators page.
+  # This file will be uploaded to artifact storage for the next job
+  download-and-distill-json:
+    needs: [generate-report]
+
+    # Don't run this job is DOWNLOAD_URL from [generate-report] is empty
+    if: ${{ needs.generate-report.outputs.DOWNLOAD_URL != '' }}
+
+    name: Download & distill JSON file
+    runs-on: ubuntu-latest
+
+    env:
+      DOWNLOAD_URL: ${{ needs.generate-report.outputs.DOWNLOAD_URL }}
+      PROJECT_OWNER_ID: ${{ vars.PROJECT_OWNER_ID }}
+      TRANSLATORS_FILENAME: translators.json
+      # [CROWDIN_TOKEN] isn't needed here because download url already
+      # has authorize token in the param
+
+    # Each command is run on separated step for debug purpose
+    steps:
+      # DOWNLOAD_URL has file name encoded to it
+      - name: Extract file name
+        id: extract
+        run: |
+          # Extract the encoded filename part: ...filename%3D%22Kreate.top-members.words.report.json%22
+          ENCODED_FILENAME=$(echo "$DOWNLOAD_URL" | grep -o 'filename%3D%22[^%]*\.json%22' | sed 's/filename%3D%22//' | sed 's/%22$//')
+
+          # Decode the filename: replace %22 with " and %3B with ;
+          # The 'printf' command handles the URL decoding
+          FILENAME=$(printf '%b' "${ENCODED_FILENAME//%/\x}")
+
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+
+      - name:  "DEBUG: Print report file name"
+        run: echo "${{ steps.extract.outputs.filename }}"
+
+      - name: Download report
+        env:
+          FILENAME: ${{ steps.extract.outputs.filename }}
+        if: ${{ steps.extract.outputs.filename != '' }}
+        # -L: follow redirects
+        run: curl -L -o "$FILENAME" "$DOWNLOAD_URL"
+
+      - name: "DEBUG: Verify content is not empty"
+        env:
+          FILENAME: ${{ steps.extract.outputs.filename }}
+        run: |
+          if [ ! -s "$FILENAME" ]; then
+            echo "File $FILENAME is empty or does not exist."
+
+            exit 1
+          fi
+      
+      # This step removes unneeded information and put wanted keys in a new json file
+      # Unwanted keys include: owner of the project, votes, etc.
+      - name: Distill content
+        env:
+          FILENAME: ${{ steps.extract.outputs.filename }}
+        # -r: Raw output (no escapes and quotes)
+        # -c: Compact output (no indentation)
+        run: |
+          jq -cr "[
+            .data[] | 
+            select(.user.id != \"$PROJECT_OWNER_ID\" and .translated > 0) | 
+            {
+              user: {
+                name: .user.fullName, 
+                avatar: .user.avatarUrl, 
+                joined: .user.joined
+              }, 
+              languages: .languages, 
+              translated: .translated
+            }
+          ]" \
+          "$FILENAME" > "$TRANSLATORS_FILENAME"
+
+      - name: Upload translators json file
+        uses: actions/upload-artifact@v5
+        with: 
+          # Name of the artifact to upload.
+          # Optional. Default is 'artifact'
+          #
+          # Don't forget to change download artifact name too
+          name: translators
+          # A file, directory or wildcard pattern that describes what to upload
+          # Required.
+          path: ${{ env.TRANSLATORS_FILENAME }}
+
+  apply-and-open-pr:
+    needs: [download-and-distill-json]
+
+    name: Apply new translators list & open PR
+    runs-on: ubuntu-latest
+
+    # Each command is run on separated step for debug purpose
+    steps:
+
+      - uses: actions/checkout@v5
+
+      - name: Download translators list
+        uses: actions/download-artifact@v6
+        with:
+          # Don't forget to change upload artifact name too
+          name: translators
+          path: src/pages/translators
+
+      - name:  "DEBUG: Print diff between old/new list"
+        # Because translators.json is a 1-line file,
+        # printing diff will hold the stdout until quit command presents
+        run: git status
+
+      - name: Capture date
+        id: date
+        run: |
+          TODAY=$(date +"%Y-%m-%d")
+          echo "today=$TODAY" >> $GITHUB_OUTPUT
+
+      - name: Commit changes & make pr
+        uses: actions/checkout@v7
+        with:
+          title: Update translators
+          commit-message: "Update translators list ${{ steps.date.outputs.today }}"
+          branch: update-translators
+          reviewers: ${{ github.GITHUB_REPOSITORY_OWNER }}

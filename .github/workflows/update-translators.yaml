@@ -169,6 +169,12 @@ jobs:
     name: Download & distill JSON file
     runs-on: ubuntu-latest
 
+    # Enable required permission for peter-evans/create-pull-request
+    # to use GITHUB_TOKEN to make PR
+    permissions:
+      contents: write
+      pull-requests: write
+
     env:
       DOWNLOAD_URL: ${{ needs.generate-report.outputs.DOWNLOAD_URL }}
       PROJECT_OWNER_ID: ${{ vars.PROJECT_OWNER_ID }}

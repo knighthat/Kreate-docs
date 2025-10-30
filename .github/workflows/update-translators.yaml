@@ -276,7 +276,7 @@ jobs:
           echo "today=$TODAY" >> $GITHUB_OUTPUT
 
       - name: Commit changes & make pr
-        uses: actions/checkout@v7
+        uses: peter-evans/create-pull-request@v7
         with:
           title: Update translators
           commit-message: "Update translators list ${{ steps.date.outputs.today }}"

@@ -9,6 +9,6 @@ news:
   description: Related information about the project
 
 release:
-  label: release
+  label: Release
   permalink: /release
   description: New version announcements

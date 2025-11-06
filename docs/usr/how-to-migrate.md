@@ -9,7 +9,9 @@ sidebar_position: 1
 
 [@knighthat](https://github.com/knighthat) releases a feature on old Kreate (`improvised` and `upstream` flavor) that allows user to seamlessly move their caches, database(s), and settings to new Kreate without breaking a sweat.
 
-> Old Kreate will stop receiving updates after Mar 16 2025, unless it's related to migration issue.
+<div class="callout">
+  Old Kreate will stop receiving updates after Mar 16 2025, unless it's related to migration issue.
+</div>
 
 :::note
 

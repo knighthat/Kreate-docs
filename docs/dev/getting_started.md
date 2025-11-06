@@ -74,7 +74,9 @@ Github has a well written instruction on this matter, here's the [link](https://
 
 ### Cloning via SSH
 
-> This is an advanced feature. However, it helps reduce the time you need to input your password.
+<div class="callout">
+  This is an advanced feature. However, it helps reduce the time you need to input your password.
+</div>
 
 As mentioned before, you can use SSH key pair to clone & push your changes without having to generate a
 [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#about-personal-access-tokens).

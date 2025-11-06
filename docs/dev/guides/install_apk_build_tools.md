@@ -51,8 +51,9 @@ to wherever you extracted the folder to.
 
 `/path/to/cmdline-tools/android-35` and `C:\Users\yourname\Downloads\cmdline-tools\android-35` can be anywhere, you just have to remember it.
 
-> _During the installation, one or several Term of Services (ToS) will be prompted to you, and you'll have to agree every single of them to continue._
-
+<div class="callout">
+  _During the installation, one or several Term of Services (ToS) will be prompted to you, and you'll have to agree every single of them to continue._
+</div>
 
 ## 3. Verify download
 

@@ -19,7 +19,7 @@ You can access this feature by going to song's menu, and then choose `Reset` opt
 Scroll down if you don't see it
 :::
 
-## 💭 Reset dialog 
+## 💭 Reset dialog
 
 ![Song reset dialog](./img/song-reset-dialog.webp)
 

@@ -23,7 +23,7 @@ _Download_ and _extract_ the one that **matches your operating system**.
 
 :::
 
-This is the file stucture after extraction
+This is the file structure after extraction
 
 ![cmdline-tools structure illustration 1](./img/cmdline_tools_file_structure_1.webp)
 

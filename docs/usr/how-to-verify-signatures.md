@@ -19,7 +19,7 @@ The signature in an APK is crucial for security, integrity, and trust. Here’s 
 
 ### 🛡️ App Integrity
 
-Signature protects APK from being modified by bad actors. After an APK is signed, any modification to the APK will break the signature, 
+Signature protects APK from being modified by bad actors. After an APK is signed, any modification to the APK will break the signature,
 thus, making the signature invalid. [Learn more about APK signing process](https://developer.android.com/studio/publish/app-signing)
 
 ### 👤 Developer Identity

@@ -4,38 +4,42 @@ title: Building Kreate
 sidebar_position: 2
 ---
 
-> When you want to have your own changes in Kreate, then building your own app is your option.
-
+<div class="callout">
+  When you want to have your own changes in Kreate, then building your own app is your option.
+</div>
 
 ## ✅ Prerequisites
 
 :::warning
     You **shouldn't** attempt to build the app with a computer that has
-    less than 6GB of RAM. 
-    
-    The build process will slow down significantly and may result in failure, 
+    less than 6GB of RAM.
+
+    The build process will slow down significantly and may result in failure,
     or the system will terminate it to preverse resources.
 :::
 
 1. A computer
-2. *Internet
+2. **Internet**
 
-> \* Only needed to download dependencies. No internet connection required to build the app
-
+<div class="callout">
+  **Only needed to download dependencies. No internet connection required to build the app**.
+</div>
 
 ## 📋 Checklist
 
 1. [Download & install Java 21 (or above)](/dev/guides/how-to-install-java-21)
 2. [Have a clone of the repo locally](/dev/getting_started)
-3. Register release notes 
+3. Register release notes
 
 ### Register release notes
 
 Kreate requires a `release_notes.txt` to be included at build time.
 This file contains all the changes made between last version and this version
 
-> This file doesn't stay in the repo to prevent the build from accidentally 
-> including old release notes. Kind of a fool-proof step
+<div class="callout">
+  This file doesn't stay in the repo to prevent the build from accidentally
+  including old release notes. Kind of a fool-proof step.
+</div>
 
 For personal build, you can just copy any text file from `fastlane/metadata/android/en-US/changelogs/`
 and paste it in `composeApp/src/androidMain/res/raw/release_notes.txt`
@@ -101,7 +105,7 @@ Your file is now available in `composeApp/build/outputs/apk/github/uncompressed/
 ## ✍️ Signing your app
 
 Android will not allow you to install unsigned APK willy-nilly.
-Steps shown above didn't cover it, and there's currently no 
+Steps shown above didn't cover it, and there's currently no
 documents that show you either.
 
 But here's a [tutorial from Medium](https://medium.com/@thedancercodes/signing-your-apks-the-pragmatic-way-396e316981ca).
@@ -109,14 +113,15 @@ But here's a [tutorial from Medium](https://medium.com/@thedancercodes/signing-y
 
 ## 🏁 Final step
 
-Copy signed APK to your phone and start the installation. 
+Copy signed APK to your phone and start the installation.
 
-If you have another instance of Kreate on your phone, 
+If you have another instance of Kreate on your phone,
 you might be asked to remove before installing this version.
 
-> Only when you didn't change `namespace` and `packageId`, which you
-> didn't if you followed this article alone
-
+<div class="callout">
+  Only when you didn't change `namespace` and `packageId`, which you
+  didn't if you followed this article alone.
+</div>
 
 ## 🪲 Issues
 

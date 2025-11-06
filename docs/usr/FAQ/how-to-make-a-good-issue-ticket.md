@@ -7,7 +7,7 @@ slug: /usr/faq/how-to-make-a-good-issue-ticket
 :::danger[Language]
 Please explicitly use English while filling out the ticket.
 
-Non-English tickets will be automatically closed after 
+Non-English tickets will be automatically closed after
 a certain period if they are not translated into English.
 
 > You don't have to excel in English, we can ask for more information if needed.
@@ -20,7 +20,7 @@ Before you submit a ticket, please make sure that you've done these:
 ### Read articles about common issues/misconceptions
 
 2 of the most common issues people have when using Kreate are about
-playback. Either song stops in the middle, or their downloads 
+playback. Either song stops in the middle, or their downloads
 don't play when offline.
 
 In most cases, this is not Kreate's fault. Please read [playback stops midway](/usr/faq/playback-stops-midway)
@@ -34,12 +34,12 @@ are common because people **keep opening the same tickets**.
 The app is currently maintained by [@KnightHat](https://github.com/knighthat). That means,
 all development, distributing releases, and handling tickets are done by **1 single person**.
 
-Every ticket must be examinate carefully before taking actions, including duplicate tickets.
+Every ticket must be examine carefully before taking actions, including duplicate tickets.
 It takes a certain amount of time to do, so, if 10 tickets are the same, it'll take 10 times the time
-to handle. 
+to handle.
 
 :::info
-The more time a dev has to spend on ticket, the less time 
+The more time a dev has to spend on ticket, the less time
 he/she has to spend on development.
 :::
 
@@ -48,7 +48,7 @@ he/she has to spend on development.
 :::warning[Incomplete tickets]
 You are expected to fill out everything that is required in the form.
 
-Imcomplete tickets will be closed with or without notice.
+Incomplete tickets will be closed with or without notice.
 :::
 
 Each section are carefully designed to carry clues to pinpoint the problem,
@@ -61,7 +61,7 @@ This is important, ticket's title must contains the problem you're facing.
 For example, if the app crashes when you start a song, you can name the ticket
 something like `App crashes when I select a song`.
 
-> Please, for the love of God, don't name your ticket like this: 
+> Please, for the love of God, don't name your ticket like this:
 > `Crash`, `Bug`, `I don't know`, `alskdhj`, or any meaningless sentences.
 
 ### Version of Kreate
@@ -77,13 +77,13 @@ This is **the current version of Kreate**, you can find this in **Settings** > *
 :::tip[Why is it important?]
 Specifying the version lets the devs know when the first problem as reported.
 
-You can also read [Choosing your build](/usr/choosing-your-build) to 
+You can also read [Choosing your build](/usr/choosing-your-build) to
 know why some platforms don't have most up-to-date version.
 :::
 
 :::warning[Avoid using `latest` or `newest`]
 Not all problems are solved in minutes, some take weeks or months.
-Naming it `latest` or `newest` doesn't help, which will result in 
+Naming it `latest` or `newest` doesn't help, which will result in
 your ticket being closed without notice.
 :::
 
@@ -99,12 +99,12 @@ tests will be done incorrectly, results in unwanted outcomes.
 
 Google's [Check & update your Android version](https://support.google.com/android/answer/7680439?hl=en).
 
-> If you don't see your Android version on the list, 
+> If you don't see your Android version on the list,
 > please choose `Other` and specify it in [Other Android versions](#other-android-versions) section.
 
 ### Other Android versions
 
-If you can replicate this issue on multiple devices with different Android versions, 
+If you can replicate this issue on multiple devices with different Android versions,
 or when you chose `Other` in [Android version](#android-version), please specify all
 of them here.
 
@@ -112,18 +112,18 @@ of them here.
 This section is **optional**
 :::
 
-### TODOs before submiting a ticket
+### TODOs before submitting a ticket
 
 Just like [TODOs](#-todos), there are things needed to be done beforehand.
 
 - **Update my app to latest version**: Your issue could be fixed in recent version.
   Check latest on our GitHub's [releases](https://github.com/knighthat/Kreate/releases/latest) page.
-  If versions are mismatch, please promptly update your app, or wait if your distribution platform 
+  If versions are mismatch, please promptly update your app, or wait if your distribution platform
   to ship new update.
-- **(If I'm on latest version) Re-install app**: Some issues occured during installation/update process,
-  but the crash won't happen until you use the app. This can be solved most of the time by install 
+- **(If I'm on latest version) Re-install app**: Some issues occurred during installation/update process,
+  but the crash won't happen until you use the app. This can be solved most of the time by install
   the same APK on top or just remove and make a fresh install on your phone.
-- **I have checked issue page and there's no problem like mine**: 
+- **I have checked issue page and there's no problem like mine**:
   Similar to [Check Issue page for similar issues](#check-issue-page-for-similar-issues)
 
 :::warning
@@ -134,7 +134,7 @@ Checking these boxes means you've done **ALL** of them.
 
 ### Tell us how to trigger this bug
 
-This is where you descibe how to you trigger the issue. This is very **_important_**.
+This is where you describe how to you trigger the issue. This is very **_important_**.
 
 This should be 1 line per step. Here's an example:
 
@@ -147,7 +147,7 @@ This should be 1 line per step. Here's an example:
 ```
 
 :::tip
-Provide as much as information you can give. Somtimes the detail is what determines the outcome
+Provide as much as information you can give. Sometimes the detail is what determines the outcome
 :::
 
 :::warning
@@ -156,13 +156,13 @@ If you have crash log(s), don't paste them here, use [Log(s)](#logs) section ins
 
 ### Submit a video/picture
 
-It's always good to have a short video to backup all your description. 
+It's always good to have a short video to backup all your description.
 
 :::tip
 If the issue in question is a visual defect, you can submit a screenshot instead.
 :::
 
-You can read [Attaching files](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files) 
+You can read [Attaching files](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files)
 from GitHub for details. TL;DR:
 
 | | Video | Image |

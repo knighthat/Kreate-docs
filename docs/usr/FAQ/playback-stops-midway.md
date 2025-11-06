@@ -31,7 +31,7 @@ Here are some messages they send when you attempt to get the stream when blocked
 Recently, new blocking methods have been implemented. One of them is cutting of
 playback stream midway.
 
-This is very easy to get while you're watching YT with an Adblock on. 
+This is very easy to get while you're watching YT with an Adblock on.
 The video/song stops somewhere in the middle with a popup "*Experiencing interruption? Find out why.*"
 message in the corner of the screen.
 
@@ -47,12 +47,14 @@ When a song isn't retrieved correctly, you won't be able to stream it back.
 Since there's no official way to verify integrity of a song when it's cached or downloaded,
 the only possible way is to listen to it.
 
-The symptom is very easy to spot, a song stops at the exact same timestamp 
+The symptom is very easy to spot, a song stops at the exact same timestamp
 on every playback.
 
 ### Kreate's problem
 
-> Don't think it's YT blocking you? Try these troubleshooting steps.
+<div class="callout">
+  Don't think it's YT blocking you? Try these troubleshooting steps.
+</div>
 
 The easiest method you can do is to play a song exists on your device.
 This can be either a cached/downloaded song, or a song that's physically on your device.
@@ -63,7 +65,7 @@ because we can eliminate corrupted cache situation.
 :::
 
 :::tip[On device songs]
-Your songs must be put inside `Music` folder in order for Kreate 
+Your songs must be put inside `Music` folder in order for Kreate
 to read and perform playback. Only required on Android 13+.
 :::
 
@@ -72,11 +74,11 @@ Kreate is not the problem
 
 ## 💡 Solutions
 
-When you're [blocked by YouTube](#youtubes-block), the only thing you can do is to 
+When you're [blocked by YouTube](#youtubes-block), the only thing you can do is to
 wait for the block to pass. Don't worry, it's soft block.\
 You can completely restart the app to force new session.
 
-If a particular song [stops at the exact timestamp](#corrupted-cache) every time you attemp to play it.
+If a particular song [stops at the exact timestamp](#corrupted-cache) every time you attempt to play it.
 Then the only solution is to remove all cache of the song and play it from start again.\
 You can read our [Song reset](/usr/features/song-reset) article for details.
 

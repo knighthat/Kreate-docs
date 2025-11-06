@@ -33,7 +33,7 @@ In this tutorial, Kreate's icon is used as the demo
 
 <details>
   <summary>Demo SVG</summary>
-  
+
   ![Demo app icon](./img/demo-app-icon.svg)
 
   ```svg
@@ -149,12 +149,12 @@ composeApp/src/res/mipmap-<dpi>
 | xxhdpi | 144 x 144 |
 | xxxdpi | 192 x 192 |
 
-> At this point, I don't have to tell you that you need to export your icon design 
+> At this point, I don't have to tell you that you need to export your icon design
 > as PNGs and to these locations, right?
 
 :::tip
 Use [Inkscape](https://inkscape.org/), this software allows you to
-export a single svg file into multiple PNG files with different 
+export a single svg file into multiple PNG files with different
 sizes without you having to manually scaling it first.
 :::
 
@@ -164,7 +164,7 @@ sizes without you having to manually scaling it first.
 For Android 8.0+
 :::
 
-As we move toward [Adaptive Icons](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive), 
+As we move toward [Adaptive Icons](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive),
 things get more complicated.
 
 Background contains unimportant part of the icon, so that's the gradient background of the demo.
@@ -228,7 +228,7 @@ Here's an example:
   <summary>Demo SVG</summary>
 
   As you can see, the icon has nothing but a simple logo.
-  
+
   ![Demo app icon](./img/demo-app-icon-monochrome.svg)
 
   ```xml
@@ -279,7 +279,7 @@ With:
 
 <details>
   <summary>ic_launcher.xml</summary>
-  
+
   ```xml
   <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
       <background android:drawable="@drawable/ic_launcher_background"/>
@@ -291,7 +291,7 @@ With:
 
 <details>
   <summary>ic_launcher_round.xml</summary>
-  
+
   ```xml
   <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@drawable/ic_launcher_background"/>
@@ -307,13 +307,13 @@ because they contain references to different parts. Updating those parts
 is enough.
 :::
 
-## Miscellanous icons
+## Miscellaneous icons
 
-Kreate uses more than what descibed above, especially the monochrome version.
+Kreate uses more than what described above, especially the monochrome version.
 
 ### Inverted monochrome
 
-This file is used in area such as notification, and player. 
+This file is used in area such as notification, and player.
 We can use [ic_launcher_monochrome.xml](#monochrome) but the vectos is too
 small for the job.
 
@@ -321,7 +321,7 @@ small for the job.
   <summary>app_icon_monochrome.xml</summary>
 
   ![App icon monochrome](./img/demo-app-icon-monochrome-inverted.svg)
-  
+
   ```xml
   <svg
     width="24"

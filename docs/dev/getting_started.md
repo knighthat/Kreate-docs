@@ -31,13 +31,13 @@ Now that we have that out of the way, let's get really started!
 
 The first step is not to clone the repo, but to fork it. Without forking, you can't make pull request (PR).
 
-:::info[Shotcuts]
+:::info[Shortcuts]
 
 Click [HERE](https://github.com/login) to login, and [HERE](https://github.com/signup) to register
 
 :::
 
-After logging in, go to our [remote repository](https://github.com/knighthat/RiMusic) 
+After logging in, go to our [remote repository](https://github.com/knighthat/RiMusic)
 
 ![Fork repo illustration](./img/fork_repo.webp)
 
@@ -50,7 +50,7 @@ to use secret key every time you want to push from local repo remote repo.
 
 :::
 
-There are some basic information you need to fill out. 
+There are some basic information you need to fill out.
 
 > Don't worry, you can still modify them later on.
 
@@ -58,8 +58,7 @@ There are some basic information you need to fill out.
 
 :::note
 
-Development happens mostly on `kbuild` branch, if you're planning on contributing to
-master branch only then tick the checkbox "Copy the `kbuild` branch only"
+You should create a separate branch for development to keep the `main` branch in sync with `upstream`.
 
 :::
 
@@ -69,7 +68,7 @@ Now all you have to do is **wait** until the forking process is completed.
 
 ## 📥 Clone remote repo to your machine
 
-### Cloning via HTTPS 
+### Cloning via HTTPS
 
 Github has a well written instruction on this matter, here's the [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
@@ -77,7 +76,7 @@ Github has a well written instruction on this matter, here's the [link](https://
 
 > This is an advanced feature. However, it helps reduce the time you need to input your password.
 
-As mentioned before, you can use SSH key pair to clone & push your changes without having to generate a 
+As mentioned before, you can use SSH key pair to clone & push your changes without having to generate a
 [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#about-personal-access-tokens).
 
 To clone the repo using SSH, open your terminal (or command prompt in Windows) and execute this command:
@@ -86,10 +85,10 @@ To clone the repo using SSH, open your terminal (or command prompt in Windows) a
 git clone --recurse-submodules git@github.com:[username]/[repo_name]
 ```
 
-**_username_** is what your account when you register for a Github acccount.\
+**_username_** is what your account when you register for a Github account.\
 **_repo_name_** is the name of your repo when you fork it.
 
-For example, if my username is **knighthat** and I name my fork **Kreate**. 
+For example, if my username is **knighthat** and I name my fork **Kreate**.
 The command will be:
 
 ```shell
@@ -100,7 +99,7 @@ This [article](https://gitscripts.com/how-to-git-clone-with-ssh) goes through th
 
 ## ✏️ Making changes to your local repository
 
-From now on, you can start applying changes to the repo you just cloned. 
+From now on, you can start applying changes to the repo you just cloned.
 This won't affect remote repositories in any way until you commit and publish them.
 
 ### Modify a file
@@ -112,13 +111,13 @@ Let's get started by making some changes to README.md, shall we?
 +++ b/README.md
 @@ -468,3 +468,5 @@ Furthermore, its contents are not affiliated with, funded, authorized, endorsed
  Google LLC or any of its affiliates, subsidiaries.
- 
+
  Any trademark, service mark, trade name, or other intellectual property rights used in this project are owned by the respective owners.
 +
 +I just made my first change
 ```
 
-> There's no easy way to show changes, here's the `git diff` version of the file. 
+> There's no easy way to show changes, here's the `git diff` version of the file.
 
 ### Acknowledge changes
 
@@ -143,7 +142,7 @@ git commit -m "my first change"
 `"my first change"` is the message attached to commit. See illustration below:
 
 ```git
-commit 76b099c466eb4219f250e1cff6ec8f39227893e9 (HEAD -> kbuild)
+commit 76b099c466eb4219f250e1cff6ec8f39227893e9 (HEAD -> main)
 Author: knighthat <git@knighthat.me>
 
     my first change
@@ -151,7 +150,7 @@ Author: knighthat <git@knighthat.me>
 
 ## ☁️⬆️ Pushing commits to remote repository
 
-To publish your changes to the public, you must push all commited chanegs to a remote repo.
+To publish your changes to the public, you must push all committed changes to a remote repo.
 
 ```shell
 git push
@@ -169,7 +168,7 @@ you must create a request for maintainers to review.
 
 ### Via forked repo
 
-Github will tell you how many commits you've pushed that aren't synced to upstream repo 
+Github will tell you how many commits you've pushed that aren't synced to upstream repo
 in your personal remote repo. Click on `Contribute` and `Open pull request` to start a request.
 
 ![Make PR method 1](./img/pr_method_1.webp)
@@ -190,19 +189,19 @@ Click on `compare across forks` if you can't select which repo
 
 :::
 
-**_base repository_** is the upstream repo and branch. Usually `knighthat/Kreate` and `kbuild`.\
+**_base repository_** is the upstream repo and branch. Usually `knighthat/Kreate` and `main`.\
 **_head repository_** is your own remote repo
 
 ## 🗒️ What to write in PR
 
-Wrting description can be difficult, especially when you are not fluent in English.\
+Writing description can be difficult, especially when you are not fluent in English.\
 But worry not, this section will break it down to you.
 
 :::note[How to make a good PR]
 
 A good PR should only aim to solve **_ONE_** and only **_ONE_** problem.
 
-Packing multiple things in a pr will only resolve in longer approve time, 
+Packing multiple things in a pr will only resolve in longer approve time,
 not to mention the confusion.
 
 :::
@@ -214,13 +213,13 @@ Title should be a brief description of your changes. For example:
 - When a new feature is added
   > Just put the name of that feature as the title
 - When a bug is fixed
-  > Fixed [_short desciption of bug_] #[_issue number_]
+  > Fixed [_short description of bug_] #[_issue number_]
 - Correct a typo
   > Typo [file name]
 
 ### Description
 
-Desctiption should perfectly describe how these changes will "change" the app.
+Description should perfectly describe how these changes will "change" the app.
 
 For example, a fix-a-bug pr should utilize this template:
 
@@ -234,9 +233,9 @@ For example, a fix-a-bug pr should utilize this template:
 
 :::warning
 
-PR with empty description is more likely to be ignored, nobody wants to take their 
+PR with empty description is more likely to be ignored, nobody wants to take their
 time to analyze your code.
 
-Best case senario, a maintainer will ask for details information before making a decision.
+Best case scenario, a maintainer will ask for details information before making a decision.
 
 :::

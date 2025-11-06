@@ -18,7 +18,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #f86ab9;
   --ifm-color-primary-dark: #e05fa7;
   --ifm-color-primary-darker: #c95596;
@@ -35,4 +35,26 @@
 
 .visibility--none {
   visibility: hidden !important;
+}
+
+/* Call-out style */
+
+.callout {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-base);
+}
+
+.callout p {
+  margin: 0;
+}
+
+[data-theme="dark"] .callout {
+  border-color: var(--ifm-color-emphasis-200);
+  background-color: var(--ifm-background-color);
 }

@@ -61,8 +61,10 @@ This is important, ticket's title must contains the problem you're facing.
 For example, if the app crashes when you start a song, you can name the ticket
 something like `App crashes when I select a song`.
 
-> Please, for the love of God, don't name your ticket like this:
-> `Crash`, `Bug`, `I don't know`, `alskdhj`, or any meaningless sentences.
+<div class="callout">
+  Please, for the love of God, don't name your ticket like this:
+  `Crash`, `Bug`, `I don't know`, `alskdhj`, or any meaningless sentences.
+</div>
 
 ### Version of Kreate
 

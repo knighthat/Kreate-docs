@@ -4,7 +4,9 @@ title: Playback stops midway
 slug: /usr/faq/playback-stops-midway
 ---
 
-> Are you experiencing interruption during playback?
+<div class="callout">
+  Are you experiencing interruption during playback?
+</div>
 
 This is a fairly common issue when you stream a song that isn't on your device yet,
 or when you first play the song after the download.

@@ -5,7 +5,7 @@ slug: /dev
 sidebar_position: 0
 ---
 
-## 👋 Greetings 
+## 👋 Greetings
 
 This page is dedicated to help new developers as well as people who already contributed to this project.
 
@@ -16,20 +16,20 @@ to figure things out _one by one_ (like we did).
 
 ## I'm new here
 
-No worries. Let's get you up and running by getting you through installtion process.
+No worries. Let's get you up and running by getting you through installation process.
 
 Head over to [Getting Started](/dev/getting_started) to get yourself a copy of the repository.
 
 ## 🧭 Basic navigation
 
-Left sidebar contains all available pages related to the topic. While right sidebar contains 
+Left sidebar contains all available pages related to the topic. While right sidebar contains
 headers (sections) of each page
 
 ## 🔧 I want to contribute to this site
 
 Scroll down to the bottom of this page and click "Edit this page" to get to the source code.
 
-:::tip 
+:::tip
 
 Don't forget to clone the repo before making changes
 

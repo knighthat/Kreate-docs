@@ -28,13 +28,13 @@ composeApp/src/androidMain/res
 Kreate is categorized as a multiple platform project. Meaning, `res` in `androidMain`,
 `commonMain`, `desktopMain` are valid paths.
 
-Each serves different platform, except for `commonMain`, which is universal. 
+Each serves different platform, except for `commonMain`, which is universal.
 But for simplicity, this tutorial will not going to use it.
 :::
 
 ## 📍 Get SVG location
 
-There are several ways you can copy a file's path. Some OS has this buton right in the menu.
+There are several ways you can copy a file's path. Some OS has this button right in the menu.
 
 ![Copy path from menu](./img/copy-path-from-menu.webp)
 
@@ -47,18 +47,18 @@ To copy from here, you need to select it, then highlight everything to copy.
 ![Copy path from address bar](./img/copy-path-from-address-bar.webp)
 
 :::info
-[KDE Plasma](https://kde.org/plasma-desktop/) is used in this tutorial, 
+[KDE Plasma](https://kde.org/plasma-desktop/) is used in this tutorial,
 but [File Explorer](https://en.wikipedia.org/wiki/File_Explorer) and [Finder](https://en.wikipedia.org/wiki/Finder_(software))
 should have similar approach
 :::
 
 ## ✎ᝰ Converting SVG to XML
 
-> Why? You may ask. 
+> Why? You may ask.
 
 The answer is simple, Android doesn't support SVG, at least, not all of the features SVG provides.
 
-XML file (internally called [VectorDrawable](https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources)) 
+XML file (internally called [VectorDrawable](https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources))
 as the name implied, is in fact, a Vector, but with limited functionalities compared to SVG
 
 Luckily, you don't have to convert your SVG to XML prior to the import, Android Studio does this right before importing SVG file/
@@ -92,7 +92,7 @@ Here, you'll need to add a few things:
 5. Next
 6. Verify everything
   > This confirmation dialog lets you make sure everything is in its correct place.
-  
+
   ![Confirm icon path](./img/confirm-icon-path.webp)
 
 7. Finish
@@ -101,5 +101,5 @@ Here, you'll need to add a few things:
 
 At this point, you should be able to see your newly added asset in [Resource Manager](https://developer.android.com/studio/write/resource-manager).
 
-The last step is to commit your changes and push it to your fork, and open a pull request. 
+The last step is to commit your changes and push it to your fork, and open a pull request.
 There's a tutorial for this too, check out [Getting Started - Acknowledge changes](/dev/getting_started#acknowledge-changes)

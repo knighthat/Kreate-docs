@@ -9,7 +9,7 @@ sidebar_position: 1
 
 [@knighthat](https://github.com/knighthat) releases a feature on old Kreate (`improvised` and `upstream` flavor) that allows user to seamlessly move their caches, database(s), and settings to new Kreate without breaking a sweat.
 
-> Old Kreate will stop receving updates after Mar 16 2025, unless it's related to migration issue.
+> Old Kreate will stop receiving updates after Mar 16 2025, unless it's related to migration issue.
 
 :::note
 
@@ -102,6 +102,6 @@ If you are not on `improvised` or `upstream` build, you are not required to migr
 
 ## 🗑️ Delete old Kreate (optional)
 
-You can safely delete your old Kreate and move on to new app. 
+You can safely delete your old Kreate and move on to new app.
 
 But my advice is to use new Kreate for few days to detect any anomaly before completely delete old Kreate

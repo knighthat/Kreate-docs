@@ -27,8 +27,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(react@19.1.1)
       '@ionic/react':
-        specifier: ^8.7.5
-        version: 8.7.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: ^8.7.9
+        version: 8.7.9(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@mdx-js/react':
         specifier: ^3.1.1
         version: 3.1.1(@types/react@19.1.13)(react@19.1.1)
@@ -1245,11 +1245,11 @@ packages:
   '@iconify/utils@3.0.2':
     resolution: {integrity: sha512-EfJS0rLfVuRuJRn4psJHtK2A9TqVnkxPpHY6lYHiB9+8eSuudsxbwMiavocG45ujOo6FJ+CIRlRnlOGinzkaGQ==}
 
-  '@ionic/core@8.7.5':
-    resolution: {integrity: sha512-Uk1qdGPoLHaVhd2FnYSAvRehd3VwwcPIfXaR51qiC7C2L5VhD27VyLSgDetc15G4U+VAIFjgUSR/pKdLFEuMPA==}
+  '@ionic/core@8.7.9':
+    resolution: {integrity: sha512-6cYp3LHjCGX32MiYR09l/O+8klkJ27WpKzllvnLRe5bxX3nOuqJvJJIshzT85qTdZNTFu7zJJrjWkgEOXGarzg==}
 
-  '@ionic/react@8.7.5':
-    resolution: {integrity: sha512-ID1in1YhmjlpLUF1aMv9zSEVc+ZiXs1fNWKJLK4U02LRQoNxmKagwYLxItAuls0KqduCErcqfC5pOcBJDtMl4Q==}
+  '@ionic/react@8.7.9':
+    resolution: {integrity: sha512-mG+0oGUOXt54QIgY6XTLWdf0u3dxHWVcuCXFH1fh4t2F7QPP392LJx6wIZieTc+Cp1r94uuNKWBZmdVPuvRxSA==}
     peerDependencies:
       react: '>=16.8.6'
       react-dom: '>=16.8.6'
@@ -1428,13 +1428,13 @@ packages:
   '@slorber/remark-comment@1.0.0':
     resolution: {integrity: sha512-RCE24n7jsOj1M0UPvIQCHTe7fI0sFL4S2nwKVWwHyVr/wI/H8GosgsJGyhnsZoGFnD/P2hLf1mSbrrgSLN93NA==}
 
-  '@stencil/core@4.36.2':
-    resolution: {integrity: sha512-PRFSpxNzX9Oi0Wfh02asztN9Sgev/MacfZwmd+VVyE6ZxW+a/kEpAYZhzGAmE+/aKVOGYuug7R9SulanYGxiDQ==}
+  '@stencil/core@4.37.1':
+    resolution: {integrity: sha512-s4ZroxdYc2HU0b7V3n59RVtMKdNlTvWWBN8KofaP64eCzvg1qRh6SKMet7MJ069F1lx/FxDvsYfOv7pZRiMWmQ==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
-  '@stencil/core@4.37.1':
-    resolution: {integrity: sha512-s4ZroxdYc2HU0b7V3n59RVtMKdNlTvWWBN8KofaP64eCzvg1qRh6SKMet7MJ069F1lx/FxDvsYfOv7pZRiMWmQ==}
+  '@stencil/core@4.38.0':
+    resolution: {integrity: sha512-oC3QFKO0X1yXVvETgc8OLY525MNKhn9vISBrbtKnGoPlokJ6rI8Vk1RK22TevnNrHLI4SExNLbcDnqilKR35JQ==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
@@ -7505,15 +7505,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ionic/core@8.7.5':
+  '@ionic/core@8.7.9':
     dependencies:
-      '@stencil/core': 4.36.2
+      '@stencil/core': 4.38.0
       ionicons: 8.0.13
       tslib: 2.8.1
 
-  '@ionic/react@8.7.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@ionic/react@8.7.9(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
-      '@ionic/core': 8.7.5
+      '@ionic/core': 8.7.9
       ionicons: 8.0.13
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
@@ -7714,7 +7714,7 @@ snapshots:
       micromark-util-character: 1.2.0
       micromark-util-symbol: 1.1.0
 
-  '@stencil/core@4.36.2':
+  '@stencil/core@4.37.1':
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.34.9
       '@rollup/rollup-darwin-x64': 4.34.9
@@ -7725,7 +7725,7 @@ snapshots:
       '@rollup/rollup-win32-arm64-msvc': 4.34.9
       '@rollup/rollup-win32-x64-msvc': 4.34.9
 
-  '@stencil/core@4.37.1':
+  '@stencil/core@4.38.0':
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.34.9
       '@rollup/rollup-darwin-x64': 4.34.9

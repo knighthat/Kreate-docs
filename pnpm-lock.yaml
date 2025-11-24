@@ -27,8 +27,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(react@19.2.0)
       '@ionic/react':
-        specifier: ^8.7.9
-        version: 8.7.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: ^8.7.10
+        version: 8.7.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@mdx-js/react':
         specifier: ^3.1.1
         version: 3.1.1(@types/react@19.1.13)(react@19.2.0)
@@ -1245,11 +1245,11 @@ packages:
   '@iconify/utils@3.0.2':
     resolution: {integrity: sha512-EfJS0rLfVuRuJRn4psJHtK2A9TqVnkxPpHY6lYHiB9+8eSuudsxbwMiavocG45ujOo6FJ+CIRlRnlOGinzkaGQ==}
 
-  '@ionic/core@8.7.9':
-    resolution: {integrity: sha512-6cYp3LHjCGX32MiYR09l/O+8klkJ27WpKzllvnLRe5bxX3nOuqJvJJIshzT85qTdZNTFu7zJJrjWkgEOXGarzg==}
+  '@ionic/core@8.7.10':
+    resolution: {integrity: sha512-auDIGVQCwh/gc69WwbR/DFzZPx4O5EpYTBjS2cRzZXKK7yS1ZMey2VLflqbdpQFye+tyBCJvfcOEHgUo1vuVFA==}
 
-  '@ionic/react@8.7.9':
-    resolution: {integrity: sha512-mG+0oGUOXt54QIgY6XTLWdf0u3dxHWVcuCXFH1fh4t2F7QPP392LJx6wIZieTc+Cp1r94uuNKWBZmdVPuvRxSA==}
+  '@ionic/react@8.7.10':
+    resolution: {integrity: sha512-FNGQCmkAjteOBz+qR9Qa/dl8AjdP4UXandmWWEECTzdrQKBpt5fFdu8vE3i7FBx60R4tr/zBxlila48EzVtqsQ==}
     peerDependencies:
       react: '>=16.8.6'
       react-dom: '>=16.8.6'
@@ -7505,15 +7505,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ionic/core@8.7.9':
+  '@ionic/core@8.7.10':
     dependencies:
       '@stencil/core': 4.38.0
       ionicons: 8.0.13
       tslib: 2.8.1
 
-  '@ionic/react@8.7.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@ionic/react@8.7.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@ionic/core': 8.7.9
+      '@ionic/core': 8.7.10
       ionicons: 8.0.13
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)

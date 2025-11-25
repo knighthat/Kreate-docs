@@ -23,7 +23,7 @@ Before you submit a ticket, please make sure that you've done these:
 playback. Either song stops in the middle, or their downloads
 don't play when offline.
 
-In most cases, this is not Kreate's fault. Please read [playback stops midway](/usr/faq/playback-stops-midway)
+In most cases, this is not Kreate's fault. Please read [playback stops halfway through](/usr/faq/playback-stops-halfway-through)
 if you're experiencing similar problems mentioned above.
 
 ### Check issue page for similar issues

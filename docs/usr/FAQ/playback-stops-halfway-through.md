@@ -1,7 +1,7 @@
 ---
-id: playback-stops-midway
-title: Playback stops midway
-slug: /usr/faq/playback-stops-midway
+id: playback-stops-halfway-through
+title: Playback stops halfway through
+slug: /usr/faq/playback-stops-halfway-through
 ---
 
 <div class="callout">

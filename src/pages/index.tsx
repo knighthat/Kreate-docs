@@ -7,6 +7,7 @@ import HomepageDoctype from '@components/homepage/Doctype';
 import Banner from '@components/homepage/Banner';
 import { useWindowDimensions } from '@utils/DimensionUtils';
 import { VerticalBadges } from '@components/homepage/Banner/DownloadBadges';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 function Badges() {
@@ -38,6 +39,8 @@ export default function Home(): ReactNode {
           { () => <Badges /> }
         </BrowserOnly>
       </main>
+
+      <SpeedInsights />
     </Layout>
   );
 }

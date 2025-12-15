@@ -8593,10 +8593,17 @@ snapshots:
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.9.7
+<<<<<<< HEAD
       caniuse-lite: 1.0.30001760
       electron-to-chromium: 1.5.267
       node-releases: 2.0.27
       update-browserslist-db: 1.2.2(browserslist@4.28.1)
+=======
+      caniuse-lite: 1.0.30001743
+      electron-to-chromium: 1.5.223
+      node-releases: 2.0.21
+      update-browserslist-db: 1.1.3(browserslist@4.26.2)
+>>>>>>> a3b578f (bump baseline-browser-mapping from 2.8.6 to 2.9.7)
 
   buffer-from@1.1.2: {}
 

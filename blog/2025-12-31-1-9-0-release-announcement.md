@@ -9,7 +9,7 @@ tags: [release]
 
 > `The last update` of this year.
 
-## What's changed
+## 🗘 What's changed
 
 Quite a few things. We changed how the **back button** works inside the app.
 
@@ -100,7 +100,7 @@ opens after closed (either expected or unexpected close).
 
 Due to a small bug in the closing procedure, the player didn't
 stop properly, which was the motive for us to rework the closing
-procedure as mentioned in [What's changed](#whats-changed).
+procedure as mentioned in [What's changed](#-whats-changed).
 
 ## ❌ Removals
 

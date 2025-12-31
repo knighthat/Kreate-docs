@@ -1,6 +1,6 @@
 ---
 id: profiles
-title: Profile
+title: Profiles
 slug: /usr/features/profiles
 ---
 

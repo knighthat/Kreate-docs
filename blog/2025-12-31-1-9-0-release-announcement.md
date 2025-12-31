@@ -45,7 +45,7 @@ This new feature allows you to have multiple profiles in the same app.
 Each profile has a separate database and settings, which makes them
 completely independent from one another.
 
-<!-- TODO: Add link to feature article -->
+For details, please visit [Profiles](/usr/features/profiles)
 
 ### 🚪 Shortcut to export database
 

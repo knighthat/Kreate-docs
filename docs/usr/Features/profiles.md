@@ -18,7 +18,7 @@ You can access this feature by going to the hamburger menu, and then choose the 
 
 This screen let you access your profiles and create new one's.
 
-### Switch profie
+### Switch profile
 
 Just click on the profile you want to switch to.
 

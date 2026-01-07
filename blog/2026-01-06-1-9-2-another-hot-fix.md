@@ -1,5 +1,5 @@
 ---
-title: v1.9.2 another hot gix
+title: v1.9.2 another hot fix
 description: Well, here we are again
 authors: [knighthat]
 tags: [release]

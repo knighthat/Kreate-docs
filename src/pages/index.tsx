@@ -29,8 +29,6 @@ export default function Home(): ReactNode {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <div id="keepandroidopen"></div>
-      
       <Banner />
       
       <main>

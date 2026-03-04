@@ -208,7 +208,7 @@ const config: Config = {
 
   scripts: [
     {
-      src: "https://keepandroidopen.org/banner.js?id=keepandroidopen",
+      src: "https://keepandroidopen.org/banner.js",
       async: true,  
       defer: false,  
       crossorigin: 'anonymous',  

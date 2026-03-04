@@ -204,6 +204,15 @@ const config: Config = {
         mode: 'auto',
       },
     ],
+  ],
+
+  scripts: [
+    {
+      src: "https://keepandroidopen.org/banner.js?id=keepandroidopen",
+      async: true,  
+      defer: false,  
+      crossorigin: 'anonymous',  
+    }
   ]
 };
 

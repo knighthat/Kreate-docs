@@ -18,7 +18,7 @@ function Content(): ReactNode {
             <HorizontalBagdes />
           </div>
           <div id={styles.right} className='col col--4'>
-            <img className='col' src='/img/banner-slogan.webp' />
+            <img className='col' src='/img/banner-slogan.svg' />
           </div>
         </div>
       </div>

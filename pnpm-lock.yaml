@@ -27,8 +27,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(react@19.2.4)
       '@ionic/react':
-        specifier: ^8.7.18
-        version: 8.7.18(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^8.8.1
+        version: 8.8.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@mdx-js/react':
         specifier: ^3.1.1
         version: 3.1.1(@types/react@19.2.14)(react@19.2.4)
@@ -1277,12 +1277,12 @@ packages:
   '@iconify/utils@3.1.0':
     resolution: {integrity: sha512-Zlzem1ZXhI1iHeeERabLNzBHdOa4VhQbqAcOQaMKuTuyZCpwKbC2R4Dd0Zo3g9EAc+Y4fiarO8HIHRAth7+skw==}
 
-  '@ionic/core@8.7.18':
-    resolution: {integrity: sha512-KUp91+XFTSAhOTLOIj7rY6j44guxI/gaR0S6bUZ/+65qZIuftRcETKb54yQ0COqn0lgAgQnkuYdWyH1uRPHsEA==}
+  '@ionic/core@8.8.1':
+    resolution: {integrity: sha512-ksOUHyOEqoyUIVWcwCNSFZVGwNfP1DKrUVeN/Cdk/Xl9Rdd/5MLHGsrOQpWQfoCf3Csdnw+KHHPrXz/2fzMkMA==}
     engines: {node: '>= 16'}
 
-  '@ionic/react@8.7.18':
-    resolution: {integrity: sha512-6OvR5xQT9p2rm+9iGrUsJXlPwsRfJdMVqU+M6iVPS4QwJ9Ob4/0CyeEHvaS+XX+pGEKTpsabiU0Ibjnomj0sLA==}
+  '@ionic/react@8.8.1':
+    resolution: {integrity: sha512-KuDWk2E0HA8EA5ioDHxGF+OD/REG2PYb7SorMgVHWRWdPYMIL9PwNXrMBfWAd6PyYLLHd2fw7UoiuT2K8SbrzQ==}
     peerDependencies:
       react: '>=16.8.6'
       react-dom: '>=16.8.6'
@@ -1538,49 +1538,41 @@ packages:
     resolution: {integrity: sha512-6TZjPHjKZUQKmVKMUowF3ewHxctrRR09eYyvT5eFv8w/fXarEra83A2mHTVJLA5xU91aCNOUnM+DWFMSbQ0Nxw==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-gnu@4.44.0':
     resolution: {integrity: sha512-ZTR2mxBHb4tK4wGf9b8SYg0Y6KQPjGpR4UWwTFdnmjB4qRtoATZ5dWn3KsDwGa5Z2ZBOE7K52L36J9LueKBdOQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.34.9':
     resolution: {integrity: sha512-LD2fytxZJZ6xzOKnMbIpgzFOuIKlxVOpiMAXawsAZ2mHBPEYOnLRK5TTEsID6z4eM23DuO88X0Tq1mErHMVq0A==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-musl@4.44.0':
     resolution: {integrity: sha512-GFWfAhVhWGd4r6UxmnKRTBwP1qmModHtd5gkraeW2G490BpFOZkFtem8yuX2NyafIP/mGpRJgTJ2PwohQkUY/Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-x64-gnu@4.34.9':
     resolution: {integrity: sha512-FwBHNSOjUTQLP4MG7y6rR6qbGw4MFeQnIBrMe161QGaQoBQLqSUEKlHIiVgF3g/mb3lxlxzJOpIBhaP+C+KP2A==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.44.0':
     resolution: {integrity: sha512-iUVJc3c0o8l9Sa/qlDL2Z9UP92UZZW1+EmQ4xfjTc1akr0iUFZNfxrXJ/R1T90h/ILm9iXEY6+iPrmYB3pXKjw==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.34.9':
     resolution: {integrity: sha512-cYRpV4650z2I3/s6+5/LONkjIz8MBeqrk+vPXV10ORBnshpn8S32bPqQ2Utv39jCiDcO2eJTuSlPXpnvmaIgRA==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-x64-musl@4.44.0':
     resolution: {integrity: sha512-PQUobbhLTQT5yz/SPg116VJBgz+XOtXt8D1ck+sfJJhuEsMj2jSej5yTdp8CvWBSceu+WW+ibVL6dm0ptG5fcA==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.34.9':
     resolution: {integrity: sha512-z4mQK9dAN6byRA/vsSgQiPeuO63wdiDxZ9yg9iyX2QTzKuQM7T4xlBoeUP/J8uiFkqxkcWndWi+W7bXdPbt27Q==}
@@ -1631,8 +1623,8 @@ packages:
   '@slorber/remark-comment@1.0.0':
     resolution: {integrity: sha512-RCE24n7jsOj1M0UPvIQCHTe7fI0sFL4S2nwKVWwHyVr/wI/H8GosgsJGyhnsZoGFnD/P2hLf1mSbrrgSLN93NA==}
 
-  '@stencil/core@4.38.0':
-    resolution: {integrity: sha512-oC3QFKO0X1yXVvETgc8OLY525MNKhn9vISBrbtKnGoPlokJ6rI8Vk1RK22TevnNrHLI4SExNLbcDnqilKR35JQ==}
+  '@stencil/core@4.43.0':
+    resolution: {integrity: sha512-6Uj2Z3lzLuufYAE7asZ6NLKgSwsB9uxl84Eh34PASnUjfj32GkrP4DtKK7fNeh1WFGGyffsTDka3gwtl+4reUg==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
@@ -7735,15 +7727,15 @@ snapshots:
       '@iconify/types': 2.0.0
       mlly: 1.8.0
 
-  '@ionic/core@8.7.18':
+  '@ionic/core@8.8.1':
     dependencies:
-      '@stencil/core': 4.38.0
+      '@stencil/core': 4.43.0
       ionicons: 8.0.13
       tslib: 2.8.1
 
-  '@ionic/react@8.7.18(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@ionic/react@8.8.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@ionic/core': 8.7.18
+      '@ionic/core': 8.8.1
       ionicons: 8.0.13
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -8151,7 +8143,7 @@ snapshots:
       micromark-util-character: 1.2.0
       micromark-util-symbol: 1.1.0
 
-  '@stencil/core@4.38.0':
+  '@stencil/core@4.43.0':
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.34.9
       '@rollup/rollup-darwin-x64': 4.34.9

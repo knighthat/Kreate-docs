@@ -8,8 +8,9 @@
 .docusaurus
 .cache-loader
 
-# VSCode
+# IDEs
 **/*.code-workspace
+.idea
 
 # Misc
 .DS_Store

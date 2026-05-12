@@ -15,20 +15,20 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.9.2",
-    "@docusaurus/plugin-vercel-analytics": "^3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@docusaurus/theme-common": "3.9.2",
-    "@docusaurus/theme-mermaid": "^3.9.2",
+    "@docusaurus/core": "3.10.1",
+    "@docusaurus/plugin-vercel-analytics": "^3.10.1",
+    "@docusaurus/preset-classic": "3.10.1",
+    "@docusaurus/theme-common": "3.10.1",
+    "@docusaurus/theme-mermaid": "^3.10.1",
     "@iconify/react": "^6.0.2",
-    "@ionic/react": "^8.8.3",
+    "@ionic/react": "^8.8.6",
     "@mdx-js/react": "^3.1.1",
     "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "ionicons": "^8.0.13",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",

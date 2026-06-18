@@ -1,5 +1,7 @@
 allowBuilds:
   core-js: false
+  sharp: true
+  unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@ionic/core@8.8.11'
   - '@ionic/react@8.8.11'

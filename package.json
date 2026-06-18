@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "dev:docs": "pnpm --filter ./app/docs start",
-    "build:docs": "pnpm --filter ./app/docs build"
+    "build:docs": "pnpm --filter ./app/docs build",
+    "dev:api": "pnpm --filter ./app/api dev",
+    "build:api": "pnpm --filter ./app/api build"
   }
 }

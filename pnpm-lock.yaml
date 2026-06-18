@@ -27,8 +27,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(react@19.2.7)
       '@ionic/react':
-        specifier: ^8.8.10
-        version: 8.8.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^8.8.11
+        version: 8.8.11(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@mdx-js/react':
         specifier: ^3.1.1
         version: 3.1.1(@types/react@19.2.17)(react@19.2.7)
@@ -1285,12 +1285,12 @@ packages:
   '@iconify/utils@3.1.3':
     resolution: {integrity: sha512-LPKOXPn/zV+zis1oOfGWogaXVpqUybF3ZS6SCZIsz8vg0ivVp9+fVqyYB7xq0aiST/VhUQYGO1qo6uoYSiEJqw==}
 
-  '@ionic/core@8.8.10':
-    resolution: {integrity: sha512-pNujZuU/vydXKtE3yOqmeOIySbXodspxuK4QcbRitWoikNZhGalqW2JvtEJqeRRvE4KJ4dJ3gXF8i6+rtVSG3Q==}
+  '@ionic/core@8.8.11':
+    resolution: {integrity: sha512-+/uKZu3+ihAHBXl+EGrln+EW6v57VWqLICOHK4zahGy7SM9soq1PYLtG03DGsxqPt9ET7YwpX1B0ToU8/Ved3w==}
     engines: {node: '>= 16'}
 
-  '@ionic/react@8.8.10':
-    resolution: {integrity: sha512-jPxh1yIhUjzY8PEErmTAl/yjbnJzLfQ7B/DZy0qhQtmTU33w8frNz9bGFMBpQqaK7XAAkUiAOUrkR33H9h+hqg==}
+  '@ionic/react@8.8.11':
+    resolution: {integrity: sha512-ZDuF8ZQNWsZqw2hxlpNqlOWmTf/vvlTiT5c8oSqX4+A7Jw6YHj+E81MM34Z80RecJYNff7BC/Jjb2THVJwbY+g==}
     peerDependencies:
       react: '>=16.8.6'
       react-dom: '>=16.8.6'
@@ -1539,25 +1539,21 @@ packages:
     resolution: {integrity: sha512-ZTR2mxBHb4tK4wGf9b8SYg0Y6KQPjGpR4UWwTFdnmjB4qRtoATZ5dWn3KsDwGa5Z2ZBOE7K52L36J9LueKBdOQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.44.0':
     resolution: {integrity: sha512-GFWfAhVhWGd4r6UxmnKRTBwP1qmModHtd5gkraeW2G490BpFOZkFtem8yuX2NyafIP/mGpRJgTJ2PwohQkUY/Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-x64-gnu@4.44.0':
     resolution: {integrity: sha512-iUVJc3c0o8l9Sa/qlDL2Z9UP92UZZW1+EmQ4xfjTc1akr0iUFZNfxrXJ/R1T90h/ILm9iXEY6+iPrmYB3pXKjw==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.44.0':
     resolution: {integrity: sha512-PQUobbhLTQT5yz/SPg116VJBgz+XOtXt8D1ck+sfJJhuEsMj2jSej5yTdp8CvWBSceu+WW+ibVL6dm0ptG5fcA==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.44.0':
     resolution: {integrity: sha512-M0CpcHf8TWn+4oTxJfh7LQuTuaYeXGbk0eageVjQCKzYLsajWS/lFC94qlRqOlyC2KvRT90ZrfXULYmukeIy7w==}
@@ -7847,15 +7843,15 @@ snapshots:
       '@iconify/types': 2.0.0
       import-meta-resolve: 4.2.0
 
-  '@ionic/core@8.8.10':
+  '@ionic/core@8.8.11':
     dependencies:
       '@stencil/core': 4.43.5
       ionicons: 8.0.13
       tslib: 2.8.1
 
-  '@ionic/react@8.8.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@ionic/react@8.8.11(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@ionic/core': 8.8.10
+      '@ionic/core': 8.8.11
       ionicons: 8.0.13
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)

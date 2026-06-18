@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model VirusTotalReport {
+  sha256        String    @id @db.VarChar(64)
+  filename      String    @db.VarChar(50)
+  version       String    @db.VarChar(20)
+  report        Bytes?
+  last_modified DateTime  @updatedAt @default(now())
+}

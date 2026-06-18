@@ -1,0 +1,6 @@
+# Generated files
+.docusaurus
+.cache-loader
+
+# Docusaurus
+swizzle.txt

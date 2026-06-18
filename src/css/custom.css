@@ -58,3 +58,102 @@
   border-color: var(--ifm-color-emphasis-200);
   background-color: var(--ifm-background-color);
 }
+
+/* Add this to your Docusaurus src/css/custom.css file 
+  It uses Docusaurus's native CSS variables so it matches your exact theme.
+*/
+
+.maintainer-quote-card {
+  position: relative;
+  background-color: var(--ifm-background-surface-color);
+  border-left: 6px solid var(--ifm-color-primary);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* Keeps the watermark inside */
+}
+
+/* Enhances the shadow when hovered to make it feel interactive */
+.maintainer-quote-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark mode subtle adjustments */
+[data-theme='dark'] .maintainer-quote-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Giant background quote mark watermark */
+.maintainer-quote-card::before {
+  content: '“';
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  font-size: 10rem;
+  font-family: Georgia, serif;
+  color: var(--ifm-color-primary);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.maintainer-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 1rem;
+}
+
+.maintainer-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.maintainer-meta p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.maintainer-meta p a {
+  text-decoration: none;
+}
+
+.maintainer-name {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ifm-color-primary);
+}
+
+.maintainer-title {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px !important;
+}
+
+.maintainer-body p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-base);
+  position: relative;
+  z-index: 1; /* Ensures text stays above the watermark */
+}
+
+/* Makes the "DO NOT" warning aggressively pop out */
+.maintainer-body strong {
+  color: var(--ifm-color-danger);
+  background-color: var(--ifm-color-danger-contrast-background);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 800;
+}

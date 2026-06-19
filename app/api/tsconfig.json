@@ -20,7 +20,10 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@db/*": ["./generated/*"]
+      "@db/*": ["./generated/*"],
+      "@db/types/*": ["./generated/models/*"],
+      "@repositories/*": ["./repositories/*"],
+      "@services/*": ["./services/*"]
     }
   },
   "include": [

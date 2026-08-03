@@ -28,7 +28,7 @@
     "ionicons": "^8.0.13",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.1",

@@ -2,11 +2,12 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
+    // Unsets the deprecated value inherited from @docusaurus/tsconfig.
+    "baseUrl": null,
     "paths": {
-      "@site/*": [ "*" ],
-      "@components/*": [ "src/components/*" ],
-      "@utils/*": [ "src/util/*" ]
+      "@site/*": [ "./*" ],
+      "@components/*": [ "./src/components/*" ],
+      "@utils/*": [ "./src/util/*" ]
     }
   },
   "exclude": [".docusaurus", "build"]

@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 
 import HomepageDoctype from '@components/homepage/Doctype';
 import Banner from '@components/homepage/Banner';
+import Features from '@components/homepage/Features';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
@@ -16,6 +17,7 @@ export default function Home(): ReactNode {
       <Banner />
 
       <main>
+        <Features />
         <HomepageDoctype />
       </main>
 

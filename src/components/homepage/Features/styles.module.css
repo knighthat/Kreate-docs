@@ -1,0 +1,93 @@
+.heading {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+}
+
+.sources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.75rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  font-size: 1.6rem;
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 15%, transparent);
+}
+
+.cardTitle {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.points li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.points li:last-child {
+  margin-bottom: 0;
+}
+
+.check {
+  flex: none;
+  color: var(--ifm-color-primary);
+}
+
+.more {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.moreLink {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  transition: color 0.2s ease;
+}
+
+.moreLink:hover {
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: none;
+}

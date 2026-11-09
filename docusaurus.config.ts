@@ -67,6 +67,11 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+          lastmod: 'date',
+          // Tag and archive listings are thin, duplicate content
+          ignorePatterns: ['/tags/**', '/blog/tags/**', '/blog/archive', '/blog/page/**'],
+        },
       } satisfies Preset.Options,
     ],
   ],

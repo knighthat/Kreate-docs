@@ -153,3 +153,40 @@
   border-radius: 4px;
   font-weight: 800;
 }
+/* Phone screenshot gallery used in user docs: <div className="screens">…</div> */
+.screens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--ifm-leading);
+}
+
+.screens p {
+  display: contents;
+}
+
+.screens img {
+  flex: 1 1 160px;
+  min-width: 0;
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Phones: one row that swipes sideways instead of stacking full-width shots */
+@media (max-width: 600px) {
+  .screens {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+  }
+
+  .screens img {
+    flex: 0 0 auto;
+    width: 62vw;
+    max-width: 240px;
+    scroll-snap-align: start;
+  }
+}

@@ -2,7 +2,7 @@
 id: how-to-verify-signatures
 title: How to verify signatures
 slug: /usr/how-to-verify-signatures
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 Each APK published is signed by a set of signature. **ONLY INSTALL** from signatures listed in the post.

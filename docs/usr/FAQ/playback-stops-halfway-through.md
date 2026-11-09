@@ -82,7 +82,8 @@ You can completely restart the app to force new session.
 
 If a particular song [stops at the exact timestamp](#corrupted-cache) every time you attempt to play it.
 Then the only solution is to remove all cache of the song and play it from start again.\
-You can read our [Song reset](/usr/features/song-reset) article for details.
+Open the song's menu, tap **Cached** and remove it from the cache; see the
+[download button](/usr/features/library/song-menu#the-download-button) for details.
 
 Lastly, if it's Kreate's fault, you can [open new issue ticket](https://github.com/knighthat/Kreate/issues) on our GitHub page.
 **_Don't forget to check if somebody has already opened another ticket that's similar to you first_**

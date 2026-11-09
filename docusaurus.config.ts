@@ -197,6 +197,18 @@ const config: Config = {
 
   plugins: [
     './custom-paths-plugin.js',
+    './recent-posts-plugin.js',
+    './crowdin-stats-plugin.js',
+    [
+      './discord-invite-plugin.js',
+      {
+        code: 'WYr9ZgJzpx',
+        fallback: {
+          name: 'Kreate - Music App',
+          description: 'A multilingual YouTube Music frontend for Android, prioritize performance',
+        },
+      },
+    ],
     [
       'vercel-analytics',
       {

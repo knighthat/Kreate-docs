@@ -140,12 +140,9 @@
     background: rgba(14, 10, 24, 0.75);
   }
 
+  /* The screenshot carousel further down covers this on small screens. */
   .previews {
-    width: 100%;
-  }
-
-  .phone {
-    width: min(40%, 200px);
+    display: none;
   }
 
   .wave {

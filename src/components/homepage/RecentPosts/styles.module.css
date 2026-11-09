@@ -1,0 +1,107 @@
+.section {
+  padding: 4rem 0;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+}
+
+.all {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  transition: color 0.2s ease;
+}
+
+.all:hover {
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: none;
+}
+
+/* Horizontal, swipeable row of cards. */
+.list {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0.25rem 0.25rem 1rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.item {
+  flex: 0 0 min(320px, 80%);
+  scroll-snap-align: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  background: var(--ifm-background-surface-color);
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ifm-color-primary);
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Gradient shows when a post has no cover image. */
+.cover {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(110deg, #f465b5, #8e3dc3 55%, #2913c1);
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.meta {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}

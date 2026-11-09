@@ -26,14 +26,14 @@ export default function Banner(): ReactNode {
         <div className={styles.previews}>
           <img
             className={clsx(styles.phone, styles.back)}
-            src='/img/17-artist-details-3.webp'
+            src='/img/screenshots/09-artist-details-3.webp'
             alt='Artist details screen'
             width={1080}
             height={2400}
           />
           <img
             className={clsx(styles.phone, styles.front)}
-            src='/img/01-player.webp'
+            src='/img/screenshots/01-player.webp'
             alt='Now playing screen'
             width={1080}
             height={2400}

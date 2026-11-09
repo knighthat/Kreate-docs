@@ -1,0 +1,104 @@
+.card {
+  --blurple: #5865f2;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  background: var(--ifm-background-surface-color);
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--blurple);
+}
+
+.banner {
+  height: 5rem;
+  /* Same image as the homepage hero; the gradient shows while it loads. */
+  background:
+    url('/img/banner.webp') center / cover,
+    linear-gradient(120deg, #f465b5, #8e3dc3 55%, #2913c1);
+}
+
+.body {
+  padding: 0 1.25rem 1.25rem;
+}
+
+/* Server icon overlaps the banner like Discord's invite card. */
+.iconWrap {
+  display: inline-flex;
+  margin-top: -2.25rem;
+  padding: 4px;
+  border-radius: 1.25rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  font-size: 4rem;
+  color: var(--blurple);
+}
+
+.name {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.online,
+.members {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+}
+
+.online {
+  background: #23a55a;
+}
+
+.members {
+  background: var(--ifm-color-emphasis-500);
+}
+
+.description {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--blurple);
+  color: #fff;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.join:hover {
+  background: #4752c4;
+  color: #fff;
+  text-decoration: none;
+}

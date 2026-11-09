@@ -1,0 +1,129 @@
+.section {
+  --phone-width: 240px;
+  --spacing: 190px;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+}
+
+/* Wheel: every phone sits in the centre, then is pushed out by --offset. */
+.stage {
+  position: relative;
+  height: calc(var(--phone-width) * 2400 / 1080 + 2rem);
+  perspective: 1200px;
+  touch-action: pan-y;
+  user-select: none;
+  outline: none;
+}
+
+/* Soft pink glow behind the active phone. */
+.stage::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--phone-width) * 1.8);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 106, 185, 0.25), transparent 65%);
+  pointer-events: none;
+}
+
+.stage:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 4px;
+  border-radius: 1rem;
+}
+
+.phone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--phone-width);
+  height: auto;
+  cursor: pointer;
+  transform:
+    translate(-50%, -50%)
+    translateX(calc(var(--offset) * var(--spacing)))
+    rotateY(calc(var(--offset) * -18deg))
+    scale(calc(1 - var(--distance) * 0.14));
+  /* Outermost phones (distance 3) fade to nothing so they can enter/leave smoothly. */
+  opacity: clamp(0, calc(1 - var(--distance) * 0.33), 1);
+  filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.5)) brightness(calc(1 - var(--distance) * 0.15));
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* Holds the wheel plus the arrows pinned to its left and right edges. */
+.viewport {
+  position: relative;
+  max-width: var(--ifm-container-width-xl);
+  margin: 0 auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 50%;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.prev {
+  left: 1rem;
+}
+
+.next {
+  right: 1rem;
+}
+
+.arrow:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-lighter);
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.counter {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-600);
+}
+
+@media (max-width: 996px) {
+  .section {
+    --phone-width: 190px;
+    --spacing: 130px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    --phone-width: 160px;
+    --spacing: 95px;
+    padding-top: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone {
+    transition: none;
+  }
+}

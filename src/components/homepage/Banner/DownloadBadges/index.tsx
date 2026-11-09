@@ -19,6 +19,16 @@ function Badge( { platform, className, to }: BadgeProps ): ReactNode {
   )
 }
 
+export function InlineBadges( { className }: { className?: string } ): ReactNode {
+  return(
+    <div className={className}>
+      <Badge platform='GitHub' to='github' />
+      <Badge platform='F-Droid' to='f-droid' />
+      <Badge platform='IzzyOnDroid' to='izzyondroid' />
+    </div>
+  )
+}
+
 export function HorizontalBagdes(): ReactNode {
   return(
     <div className='container'>

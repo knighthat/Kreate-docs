@@ -1,27 +1,11 @@
 import type {ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 
 import HomepageDoctype from '@components/homepage/Doctype';
 import Banner from '@components/homepage/Banner';
-import { useWindowDimensions } from '@utils/DimensionUtils';
-import { VerticalBadges } from '@components/homepage/Banner/DownloadBadges';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
-
-function Badges() {
-  const {width} = useWindowDimensions()
-
-  if( width > 996 )
-    return <></>
-  else
-    return(
-      <section className='padding-vert--xl'>
-        <VerticalBadges />
-      </section>
-    )
-}
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
@@ -30,13 +14,9 @@ export default function Home(): ReactNode {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <Banner />
-      
+
       <main>
         <HomepageDoctype />
-
-        <BrowserOnly>
-          { () => <Badges /> }
-        </BrowserOnly>
       </main>
 
       <SpeedInsights />

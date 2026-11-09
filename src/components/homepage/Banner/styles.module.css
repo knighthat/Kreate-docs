@@ -1,52 +1,154 @@
-.bannerHeight {
-  min-height: 300px;
-  max-height: 20%;
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 7rem;
+  color: #fff;
+  /* Fallback while banner.webp loads, sampled from its colours. */
+  background: linear-gradient(110deg, #f465b5, #8e3dc3 55%, #2913c1);
 }
 
-.container {
-  /* Set the positioning context */
-  position: relative; 
-  /* Other flex styles remain */
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Darkens the busy screenshots behind the text; fades out towards the left. */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(14, 10, 24, 0.92) 0%,
+    rgba(14, 10, 24, 0.8) 40%,
+    rgba(14, 10, 24, 0.45) 100%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
   display: flex;
+  /* Previews on the left, text on the right; DOM keeps text first for phones. */
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 3rem;
+}
+
+.text {
+  flex: 1 1 58%;
+}
+
+.title {
+  margin: 0 0 2rem;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.docsLink {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.docsLink:hover {
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: underline;
+}
+
+/* GitHub + F-Droid on the first row, IzzyOnDroid below. */
+.badges {
+  --badge-gap: 0.375rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--badge-gap);
+  width: min(100%, 640px);
+}
+
+.badges > a {
+  flex: 0 0 calc((100% - var(--badge-gap)) / 2);
+}
+
+.badges img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.previews {
+  flex: 1 1 42%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.image {
-  /* Position the image absolutely within the container */
+.phone {
+  width: min(48%, 240px);
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+}
+
+.back {
+  transform: rotate(-6deg) translateY(1.5rem);
+  margin-right: -10%;
+  opacity: 0.9;
+}
+
+.front {
+  position: relative;
+  transform: rotate(4deg);
+}
+
+/* Blends the hero into the page background below it. */
+.wave {
   position: absolute;
-  top: 0;
   left: 0;
+  bottom: -1px;
   width: 100%;
-  height: 100%;
-  /* Send the image behind all other content */
-  z-index: 0;
-  /* Ensure the image covers the area without distortion */
-  object-fit: cover; 
-
-  filter: brightness(80%) contrast(120%); 
+  height: 80px;
+  fill: var(--ifm-background-color);
 }
 
-.content {
-  z-index: 1;
-}
+@media (max-width: 996px) {
+  .hero {
+    padding: 3rem 0 5rem;
+  }
 
-#left {
-  text-align: right; 
+  .inner {
+    flex-direction: column;
+    text-align: center;
+  }
 
-  border-right: 2px solid; 
-  /* Use an image (a linear gradient) for the border color */
-  border-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%, /* Transparent at the top */
-    rgba(255, 255, 255, 1) 50%, /* Solid black in the middle */
-    rgba(0, 0, 0, 0) 100% /* Transparent at the bottom */
-  );
-  /* Ensure the gradient stretches fully along the border */
-  border-image-slice: 1; 
-}
+  .badges {
+    margin-inline: auto;
+    justify-content: center;
+  }
 
-#right {
-  display: flex;
-  align-items: center; 
-  justify-content: left; 
+  .overlay {
+    background: rgba(14, 10, 24, 0.75);
+  }
+
+  .previews {
+    width: 100%;
+  }
+
+  .phone {
+    width: min(40%, 200px);
+  }
+
+  .wave {
+    height: 48px;
+  }
 }

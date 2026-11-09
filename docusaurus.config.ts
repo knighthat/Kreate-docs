@@ -5,6 +5,12 @@ import { APP_NAME, APP_REPO_PATH, DOC_REPO_PATH, GITHUB_URL, OWNER } from './con
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+// Docusaurus doesn't read .env itself. Load it for local builds (CROWDIN_TOKEN, GITHUB_TOKEN...);
+// on CI/Vercel the variables come from the environment and there is no file.
+try {
+  process.loadEnvFile();
+} catch {}
+
 const config: Config = {
   title: APP_NAME,
   tagline: 'Music your way',
@@ -94,6 +100,8 @@ const config: Config = {
           ]
         },
         { label: 'Blog', position: 'left', to: 'blog' },
+        // First in the list so it's the top row of the mobile menu; on desktop it's left of Discord.
+        { type: 'custom-repoStats', position: 'right' },
         {
           position: 'right',
           href: "https://kreate.knighthat.me/discord",
@@ -200,6 +208,7 @@ const config: Config = {
     ['./offline-icons-plugin.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],
     './recent-posts-plugin.js',
     './crowdin-stats-plugin.js',
+    ['./github-stats-plugin.js', { repo: APP_REPO_PATH }],
     [
       './discord-invite-plugin.js',
       {

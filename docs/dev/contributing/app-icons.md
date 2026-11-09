@@ -1,6 +1,7 @@
 ---
 id: contribue-app-icons]
 title: App icons
+description: "Design and add a new launcher icon to Kreate: adaptive icon specs, naming, layers and monochrome variants."
 slug: /dev/contributing/app-icons
 sidebar_position: 1
 ---

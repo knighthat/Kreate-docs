@@ -1,6 +1,7 @@
 ---
 id: how-to-install-buildtools
 title: How to install build tools
+description: "Install Android build tools from the command-line tools without installing Android Studio."
 slug: /dev/guides/how-to-install-buildtools
 sidebar_position: 2
 ---

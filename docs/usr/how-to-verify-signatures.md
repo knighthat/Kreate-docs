@@ -1,6 +1,7 @@
 ---
 id: how-to-verify-signatures
 title: How to verify signatures
+description: "Why APK signatures matter and how to check that your Kreate download is genuine with apksigner or Java's keytool."
 slug: /usr/how-to-verify-signatures
 sidebar_position: 4
 ---

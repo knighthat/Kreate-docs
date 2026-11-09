@@ -1,6 +1,7 @@
 ---
 id: choosing-your-build
 title: Choosing your build
+description: "Where to get Kreate (GitHub, F-Droid, IzzyOnDroid, Obtainium or OpenAPK) and the pros and cons of each."
 slug: /usr/choosing-your-build
 sidebar_position: 0
 ---

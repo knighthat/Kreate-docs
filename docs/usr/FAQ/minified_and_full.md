@@ -1,6 +1,7 @@
 ---
 id: minified_and_full
 title: Release and Uncompressed
+description: "The difference between Kreate's release and uncompressed APKs, which one to install and how to switch."
 slug: /usr/faq/minified_and_full
 sidebar_position: 0
 ---

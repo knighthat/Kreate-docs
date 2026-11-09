@@ -1,6 +1,7 @@
 ---
 id: intro
 title: Introduction
+description: "Start here to find your way around Kreate's user guides: features, installation, FAQ and troubleshooting."
 slug: /usr
 sidebar_position: 0
 ---

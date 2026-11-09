@@ -1,6 +1,7 @@
 ---
 id: multiple-apks
 title: Why are there multiple APKs?
+description: "Why Kreate ships several APKs per release, what R8 and ABI splits do, and which file to download for your phone."
 ---
 
 The developers of Kreate always aim for better performance. Consequencially,

@@ -1,6 +1,7 @@
 ---
 id: contributing
 title: Contributing
+description: "Step-by-step guides for contributing assets such as icons and images to Kreate."
 slug: /dev/contributing
 sidebar_position: 3
 ---

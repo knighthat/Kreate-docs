@@ -1,6 +1,7 @@
 ---
 id: playback-stops-halfway-through
 title: Playback stops halfway through
+description: "Why songs stop partway through, from YouTube blocks to corrupted cache, and how to tell whether Kreate is at fault."
 slug: /usr/faq/playback-stops-halfway-through
 ---
 

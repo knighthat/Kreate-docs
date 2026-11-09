@@ -1,6 +1,7 @@
 ---
 id: intro
 title: Introduction
+description: "Start here to contribute to Kreate: developer docs for setting up, building the app and submitting changes."
 slug: /dev
 sidebar_position: 0
 ---

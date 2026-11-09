@@ -1,6 +1,7 @@
 ---
 id: building_kreate
 title: Building Kreate
+description: "Build your own Kreate APK with Gradle: prerequisites, release notes setup, and release vs uncompressed builds."
 sidebar_position: 2
 ---
 

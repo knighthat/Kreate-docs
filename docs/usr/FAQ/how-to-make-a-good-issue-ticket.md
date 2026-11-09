@@ -1,6 +1,7 @@
 ---
 id: how-to-make-a-good-issue-ticket
 title: How to make a good issue ticket
+description: "What to check before reporting a bug and how to fill out each part of the issue form so it gets fixed faster."
 slug: /usr/faq/how-to-make-a-good-issue-ticket
 ---
 

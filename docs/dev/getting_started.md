@@ -1,6 +1,7 @@
 ---
 id: getting_started
 title: Getting Started
+description: "Requirements, then how to fork and clone the Kreate repo, commit your changes and open a pull request."
 slug: /dev/getting_started
 sidebar_position: 1
 ---

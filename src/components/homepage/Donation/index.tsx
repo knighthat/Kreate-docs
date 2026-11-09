@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode, type CSSProperties } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@Iconify';
 
 import styles from './styles.module.css';
 

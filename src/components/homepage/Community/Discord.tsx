@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@Iconify';
 import { usePluginData } from '@docusaurus/useGlobalData';
 
 import styles from './discord.module.css';
@@ -22,7 +22,8 @@ export default function Discord(): ReactNode {
 
   return(
     <div className={styles.card}>
-      <div className={styles.banner} />
+      {/* Same URL as the hero background, so the browser reuses the cached file. */}
+      <img className={styles.banner} src='/img/banner.webp' alt='' loading='lazy' />
 
       <div className={styles.body}>
         <span className={styles.iconWrap}>

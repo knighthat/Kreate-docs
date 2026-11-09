@@ -11,7 +11,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: `https://${APP_NAME}.${OWNER}.me`,
+  url: `https://${APP_NAME.toLowerCase()}.${OWNER}.me`,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -67,7 +67,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.webp',
     navbar: {
       title: APP_NAME,
       logo: {
@@ -197,6 +197,7 @@ const config: Config = {
 
   plugins: [
     './custom-paths-plugin.js',
+    ['./offline-icons-plugin.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],
     './recent-posts-plugin.js',
     './crowdin-stats-plugin.js',
     [

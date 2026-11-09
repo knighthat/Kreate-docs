@@ -6,10 +6,27 @@ import styles from './styles.module.css'
 import { InlineBadges } from './DownloadBadges';
 
 
+/** 1x1 transparent GIF: what small screens "load" instead of the hidden screenshots. */
+const BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
+/**
+ * The previews are hidden at <= 996px (see styles.module.css). CSS alone would still
+ * download them, so <picture> swaps in BLANK there and the real file is never fetched.
+ */
+function Phone( { className, src, alt }: { className: string, src: string, alt: string } ): ReactNode {
+  return(
+    <picture className={clsx(styles.phone, className)}>
+      <source media='(max-width: 996px)' srcSet={BLANK} />
+      <img src={src} alt={alt} width={1080} height={2400} />
+    </picture>
+  )
+}
+
 export default function Banner(): ReactNode {
   return(
     <header className={styles.hero}>
-      <img src='/img/banner.webp' alt='' aria-hidden='true' className={styles.background} />
+      {/* Largest thing on the first screen, so fetch it before anything else. */}
+      <img src='/img/banner.webp' alt='' aria-hidden='true' className={styles.background} fetchPriority='high' />
       <div className={styles.overlay} />
 
       <div className={clsx('container', styles.inner)}>
@@ -24,19 +41,15 @@ export default function Banner(): ReactNode {
         </div>
 
         <div className={styles.previews}>
-          <img
-            className={clsx(styles.phone, styles.back)}
+          <Phone
+            className={styles.back}
             src='/img/screenshots/09-artist-details-3.webp'
             alt='Artist details screen'
-            width={1080}
-            height={2400}
           />
-          <img
-            className={clsx(styles.phone, styles.front)}
+          <Phone
+            className={styles.front}
             src='/img/screenshots/01-player.webp'
             alt='Now playing screen'
-            width={1080}
-            height={2400}
           />
         </div>
       </div>

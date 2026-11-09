@@ -29,10 +29,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(25, 13, 192, 0.3);
 }
 
-.flex-justc--center {
-  justify-content: center;
-}
-
 .visibility--none {
   visibility: hidden !important;
 }

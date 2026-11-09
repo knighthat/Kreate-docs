@@ -20,5 +20,6 @@ export default function Icon({ color, colorDark, ...props }: IconProps): ReactNo
         setIconColor(newColor);
     }, [colorMode]);
 
-  return <IconifyIcon color={iconColor} {...props} />
+  // `ssr`: icons are bundled offline (offline-icons-plugin.js), so render immediately.
+  return <IconifyIcon ssr color={iconColor} {...props} />
 }

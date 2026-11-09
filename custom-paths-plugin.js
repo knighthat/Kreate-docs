@@ -8,7 +8,9 @@ export default function CustomPathsPlugin(context, options) {
         resolve: {
           alias: {
             "@components/*": "/src/components/*",
-            "@utils/*": "/src/util/*"
+            "@utils/*": "/src/util/*",
+            // `$` = exact match: `import { Icon } from '@Iconify'`
+            "@Iconify$": "/src/components/Iconify"
           },
         },
       };

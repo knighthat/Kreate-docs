@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import { Icon } from '@Iconify';
 
 import styles from './styles.module.css';
 

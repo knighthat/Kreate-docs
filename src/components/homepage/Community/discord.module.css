@@ -12,11 +12,13 @@
 }
 
 .banner {
+  display: block;
+  width: 100%;
   height: 5rem;
-  /* Same image as the homepage hero; the gradient shows while it loads. */
-  background:
-    url('/img/banner.webp') center / cover,
-    linear-gradient(120deg, #f465b5, #8e3dc3 55%, #2913c1);
+  object-fit: cover;
+  object-position: center;
+  /* Shows while the image loads. */
+  background: linear-gradient(120deg, #f465b5, #8e3dc3 55%, #2913c1);
 }
 
 .body {

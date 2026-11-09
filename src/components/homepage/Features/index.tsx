@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import { Icon } from '@Iconify';
 import Link from '@docusaurus/Link';
 
 import styles from './styles.module.css';

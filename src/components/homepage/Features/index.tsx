@@ -11,11 +11,14 @@ type Source = {
   title: string
   icon: string
   points: string[]
+  /** Doc the card links to. */
+  to: string
 };
 
 const sources: Source[] = [
   {
     title: 'YouTube Music',
+    to: '/usr/features/sources/youtube-music',
     icon: 'simple-icons:youtubemusic',
     points: [
       'Search and stream its huge catalogue',
@@ -24,6 +27,7 @@ const sources: Source[] = [
   },
   {
     title: 'OpenSubsonic server',
+    to: '/usr/features/sources/opensubsonic',
     icon: 'mdi:server-network',
     points: [
       'Connect to your own music server',
@@ -32,6 +36,7 @@ const sources: Source[] = [
   },
   {
     title: 'On-device media',
+    to: '/usr/features/sources/local-files',
     icon: 'mdi:folder-music',
     points: [
       'Play music files stored on your phone',
@@ -40,9 +45,9 @@ const sources: Source[] = [
   },
 ];
 
-function SourceCard( { title, icon, points }: Source ): ReactNode {
+function SourceCard( { title, icon, points, to }: Source ): ReactNode {
   return(
-    <article className={styles.card}>
+    <Link to={to} className={styles.card}>
       <div className={styles.cardTop}>
         <span className={styles.iconBadge}>
           <Icon icon={icon} />
@@ -59,7 +64,7 @@ function SourceCard( { title, icon, points }: Source ): ReactNode {
           </li>
         ))}
       </ul>
-    </article>
+    </Link>
   )
 }
 
@@ -74,7 +79,7 @@ export default function Features(): ReactNode {
         <Highlights />
 
         <div className={styles.more}>
-          <Link className={styles.moreLink} to='/usr'>
+          <Link className={styles.moreLink} to='/usr/features'>
             And many more features <span aria-hidden='true'>→</span>
           </Link>
         </div>

@@ -1,0 +1,375 @@
+.page {
+  max-width: 720px;
+  padding-block: 3rem 4rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+}
+
+/* Drop zone */
+
+.zone {
+  --zone-accent: var(--ifm-color-primary);
+  margin-top: 2rem;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 2px dashed var(--ifm-color-emphasis-400);
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+  transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.zone.idle {
+  cursor: pointer;
+}
+
+.zone.idle:hover,
+.zone.idle:focus-visible,
+.zone.dragging {
+  border-color: var(--zone-accent);
+  background: color-mix(in srgb, var(--zone-accent) 6%, var(--ifm-background-surface-color));
+  outline: none;
+}
+
+.zone.dragging {
+  transform: scale(1.01);
+}
+
+.zone.checking {
+  border-style: solid;
+  cursor: progress;
+}
+
+.zone.valid {
+  --zone-accent: var(--ifm-color-success);
+  border-style: solid;
+  border-color: var(--zone-accent);
+  background: color-mix(in srgb, var(--zone-accent) 8%, var(--ifm-background-surface-color));
+}
+
+.zone.invalid {
+  --zone-accent: var(--ifm-color-danger);
+  border-style: solid;
+  border-color: var(--zone-accent);
+  background: color-mix(in srgb, var(--zone-accent) 8%, var(--ifm-background-surface-color));
+}
+
+.zoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+}
+
+.zoneTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.zoneHint {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.fileName {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  overflow-wrap: anywhere;
+}
+
+.uploadIcon {
+  width: 56px;
+  height: 56px;
+  fill: none;
+  stroke: var(--zone-accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Loading */
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 5px solid var(--ifm-color-emphasis-200);
+  border-top-color: var(--ifm-color-primary);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Result marks */
+
+.mark {
+  width: 88px;
+  height: 88px;
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mark circle {
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+  animation: draw 0.5s ease-out forwards;
+}
+
+.mark path {
+  stroke-width: 5;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: draw 0.35s 0.4s ease-out forwards;
+}
+
+.tick { stroke: var(--ifm-color-success); }
+.cross { stroke: var(--ifm-color-danger); }
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation-duration: 2s; }
+  .mark circle, .mark path { animation: none; stroke-dashoffset: 0; }
+}
+
+/* Below the zone */
+
+.actions {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.fingerprint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.fingerprint code,
+.fpCode {
+  overflow-wrap: anywhere;
+  font-size: 0.8rem;
+}
+
+.details {
+  margin-top: 3rem;
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.details ul {
+  margin-top: 0.75rem;
+}
+
+.details li {
+  margin-bottom: 0.75rem;
+}
+
+/* APK details (shown after a valid result) */
+
+.info {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  min-width: 0;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card dl {
+  margin: 0;
+}
+
+.row {
+  padding-block: 0.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.row dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.row dd {
+  margin: 0.15rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.card p {
+  margin: 0;
+}
+
+.muted {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.permissions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 0.75rem 1.5rem;
+}
+
+.permName {
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.card details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tableWrap {
+  margin-top: 0.75rem;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.libraries {
+  display: table;
+  width: 100%;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.libraries th {
+  position: sticky;
+  top: 0;
+  background: var(--ifm-background-surface-color);
+  text-align: left;
+}
+
+.libraries td code {
+  overflow-wrap: anywhere;
+}
+
+/* VirusTotal scan */
+
+.scanCard {
+  margin-top: 2.5rem;
+}
+
+.scanCard + .info {
+  margin-top: 1rem;
+}
+
+.scanCard p {
+  margin-bottom: 0.5rem;
+}
+
+.scanRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.scanHeadline {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.scanClean {
+  color: var(--ifm-color-success-darker);
+}
+
+.scanFlagged {
+  color: var(--ifm-color-warning-darker);
+}
+
+[data-theme='dark'] .scanClean {
+  color: var(--ifm-color-success-lighter);
+}
+
+[data-theme='dark'] .scanFlagged {
+  color: var(--ifm-color-warning-lighter);
+}
+
+.reportLink {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.scanCard .button {
+  margin-right: 1rem;
+}
+
+.sha {
+  margin: 1rem 0 0 !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.sha code {
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+}
+
+.miniSpinner {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid var(--ifm-color-emphasis-200);
+  border-top-color: var(--ifm-color-primary);
+  animation: spin 0.8s linear infinite;
+}

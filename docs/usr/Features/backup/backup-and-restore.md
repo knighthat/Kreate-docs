@@ -39,7 +39,7 @@ Backup and restore are only available on the **default profile**.
 ## During setup
 
 The setup wizard's **Import** page restores a backup too, so a new device starts with your library
-and settings. See [First launch](../getting-started/first-launch.md#4-import).
+and settings. See [First launch](../../Getting-started/first-launch.md#4-import).
 
 ## Older backups
 

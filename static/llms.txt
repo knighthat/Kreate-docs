@@ -43,9 +43,9 @@ Kreate v3 is a rewrite from scratch. Versions up to v2 were a fork of RiMusic bu
 
 ## User guide
 
-- [What is Kreate](https://kreate.knighthat.me/usr/features): What Kreate is: one music library for files on your device, YouTube Music and your own OpenSubsonic server.
-- [First launch](https://kreate.knighthat.me/usr/features/getting-started/first-launch): Walk through the setup wizard: permissions, sign-in, importing a backup and basic settings.
-- [Finding your way](https://kreate.knighthat.me/usr/features/getting-started/finding-your-way): The main screen, the mini player, long-press menus, badges and messages.
+- [What is Kreate](https://kreate.knighthat.me/usr): What Kreate is: one music library for files on your device, YouTube Music and your own OpenSubsonic server.
+- [First launch](https://kreate.knighthat.me/usr/getting-started/first-launch): Walk through the setup wizard: permissions, sign-in, importing a backup and basic settings.
+- [Finding your way](https://kreate.knighthat.me/usr/getting-started/finding-your-way): The main screen, the mini player, long-press menus, badges and messages.
 - [How sources work](https://kreate.knighthat.me/usr/features/sources/overview): How device files, YouTube Music and OpenSubsonic share one library, what gets stored and stream quality.
 - [Music on your device](https://kreate.knighthat.me/usr/features/sources/local-files): Scan the music files on your phone, measure their loudness and reorder device albums.
 - [YouTube Music](https://kreate.knighthat.me/usr/features/sources/youtube-music): Use YouTube Music with or without an account: sign-in, sync, region, quality and login for playback.

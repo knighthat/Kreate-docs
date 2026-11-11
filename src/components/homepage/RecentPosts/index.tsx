@@ -40,27 +40,47 @@ function PostCard( { title, permalink, date, description, image, readingTime }: 
   )
 }
 
-export default function RecentPosts(): ReactNode {
-  const { posts } = usePluginData('recent-posts-plugin') as { posts: Post[] };
+/** Last card of a row, linking to the full list. */
+function SeeMoreCard( { to }: { to: string } ): ReactNode {
+  return(
+    <li className={styles.item}>
+      <Link to={to} className={`${styles.card} ${styles.more}`}>
+        <span className={styles.moreArrow} aria-hidden='true'>→</span>
+        <Translate id='home.posts.seeMore'>See more</Translate>
+      </Link>
+    </li>
+  )
+}
 
+/** One horizontally scrolling row, ending with a "See more" card. */
+function Row( { posts, more }: { posts: Post[], more: string } ): ReactNode {
   if( !posts.length )
+    return null
+
+  return(
+    <ul className={styles.list}>
+      {posts.map( post => <PostCard key={post.permalink} {...post} /> )}
+      <SeeMoreCard to={more} />
+    </ul>
+  )
+}
+
+export default function RecentPosts(): ReactNode {
+  const { posts, releases } = usePluginData('recent-posts-plugin') as { posts: Post[], releases: Post[] };
+
+  if( !posts.length && !releases.length )
     return null
 
   return(
     <section className={styles.section}>
       <div className='container'>
-        <div className={styles.header}>
-          <h2 className={styles.heading}>
-            <Translate id='home.posts.heading'>Recent posts</Translate>
-          </h2>
-          <Link className={styles.all} to='/blog'>
-            <Translate id='home.posts.viewAll'>View all</Translate> <span aria-hidden='true'>→</span>
-          </Link>
-        </div>
+        <h2 className={styles.heading}>
+          <Translate id='home.posts.heading'>Recent posts</Translate>
+        </h2>
 
-        <ul className={styles.list}>
-          {posts.map( post => <PostCard key={post.permalink} {...post} /> )}
-        </ul>
+        {/* First row: blog posts. Second row: releases, each scrolling on its own. */}
+        <Row posts={posts} more='/blog' />
+        <Row posts={releases} more='/releases' />
       </div>
     </section>
   )

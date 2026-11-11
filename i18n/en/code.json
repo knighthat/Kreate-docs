@@ -483,8 +483,8 @@
   "home.posts.heading": {
     "message": "Recent posts"
   },
-  "home.posts.viewAll": {
-    "message": "View all"
+  "home.posts.seeMore": {
+    "message": "See more"
   },
   "home.screenshots.player": {
     "message": "Player"

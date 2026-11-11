@@ -35,6 +35,7 @@ files:
     # The blog is English-only, so its title and sidebar labels stay English too.
     ignore:
       - /i18n/en/docusaurus-plugin-content-blog/**/*
+      - /i18n/en/docusaurus-plugin-content-blog-releases/**/*
     # Docusaurus JSON is { "id": { "message", "description" } }: the Chrome JSON layout,
     # so descriptions reach translators as context instead of as strings to translate.
     type: chrome

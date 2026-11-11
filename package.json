@@ -24,12 +24,14 @@
     "@iconify/react": "^6.0.4",
     "@ionic/react": "^8.8.19",
     "@mdx-js/react": "^3.1.1",
+    "@resvg/resvg-js": "^2.6.2",
     "@vercel/speed-insights": "^2.1.0",
     "clsx": "^2.1.1",
     "ionicons": "^8.1.0",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.1",

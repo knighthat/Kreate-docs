@@ -4,6 +4,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { APP_NAME, APP_REPO_PATH, DOC_REPO_PATH, GITHUB_URL, OWNER } from './constants';
+import { addReleaseThumbnails, GENERATED_STATIC_DIR } from './release-thumbnails.js';
+import { generateReleasePosts, RELEASE_POSTS_DIR } from './release-posts.js';
+
+// Build-time images (release thumbnails) are served from here as well as static/.
+fs.mkdirSync(GENERATED_STATIC_DIR, { recursive: true });
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -27,6 +32,7 @@ const LOCALES = [
 ];
 
 const config: Config = {
+  staticDirectories: ['static', GENERATED_STATIC_DIR],
   title: APP_NAME,
   tagline: 'Music your way',
   favicon: 'img/favicon.ico',
@@ -117,6 +123,8 @@ const config: Config = {
           ]
         },
         { label: 'Blog', position: 'left', to: 'blog' },
+        // Release posts have their own section (/releases); the navbar goes to GitHub.
+        { label: 'Releases', position: 'left', href: `${GITHUB_URL}/${APP_REPO_PATH}/releases` },
         { label: 'Download', position: 'left', to: 'download' },
         { type: 'search', position: 'right' },
         // Top row of the mobile menu; on desktop it's left of Discord.
@@ -236,7 +244,8 @@ const config: Config = {
         hashed: true,
         // Docs are served from the site root (see `routeBasePath` above).
         docsRouteBasePath: '/',
-        blogRouteBasePath: '/blog',
+        blogDir: ['blog', path.relative(__dirname, RELEASE_POSTS_DIR)],
+        blogRouteBasePath: ['/blog', '/releases'],
         language: ['en'],
         highlightSearchTermsOnTargetPage: true,
       },
@@ -246,6 +255,29 @@ const config: Config = {
   plugins: [
     './custom-paths-plugin.js',
     ['./offline-icons-plugin.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],
+    [
+      // The latest GitHub releases as posts, written at build time by release-posts.js
+      // (see createConfig below). A second blog, kept out of /blog but using its layout;
+      // the homepage lists them as the second row of "Recent posts".
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'releases',
+        path: RELEASE_POSTS_DIR,
+        routeBasePath: '/releases',
+        blogTitle: 'Releases',
+        blogDescription: `Every ${APP_NAME} release and its changelog`,
+        blogSidebarTitle: 'All releases',
+        blogSidebarCount: 'ALL',
+        authorsMapPath: path.relative(RELEASE_POSTS_DIR, path.join(__dirname, 'blog/authors.yml')),
+        showReadingTime: false,
+        feedOptions: { type: ['rss', 'atom'], xslt: true },
+        onInlineTags: 'ignore',
+        onInlineAuthors: 'warn',
+        onUntruncatedBlogPosts: 'ignore',
+        // Posts without `image` get one drawn from their version number.
+        processBlogPosts: addReleaseThumbnails,
+      },
+    ],
     './recent-posts-plugin.js',
     './crowdin-stats-plugin.js',
     ['./github-stats-plugin.js', { repo: APP_REPO_PATH }],
@@ -278,4 +310,8 @@ const config: Config = {
   ]
 };
 
-export default config;
+export default async function createConfig(): Promise<Config> {
+  // Must finish before the releases blog reads its folder.
+  await generateReleasePosts({ repo: APP_REPO_PATH, count: 5, author: OWNER });
+  return config;
+}

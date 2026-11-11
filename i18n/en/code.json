@@ -903,5 +903,27 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "download.title": {
+    "message": "Download"
+  },
+  "download.description": {
+    "message": "Every place you can download {app} from."
+  },
+  "download.heading": {
+    "message": "Download {app}"
+  },
+  "download.lead": {
+    "message": "Pick wherever you prefer to get your apps from."
+  },
+  "download.verify": {
+    "message": "Not sure an APK is genuine? You can {link}."
+  },
+  "download.verifyLink": {
+    "message": "verify it here"
+  },
+  "home.banner.moreDownloads": {
+    "message": "More downloads",
+    "description": "Button above the download badges, opens the page listing every download source"
   }
 }

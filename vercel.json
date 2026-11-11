@@ -9,7 +9,7 @@
       "source": "/translate",
       "destination": "https://translate.kreate.knighthat.me",
       "permanent": true
-    }, 
+    },
     {
       "source": "/donate",
       "destination": "https://www.patreon.com/knighthat",
@@ -17,7 +17,7 @@
     },
     {
       "source": "/download/github",
-      "destination": "https://github.com/knighthat/RiMusic/releases/latest",
+      "destination": "https://github.com/knighthat/Kreate/releases/latest",
       "permanent": true
     },
     {
@@ -38,6 +38,11 @@
     {
       "source": "/download/openapk",
       "destination": "https://www.openapk.net/kreate/me.knighthat.kreate/",
+      "permanent": true
+    },
+    {
+      "source": "/download/patreon",
+      "destination": "https://www.patreon.com/knighthat",
       "permanent": true
     }
   ]

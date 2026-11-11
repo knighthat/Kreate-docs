@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css'
-import { InlineBadges } from './DownloadBadges';
+import { InlineBadges } from '@site/src/components/DownloadBadges';
 
 
 /** 1x1 transparent GIF: what small screens "load" instead of the hidden screenshots. */
@@ -37,9 +37,14 @@ export default function Banner(): ReactNode {
               Feature-rich &amp; customizable music player
             </Translate>
           </h1>
-          <Link className={styles.docsLink} to='/dev'>
-            <Translate id='home.banner.readDocs'>Read docs</Translate> <span aria-hidden='true'>→</span>
-          </Link>
+          <div className={styles.actions}>
+            <Link className='button button--primary button--lg' to='/dev'>
+              <Translate id='home.banner.readDocs'>Read docs</Translate>
+            </Link>
+            <Link className={clsx('button button--outline button--lg', styles.action)} to='/download'>
+              <Translate id='home.banner.moreDownloads' description='Button above the download badges, opens the page listing every download source'>More downloads</Translate>
+            </Link>
+          </div>
           <InlineBadges className={styles.badges} />
         </div>
 

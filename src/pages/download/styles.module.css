@@ -1,0 +1,25 @@
+.page {
+  max-width: 880px;
+  padding-block: 3rem 4rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+}
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 0.5rem;
+  margin-block: 2rem;
+}
+
+.badges img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.verify {
+  color: var(--ifm-color-emphasis-700);
+}

@@ -30,5 +30,9 @@
   "item.label.Users": {
     "message": "Users",
     "description": "Navbar item with label Users"
+  },
+  "item.label.Download": {
+    "message": "Download",
+    "description": "Navbar item with label Download"
   }
 }

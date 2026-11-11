@@ -52,22 +52,7 @@
   color: #fff;
 }
 
-.docsLink {
-  display: inline-block;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease;
-}
-
-.docsLink:hover {
-  color: var(--ifm-color-primary-lighter);
-  text-decoration: underline;
-}
-
-/* GitHub + F-Droid on the first row, IzzyOnDroid below. */
+/* GitHub + F-Droid on the first row, Patreon below. */
 .badges {
   --badge-gap: 0.375rem;
   display: flex;
@@ -85,6 +70,27 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* "Read docs" + "More downloads", side by side above the badges. */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* White outline so it reads on the dark hero in both themes. */
+.action {
+  --ifm-button-border-color: rgba(255, 255, 255, 0.7);
+  --ifm-button-color: #fff;
+  color: #fff;
+}
+
+.action:hover {
+  --ifm-button-border-color: #fff;
+  --ifm-button-background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 
 .previews {
@@ -139,6 +145,10 @@
 
   .badges {
     margin-inline: auto;
+    justify-content: center;
+  }
+
+  .actions {
     justify-content: center;
   }
 

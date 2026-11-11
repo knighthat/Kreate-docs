@@ -118,7 +118,8 @@ const config: Config = {
         },
         { label: 'Blog', position: 'left', to: 'blog' },
         { label: 'Download', position: 'left', to: 'download' },
-        // First in the list so it's the top row of the mobile menu; on desktop it's left of Discord.
+        { type: 'search', position: 'right' },
+        // Top row of the mobile menu; on desktop it's left of Discord.
         { type: 'custom-repoStats', position: 'right' },
         {
           position: 'right',
@@ -221,7 +222,22 @@ const config: Config = {
     }
   },
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      // Builds the index at build time: no external service, but search only works
+      // in `pnpm build`/`serve`, not in `pnpm start`.
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        // Docs are served from the site root (see `routeBasePath` above).
+        docsRouteBasePath: '/',
+        blogRouteBasePath: '/blog',
+        language: ['en'],
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+  ],
 
   plugins: [
     './custom-paths-plugin.js',

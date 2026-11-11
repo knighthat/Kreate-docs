@@ -1,0 +1,112 @@
+name: Crowdin
+
+
+on:
+  # Upload sources whenever the files crowdin.yml uploads change.
+  push:
+    branches: [ main ]
+    # Same files crowdin.yml uploads. Keep the two in sync.
+    paths:
+      - 'i18n/en/**/*.json'
+      - '!i18n/en/docusaurus-plugin-content-blog/**'
+      - 'docs/**/*.md'
+      - 'docs/**/*.mdx'
+      - 'crowdin.yml'
+      - '.github/workflows/crowdin.yaml'
+
+  # Pull translations weekly into kreate3_l10n.
+  schedule:
+    - cron: '0 13 * * 1'   # Every Monday at 1 PM (UTC)
+
+  # Manual run: pulls translations into <selected branch>_l10n.
+  # Run from main, it also uploads sources first.
+  workflow_dispatch:
+
+
+# Queue runs instead of racing them: Crowdin rejects parallel builds of the same project.
+concurrency:
+  group: 'crowdin'
+  cancel-in-progress: false
+
+
+permissions:
+  contents: read
+
+
+jobs:
+  upload-sources:
+    name: Upload sources
+    runs-on: ubuntu-latest
+    # Only main holds the sources translators should see; other branches would push drafts.
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref_name == 'main')
+
+    steps:
+      - uses: actions/checkout@v5
+
+      # Files go to the "docs" branch of the Kreate project (set in crowdin.yml),
+      # so the app's "kreate3" branch is never touched.
+      - name: Upload sources
+        uses: crowdin/github-action@v3
+        with:
+          upload_sources: true
+          upload_translations: false
+          download_translations: false
+          crowdin_branch_name: docs
+        env:
+          CROWDIN_PROJECT_ID: ${{ vars.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+
+  # Downloads translations, commits them to <branch>_l10n and opens (or updates)
+  # a pull request into <branch>. Scheduled runs always use kreate3, because
+  # schedules only ever start from the default branch.
+  #
+  # <branch>_l10n is rebuilt from <branch> on every run and force-pushed, so
+  # whatever it held before is replaced.
+  download-translations:
+    name: Download translations
+    runs-on: ubuntu-latest
+    # After the upload when both run, so the download includes the newest sources.
+    needs: upload-sources
+    if: ${{ !cancelled() && github.event_name != 'push' }}
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    env:
+      TARGET_BRANCH: ${{ github.event_name == 'schedule' && 'kreate3' || github.ref_name }}
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+
+      # Start from a clean slate so the branch holds exactly what Crowdin exports:
+      # translations of deleted docs and dropped languages disappear instead of lingering.
+      # i18n/en is the source and stays.
+      - name: Remove existing translations
+        run: find i18n -mindepth 1 -maxdepth 1 -type d ! -name en -exec rm -rf {} +
+
+      - name: Get date
+        id: date
+        run: echo "today=$(date -u +%Y/%m/%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Download translations
+        uses: crowdin/github-action@v3
+        with:
+          upload_sources: false
+          upload_translations: false
+          download_translations: true
+          crowdin_branch_name: docs
+
+          localization_branch_name: ${{ env.TARGET_BRANCH }}_l10n
+          commit_message: 'update translations from Crowdin'
+          create_pull_request: true
+          pull_request_title: Update translations ${{ steps.date.outputs.today }}
+          pull_request_body: 'Translations pulled from the `docs` branch of the Kreate project on Crowdin.'
+          pull_request_base_branch_name: ${{ env.TARGET_BRANCH }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ vars.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}

@@ -8,14 +8,17 @@
  * If the signing key is ever rotated, ADD the new fingerprint; keep the old one
  * so older releases still verify.
  */
+import { translate } from '@docusaurus/Translate'
+
 export interface TrustedSigner {
-  label: string
+  /** A function so the label is translated at render time, in the visitor's locale. */
+  label: () => string
   sha256: string
 }
 
 export const TRUSTED_SIGNERS: readonly TrustedSigner[] = [
   {
-    label: 'Official releases',
+    label: () => translate({ id: 'verify.signer.official', message: 'Official releases' }),
     sha256: '1bd03a8de5df4dbd7faddb81b9f2aaf55681a584a93d6fb47e9a5ccc736ef7ac',
   },
 ]

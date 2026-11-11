@@ -1,6 +1,8 @@
 import type { ReactNode, CSSProperties } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate from '@docusaurus/Translate';
 
 import translators from '@site/src/pages/translators/translators.json';
 import styles from './styles.module.css';
@@ -22,9 +24,10 @@ const top = ( translators as Translator[] )
   .sort( ( a, b ) => b.translated - a.translated )
   .slice( 0, LIMIT );
 
-const wordFormat = new Intl.NumberFormat( 'en' );
-
 export default function TopTranslators(): ReactNode {
+  const { i18n } = useDocusaurusContext();
+  const wordFormat = new Intl.NumberFormat( i18n.currentLocale );
+
   if( !top.length )
     return null
 
@@ -33,9 +36,11 @@ export default function TopTranslators(): ReactNode {
   return(
     <div className={styles.column}>
       <div className={styles.header}>
-        <h2 className={styles.heading}>Top translators</h2>
+        <h2 className={styles.heading}>
+          <Translate id='home.translators.heading'>Top translators</Translate>
+        </h2>
         <Link className={styles.all} to='/translators'>
-          See all <span aria-hidden='true'>→</span>
+          <Translate id='home.translators.seeAll'>See all</Translate> <span aria-hidden='true'>→</span>
         </Link>
       </div>
 
@@ -60,7 +65,7 @@ export default function TopTranslators(): ReactNode {
 
             <span className={styles.words}>
               {wordFormat.format( translated )}
-              <small>words</small>
+              <small><Translate id='home.translators.words' description='Unit under a translated-words count'>words</Translate></small>
             </span>
           </li>
         ))}

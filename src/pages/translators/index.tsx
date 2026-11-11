@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import Translate, { translate } from '@docusaurus/Translate';
 
 
 interface User {
@@ -31,7 +32,7 @@ function RenderUser({ name, avatar }: User): ReactNode {
       <div className={clsx('visibility--none padding-left--sm', styles.userNameFont)}>{name}</div>
 
       <div className={styles.avatarContainer}>
-        <img src={avatar} alt={`${name} avatar`} className={styles.avatarImage} />
+        <img src={avatar} alt={translate({ id: 'translators.avatarAlt', message: '{name} avatar' }, { name })} className={styles.avatarImage} />
       </div>
 
       <div className={clsx(styles.userName, styles.userNameFont, 'padding-left--sm')}>{name}</div>
@@ -53,10 +54,10 @@ function TranslatorsTable(): ReactNode {
     <table className='container'>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Translated (words)</th>
-          <th>Languages</th>
-          <th>Member since</th>
+          <th><Translate id='translators.table.name'>Name</Translate></th>
+          <th><Translate id='translators.table.translated'>Translated (words)</Translate></th>
+          <th><Translate id='translators.table.languages'>Languages</Translate></th>
+          <th><Translate id='translators.table.joined'>Member since</Translate></th>
         </tr>
       </thead>
       <tbody>
@@ -91,8 +92,8 @@ function TranslatorsTable(): ReactNode {
 export default function Translators(): ReactNode {
   return (
     <Layout
-      title='Translators'
-      description='Turning English into your native language'>
+      title={translate({ id: 'translators.title', message: 'Translators' })}
+      description={translate({ id: 'translators.description', message: 'Turning English into your native language' })}>
       <main className='padding-vert--xl'>
         <BrowserOnly>
           {() => <TranslatorsTable />}

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type DragEvent, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import Translate, { translate } from '@docusaurus/Translate';
 
 import { verifyApk, formatFingerprint, normalizeFingerprint, ApkFormatError } from '@utils/apk/verify';
 import { inspectApk, type ApkInfo } from '@utils/apk/inspect';
@@ -23,7 +24,7 @@ type State =
 async function check(file: File): Promise<State> {
   const fileName = file.name;
   if (file.size > MAX_SIZE)
-    return { kind: 'invalid', fileName, reason: 'This file is too large to be a Kreate APK.' };
+    return { kind: 'invalid', fileName, reason: translate({ id: 'verify.reason.tooLarge', message: 'This file is too large to be a {app} APK.' }, { app: APP_NAME }) };
 
   try {
     const bytes = new Uint8Array(await file.arrayBuffer());
@@ -42,22 +43,23 @@ async function check(file: File): Promise<State> {
         }
         // Hash of the whole file, used to look up the VirusTotal report.
         const sha256 = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('');
-        return { kind: 'valid', fileName, signer: signer.label, fingerprint: fp, sha256, info };
+        return { kind: 'valid', fileName, signer: signer.label(), fingerprint: fp, sha256, info };
       }
       case 'untrusted':
         return {
           kind: 'invalid', fileName,
-          reason: `The signature is intact, but it was not signed by ${APP_NAME}'s developers. Do not install it.`,
+          reason: translate({ id: 'verify.reason.untrusted', message: 'The signature is intact, but it was not signed by {app}\'s developers. Do not install it.' }, { app: APP_NAME }),
           fingerprint: result.fingerprints.find(fp => !TRUSTED_SIGNERS.some(s => normalizeFingerprint(s.sha256) === fp)),
         };
       case 'invalid':
-        return { kind: 'invalid', fileName, reason: `${result.reason}. Do not install it.` };
+        // `reason` is a technical message from the verifier and stays in English.
+        return { kind: 'invalid', fileName, reason: translate({ id: 'verify.reason.invalid', message: '{reason}. Do not install it.', description: '{reason} is a technical error in English, e.g. "Signature does not verify"' }, { reason: result.reason }) };
     }
   } catch (e) {
     if (e instanceof ApkFormatError)
       return { kind: 'invalid', fileName, reason: `${e.message}.` };
     console.error(e);
-    return { kind: 'invalid', fileName, reason: 'This file could not be checked. Your browser may not support it.' };
+    return { kind: 'invalid', fileName, reason: translate({ id: 'verify.reason.unsupported', message: 'This file could not be checked. Your browser may not support it.' }) };
   }
 }
 
@@ -119,14 +121,16 @@ export default function Verify(): ReactNode {
 
   return (
     <Layout
-      title="Verify APK"
-      description={`Check that a ${APP_NAME} APK is genuine and unmodified. The file is checked in your browser and never uploaded.`}
+      title={translate({ id: 'verify.title', message: 'Verify APK' })}
+      description={translate({ id: 'verify.description', message: 'Check that a {app} APK is genuine and unmodified. The file is checked in your browser and never uploaded.' }, { app: APP_NAME })}
     >
       <main className={clsx('container', styles.page)}>
-        <h1>Verify your APK</h1>
+        <h1><Translate id='verify.heading'>Verify your APK</Translate></h1>
         <p className={styles.lead}>
-          Check that a {APP_NAME} APK was signed by its developers and hasn't been modified.
-          Everything runs in your browser. <strong>Your file is never uploaded.</strong>
+          <Translate id='verify.lead' values={{ app: APP_NAME }}>
+            {'Check that a {app} APK was signed by its developers and hasn\'t been modified. Everything runs in your browser.'}
+          </Translate>{' '}
+          <strong><Translate id='verify.leadNoUpload'>Your file is never uploaded.</Translate></strong>
         </p>
 
         <input
@@ -142,7 +146,7 @@ export default function Verify(): ReactNode {
           role="button"
           tabIndex={busy ? -1 : 0}
           aria-busy={busy}
-          aria-label="Choose or drop an APK file to verify"
+          aria-label={translate({ id: 'verify.zone.label', message: 'Choose or drop an APK file to verify' })}
           onClick={state.kind === 'idle' ? openPicker : undefined}
           onKeyDown={e => { if (state.kind === 'idle' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openPicker(); } }}
           onDragOver={e => { e.preventDefault(); if (!busy) setDragging(true); }}
@@ -155,15 +159,17 @@ export default function Verify(): ReactNode {
                 <svg className={styles.uploadIcon} viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 16V4m0 0-5 5m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
                 </svg>
-                <div className={styles.zoneTitle}>{dragging ? 'Drop it here' : 'Drag & drop an APK here'}</div>
-                <div className={styles.zoneHint}>or click to choose a file</div>
+                <div className={styles.zoneTitle}>{dragging
+                  ? translate({ id: 'verify.zone.drop', message: 'Drop it here' })
+                  : translate({ id: 'verify.zone.idle', message: 'Drag & drop an APK here' })}</div>
+                <div className={styles.zoneHint}><Translate id='verify.zone.idleHint'>or click to choose a file</Translate></div>
               </>
             )}
 
             {state.kind === 'checking' && (
               <>
                 <div className={styles.spinner} aria-hidden="true" />
-                <div className={styles.zoneTitle}>Checking signature…</div>
+                <div className={styles.zoneTitle}><Translate id='verify.zone.checking'>Checking signature…</Translate></div>
                 <div className={styles.fileName}>{state.fileName}</div>
               </>
             )}
@@ -172,17 +178,22 @@ export default function Verify(): ReactNode {
               <>
                 <Tick />
                 <div className={styles.zoneTitle}>
-                  Genuine {APP_NAME} APK{state.info?.versionName && ` · ${state.info.versionName}`}
+                  <Translate id='verify.zone.valid' values={{ app: APP_NAME }}>{'Genuine {app} APK'}</Translate>
+                  {state.info?.versionName && ` · ${state.info.versionName}`}
                 </div>
                 <div className={styles.fileName}>{state.fileName}</div>
-                <div className={styles.zoneHint}>Signed by {state.signer}. Safe to install.</div>
+                <div className={styles.zoneHint}>
+                  <Translate id='verify.zone.validHint' values={{ signer: state.signer }}>{'Signed by {signer}. Safe to install.'}</Translate>
+                </div>
               </>
             )}
 
             {state.kind === 'invalid' && (
               <>
                 <Cross />
-                <div className={styles.zoneTitle}>Not a genuine {APP_NAME} APK</div>
+                <div className={styles.zoneTitle}>
+                  <Translate id='verify.zone.invalid' values={{ app: APP_NAME }}>{'Not a genuine {app} APK'}</Translate>
+                </div>
                 <div className={styles.fileName}>{state.fileName}</div>
                 <div className={styles.zoneHint}>{state.reason}</div>
               </>
@@ -192,10 +203,12 @@ export default function Verify(): ReactNode {
 
         {(state.kind === 'valid' || state.kind === 'invalid') && (
           <div className={styles.actions}>
-            <button className="button button--primary" onClick={reset}>Check another file</button>
+            <button className="button button--primary" onClick={reset}>
+              <Translate id='verify.checkAnother'>Check another file</Translate>
+            </button>
             {state.fingerprint && (
               <p className={styles.fingerprint}>
-                Signer certificate SHA-256:<br />
+                <Translate id='verify.signerFingerprint'>Signer certificate SHA-256:</Translate><br />
                 <code>{formatFingerprint(state.fingerprint)}</code>
               </p>
             )}
@@ -213,15 +226,19 @@ export default function Verify(): ReactNode {
         {state.kind === 'valid' && state.info && <ApkDetails info={state.info} />}
 
         <details className={styles.details}>
-          <summary>Official signing certificate</summary>
+          <summary><Translate id='verify.official.summary'>Official signing certificate</Translate></summary>
           <p>
-            Official APKs from GitHub and IzzyOnDroid are signed with this certificate.
-            You can also check an APK yourself with <code>apksigner verify --print-certs Kreate.apk</code>.
+            <Translate
+              id='verify.official.body'
+              values={{ command: <code>apksigner verify --print-certs Kreate.apk</code> }}
+            >
+              {'Official APKs from GitHub and IzzyOnDroid are signed with this certificate. You can also check an APK yourself with {command}.'}
+            </Translate>
           </p>
           <ul>
             {TRUSTED_SIGNERS.map(s => (
               <li key={s.sha256}>
-                <strong>{s.label}</strong><br />
+                <strong>{s.label()}</strong><br />
                 <code className={styles.fpCode}>{formatFingerprint(s.sha256)}</code>
               </li>
             ))}

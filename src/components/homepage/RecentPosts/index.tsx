@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
@@ -14,9 +16,10 @@ type Post = {
   readingTime: number | null
 };
 
-const dateFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
-
 function PostCard( { title, permalink, date, description, image, readingTime }: Post ): ReactNode {
+  const { i18n } = useDocusaurusContext();
+  const dateFormat = new Intl.DateTimeFormat(i18n.currentLocale, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+
   return(
     <li className={styles.item}>
       <Link to={permalink} className={styles.card}>
@@ -27,7 +30,7 @@ function PostCard( { title, permalink, date, description, image, readingTime }: 
         <div className={styles.content}>
           <p className={styles.meta}>
             <time dateTime={date}>{dateFormat.format(new Date(date))}</time>
-            {readingTime && <> · {Math.ceil(readingTime)} min read</>}
+            {readingTime && <> · <Translate id='home.posts.readingTime' values={{ minutes: Math.ceil(readingTime) }}>{'{minutes} min read'}</Translate></>}
           </p>
           <h3 className={styles.title}>{title}</h3>
           {description && <p className={styles.description}>{description}</p>}
@@ -47,9 +50,11 @@ export default function RecentPosts(): ReactNode {
     <section className={styles.section}>
       <div className='container'>
         <div className={styles.header}>
-          <h2 className={styles.heading}>Recent posts</h2>
+          <h2 className={styles.heading}>
+            <Translate id='home.posts.heading'>Recent posts</Translate>
+          </h2>
           <Link className={styles.all} to='/blog'>
-            View all <span aria-hidden='true'>→</span>
+            <Translate id='home.posts.viewAll'>View all</Translate> <span aria-hidden='true'>→</span>
           </Link>
         </div>
 

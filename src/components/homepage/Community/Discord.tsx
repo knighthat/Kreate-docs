@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { Icon } from '@Iconify';
 import { usePluginData } from '@docusaurus/useGlobalData';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate from '@docusaurus/Translate';
 
 import styles from './discord.module.css';
 
@@ -14,11 +16,11 @@ type Invite = {
   members: number | null
 };
 
-const countFormat = new Intl.NumberFormat( 'en' );
-
 /** Invite card styled after Discord's own invite embed. Data comes from discord-invite-plugin at build time. */
 export default function Discord(): ReactNode {
   const invite = usePluginData( 'discord-invite-plugin' ) as Invite;
+  const { i18n } = useDocusaurusContext();
+  const countFormat = new Intl.NumberFormat( i18n.currentLocale );
 
   return(
     <div className={styles.card}>
@@ -37,8 +39,18 @@ export default function Discord(): ReactNode {
 
         {invite.online !== null && invite.members !== null && (
           <p className={styles.stats}>
-            <span><i className={styles.online} />{countFormat.format( invite.online )} Online</span>
-            <span><i className={styles.members} />{countFormat.format( invite.members )} Members</span>
+            <span>
+              <i className={styles.online} />
+              <Translate id='home.discord.online' values={{ count: countFormat.format( invite.online ) }}>
+                {'{count} Online'}
+              </Translate>
+            </span>
+            <span>
+              <i className={styles.members} />
+              <Translate id='home.discord.members' values={{ count: countFormat.format( invite.members ) }}>
+                {'{count} Members'}
+              </Translate>
+            </span>
           </p>
         )}
 
@@ -46,7 +58,7 @@ export default function Discord(): ReactNode {
 
         <a className={styles.join} href={invite.url} target='_blank' rel='noopener noreferrer'>
           <Icon icon='bi:discord' aria-hidden='true' />
-          Join server
+          <Translate id='home.discord.join'>Join server</Translate>
         </a>
       </div>
     </div>

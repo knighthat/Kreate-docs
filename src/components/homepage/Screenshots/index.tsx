@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@Iconify';
+import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
@@ -10,29 +11,30 @@ type Screenshot = {
   caption: string
 };
 
-const screenshots: Screenshot[] = [
-  { file: '01-player', caption: 'Player' },
-  { file: '02-queue', caption: 'Queue' },
-  { file: '03-lyrics', caption: 'Lyrics' },
-  { file: '04-songs', caption: 'Songs' },
-  { file: '05-albums', caption: 'Albums' },
-  { file: '06-artists', caption: 'Artists' },
-  { file: '07-playlists', caption: 'Playlists' },
-  { file: '08-album-details', caption: 'Album details' },
-  { file: '08-album-details-2', caption: 'Album details' },
-  { file: '08-album-details-3', caption: 'Album details' },
-  { file: '09-artist-details', caption: 'Artist details' },
-  { file: '09-artist-details-2', caption: 'Artist details' },
-  { file: '09-artist-details-3', caption: 'Artist details' },
-  { file: '10-playlist-details', caption: 'Playlist details' },
-  { file: '10-playlist-details-2', caption: 'Playlist details' },
-  { file: '10-playlist-details-3', caption: 'Playlist details' },
-  { file: '11-history', caption: 'History' },
-  { file: '12-statistics', caption: 'Statistics' },
-  { file: '13-search-suggestions', caption: 'Search suggestions' },
-  { file: '14-album-menu', caption: 'Album menu' },
-  { file: '15-artist-menu', caption: 'Artist menu' },
-  { file: '16-playlist-menu', caption: 'Playlist menu' },
+// A function so translate() runs at render time, in the visitor's locale.
+const getScreenshots = (): Screenshot[] => [
+  { file: '01-player', caption: translate({ id: 'home.screenshots.player', message: 'Player' }) },
+  { file: '02-queue', caption: translate({ id: 'home.screenshots.queue', message: 'Queue' }) },
+  { file: '03-lyrics', caption: translate({ id: 'home.screenshots.lyrics', message: 'Lyrics' }) },
+  { file: '04-songs', caption: translate({ id: 'home.screenshots.songs', message: 'Songs' }) },
+  { file: '05-albums', caption: translate({ id: 'home.screenshots.albums', message: 'Albums' }) },
+  { file: '06-artists', caption: translate({ id: 'home.screenshots.artists', message: 'Artists' }) },
+  { file: '07-playlists', caption: translate({ id: 'home.screenshots.playlists', message: 'Playlists' }) },
+  { file: '08-album-details', caption: translate({ id: 'home.screenshots.albumDetails', message: 'Album details' }) },
+  { file: '08-album-details-2', caption: translate({ id: 'home.screenshots.albumDetails', message: 'Album details' }) },
+  { file: '08-album-details-3', caption: translate({ id: 'home.screenshots.albumDetails', message: 'Album details' }) },
+  { file: '09-artist-details', caption: translate({ id: 'home.screenshots.artistDetails', message: 'Artist details' }) },
+  { file: '09-artist-details-2', caption: translate({ id: 'home.screenshots.artistDetails', message: 'Artist details' }) },
+  { file: '09-artist-details-3', caption: translate({ id: 'home.screenshots.artistDetails', message: 'Artist details' }) },
+  { file: '10-playlist-details', caption: translate({ id: 'home.screenshots.playlistDetails', message: 'Playlist details' }) },
+  { file: '10-playlist-details-2', caption: translate({ id: 'home.screenshots.playlistDetails', message: 'Playlist details' }) },
+  { file: '10-playlist-details-3', caption: translate({ id: 'home.screenshots.playlistDetails', message: 'Playlist details' }) },
+  { file: '11-history', caption: translate({ id: 'home.screenshots.history', message: 'History' }) },
+  { file: '12-statistics', caption: translate({ id: 'home.screenshots.statistics', message: 'Statistics' }) },
+  { file: '13-search-suggestions', caption: translate({ id: 'home.screenshots.searchSuggestions', message: 'Search suggestions' }) },
+  { file: '14-album-menu', caption: translate({ id: 'home.screenshots.albumMenu', message: 'Album menu' }) },
+  { file: '15-artist-menu', caption: translate({ id: 'home.screenshots.artistMenu', message: 'Artist menu' }) },
+  { file: '16-playlist-menu', caption: translate({ id: 'home.screenshots.playlistMenu', message: 'Playlist menu' }) },
 ];
 
 /** Phones rendered on each side of the active one; the outermost is faded out. */
@@ -49,6 +51,7 @@ function ringOffset( index: number, active: number, length: number ): number {
 }
 
 export default function Screenshots(): ReactNode {
+  const screenshots = getScreenshots();
   const count = screenshots.length;
   const [active, setActive] = useState( 0 );
   const [paused, setPaused] = useState( false );
@@ -76,14 +79,14 @@ export default function Screenshots(): ReactNode {
     <section
       className={styles.section}
       aria-roledescription='carousel'
-      aria-label='App screenshots'
+      aria-label={translate({ id: 'home.screenshots.label', message: 'App screenshots' })}
       onMouseEnter={() => setPaused( true )}
       onMouseLeave={() => setPaused( false )}
       onFocus={() => setPaused( true )}
       onBlur={() => setPaused( false )}
     >
       <div className={styles.viewport}>
-        <button type='button' className={clsx(styles.arrow, styles.prev)} onClick={() => go( -1 )} aria-label='Previous screenshot'>
+        <button type='button' className={clsx(styles.arrow, styles.prev)} onClick={() => go( -1 )} aria-label={translate({ id: 'home.screenshots.previous', message: 'Previous screenshot' })}>
           <Icon icon='mdi:chevron-left' />
         </button>
 
@@ -125,7 +128,7 @@ export default function Screenshots(): ReactNode {
                 className={styles.phone}
                 style={style}
                 src={`/img/screenshots/${file}.webp`}
-                alt={offset === 0 ? `${caption} screen` : ''}
+                alt={offset === 0 ? translate({ id: 'home.screenshots.alt', message: '{screen} screen', description: 'Alt text of the centered screenshot; {screen} is its caption' }, { screen: caption }) : ''}
                 aria-hidden={offset !== 0}
                 width={1080}
                 height={2400}
@@ -136,7 +139,7 @@ export default function Screenshots(): ReactNode {
           })}
         </div>
 
-        <button type='button' className={clsx(styles.arrow, styles.next)} onClick={() => go( 1 )} aria-label='Next screenshot'>
+        <button type='button' className={clsx(styles.arrow, styles.next)} onClick={() => go( 1 )} aria-label={translate({ id: 'home.screenshots.next', message: 'Next screenshot' })}>
           <Icon icon='mdi:chevron-right' />
         </button>
       </div>

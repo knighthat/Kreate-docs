@@ -1,0 +1,58 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.title.Special thanks": {
+    "message": "Special thanks",
+    "description": "The title of the footer links column with title=Special thanks in the footer"
+  },
+  "link.item.label.For developers": {
+    "message": "For developers",
+    "description": "The label of footer link with label=For developers linking to /dev"
+  },
+  "link.item.label.For users": {
+    "message": "For users",
+    "description": "The label of footer link with label=For users linking to /usr"
+  },
+  "link.item.label.Github Discussion": {
+    "message": "Github Discussion",
+    "description": "The label of footer link with label=Github Discussion linking to https://github.com/knighthat/Kreate/discussions"
+  },
+  "link.item.label.Discord Server": {
+    "message": "Discord Server",
+    "description": "The label of footer link with label=Discord Server linking to https://kreate.knighthat.me/discord"
+  },
+  "link.item.label.About KnightHat": {
+    "message": "About KnightHat",
+    "description": "The label of footer link with label=About KnightHat linking to https://github.com/knighthat"
+  },
+  "link.item.label.About Kreate": {
+    "message": "About Kreate",
+    "description": "The label of footer link with label=About Kreate linking to https://github.com/knighthat/Kreate"
+  },
+  "link.item.label.Source code": {
+    "message": "Source code",
+    "description": "The label of footer link with label=Source code linking to https://github.com/knighthat/Kreate-docs"
+  },
+  "link.item.label.Blogs": {
+    "message": "Blogs",
+    "description": "The label of footer link with label=Blogs linking to blog"
+  },
+  "link.item.label.Translators": {
+    "message": "Translators",
+    "description": "The label of footer link with label=Translators linking to translators"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Kreate. Built with <a href='https://docusaurus.io/' target=\"_blank\">Docusaurus</a>. Powered by <a href='https://vercel.com/' target=\"_blank\">Vercel</a>",
+    "description": "The footer copyright"
+  }
+}

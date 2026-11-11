@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import Translate, { translate } from '@docusaurus/Translate';
+
 import type { ApkInfo } from '@utils/apk/inspect';
 import { abiLabel, permissionLabel, sdkLabel } from '@utils/apk/labels';
 import { APP_PACKAGE, APP_REPO_PATH, GITHUB_URL } from '@site/constants';
@@ -15,21 +17,23 @@ function Row({ label, children }: { label: string; children: ReactNode }): React
   );
 }
 
-const unknown = <span className={styles.muted}>Not found</span>;
+const unknown = <span className={styles.muted}><Translate id='verify.details.notFound'>Not found</Translate></span>;
 
 
 function AppSection({ info }: { info: ApkInfo }): ReactNode {
   return (
     <section className={styles.card}>
-      <h2>App</h2>
+      <h2><Translate id='verify.details.app' description='Heading of the APK details card about the app'>App</Translate></h2>
       <dl>
-        <Row label="Package name">{info.packageName ? <code>{info.packageName}</code> : unknown}</Row>
-        <Row label="Version name">
+        <Row label={translate({ id: 'verify.details.packageName', message: 'Package name' })}>{info.packageName ? <code>{info.packageName}</code> : unknown}</Row>
+        <Row label={translate({ id: 'verify.details.versionName', message: 'Version name' })}>
           {info.versionName ?? unknown}
-          {info.versionCode !== undefined && <span className={styles.muted}> (build {info.versionCode})</span>}
+          {info.versionCode !== undefined && <span className={styles.muted}>
+            {' '}<Translate id='verify.details.versionCode' values={{ code: info.versionCode }}>{'(build {code})'}</Translate>
+          </span>}
         </Row>
-        <Row label="Minimum SDK">{info.minSdk !== undefined ? sdkLabel(info.minSdk) : unknown}</Row>
-        <Row label="Target SDK">{info.targetSdk !== undefined ? sdkLabel(info.targetSdk) : unknown}</Row>
+        <Row label={translate({ id: 'verify.details.minSdk', message: 'Minimum SDK' })}>{info.minSdk !== undefined ? sdkLabel(info.minSdk) : unknown}</Row>
+        <Row label={translate({ id: 'verify.details.targetSdk', message: 'Target SDK' })}>{info.targetSdk !== undefined ? sdkLabel(info.targetSdk) : unknown}</Row>
       </dl>
     </section>
   );
@@ -50,11 +54,11 @@ function BuildSection({ info }: { info: ApkInfo }): ReactNode {
 
   return (
     <section className={styles.card}>
-      <h2>Build</h2>
+      <h2><Translate id='verify.details.build' description='Heading of the APK details card about how it was built'>Build</Translate></h2>
       <dl>
-        <Row label="CPU architecture">
+        <Row label={translate({ id: 'verify.details.cpu', message: 'CPU architecture' })}>
           {info.abis.length === 0
-            ? 'Any (no native code)'
+            ? translate({ id: 'verify.details.anyAbi', message: 'Any (no native code)' })
             : info.abis.map(abi => (
               <div key={abi}>
                 <code>{abi}</code>
@@ -62,14 +66,14 @@ function BuildSection({ info }: { info: ApkInfo }): ReactNode {
               </div>
             ))}
         </Row>
-        <Row label="Git commit">
+        <Row label={translate({ id: 'verify.details.gitCommit', message: 'Git commit' })}>
           {info.gitCommit
             ? commitUrl
               ? <a href={commitUrl} target="_blank" rel="noopener noreferrer"><code>{info.gitCommit.slice(0, 12)}</code></a>
               : <code title={info.gitCommit}>{info.gitCommit.slice(0, 12)}</code>
             : unknown}
         </Row>
-        <Row label="Build tools">
+        <Row label={translate({ id: 'verify.details.buildTools', message: 'Build tools' })}>
           {tools.length ? tools.map(t => <div key={t}>{t}</div>) : unknown}
         </Row>
       </dl>
@@ -82,11 +86,11 @@ function PermissionsSection({ info }: { info: ApkInfo }): ReactNode {
   const permissions = info.permissions;
   return (
     <section className={styles.card}>
-      <h2>Permissions{permissions && <span className={styles.count}>{permissions.length}</span>}</h2>
+      <h2><Translate id='verify.details.permissions'>Permissions</Translate>{permissions && <span className={styles.count}>{permissions.length}</span>}</h2>
       {!permissions
-        ? <p className={styles.muted}>Could not be read.</p>
+        ? <p className={styles.muted}><Translate id='verify.details.permissionsUnreadable'>Could not be read.</Translate></p>
         : permissions.length === 0
-          ? <p>This app requests no permissions.</p>
+          ? <p><Translate id='verify.details.noPermissions'>This app requests no permissions.</Translate></p>
           : (
             <ul className={styles.permissions}>
               {permissions.map(p => {
@@ -97,7 +101,10 @@ function PermissionsSection({ info }: { info: ApkInfo }): ReactNode {
                     {label && <div>{label}</div>}
                     <code className={styles.permName}>{short}</code>
                     {p.maxSdk !== undefined && (
-                      <span className={styles.muted}> · only on {sdkLabel(p.maxSdk)} and older</span>
+                      <span className={styles.muted}>
+                        {' · '}
+                        <Translate id='verify.details.maxSdk' values={{ sdk: sdkLabel(p.maxSdk) }}>{'only on {sdk} and older'}</Translate>
+                      </span>
                     )}
                   </li>
                 );
@@ -112,15 +119,22 @@ function PermissionsSection({ info }: { info: ApkInfo }): ReactNode {
 function LibrariesSection({ info }: { info: ApkInfo }): ReactNode {
   return (
     <section className={styles.card}>
-      <h2>Library versions{info.libraries.length > 0 && <span className={styles.count}>{info.libraries.length}</span>}</h2>
+      <h2><Translate id='verify.details.libraries'>Library versions</Translate>{info.libraries.length > 0 && <span className={styles.count}>{info.libraries.length}</span>}</h2>
       {info.libraries.length === 0
-        ? <p className={styles.muted}>This APK doesn't include library version information.</p>
+        ? <p className={styles.muted}>
+            <Translate id='verify.details.noLibraries'>This APK doesn't include library version information.</Translate>
+          </p>
         : (
           <details>
-            <summary>Show all libraries</summary>
+            <summary><Translate id='verify.details.showLibraries'>Show all libraries</Translate></summary>
             <div className={styles.tableWrap}>
               <table className={styles.libraries}>
-                <thead><tr><th>Library</th><th>Version</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th><Translate id='verify.details.library'>Library</Translate></th>
+                    <th><Translate id='verify.details.version'>Version</Translate></th>
+                  </tr>
+                </thead>
                 <tbody>
                   {info.libraries.map(l => (
                     <tr key={l.name}><td><code>{l.name}</code></td><td>{l.version}</td></tr>

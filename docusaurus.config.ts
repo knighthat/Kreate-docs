@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
@@ -10,6 +12,19 @@ import { APP_NAME, APP_REPO_PATH, DOC_REPO_PATH, GITHUB_URL, OWNER } from './con
 try {
   process.loadEnvFile();
 } catch {}
+
+// Every folder in i18n/ is a locale (pulled from Crowdin). `en` is skipped because
+// i18n/en/ only holds the source strings uploaded to Crowdin.
+const I18N_DIR = path.join(__dirname, 'i18n');
+const LOCALES = [
+  'en',
+  ...(fs.existsSync(I18N_DIR)
+    ? fs.readdirSync(I18N_DIR, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory() && entry.name !== 'en')
+        .map((entry) => entry.name)
+        .sort()
+    : []),
+];
 
 const config: Config = {
   title: APP_NAME,
@@ -29,12 +44,9 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: LOCALES,
   },
 
   presets: [
@@ -123,6 +135,8 @@ const config: Config = {
           },
           label: 'Github'
         },
+        // Hidden until at least one translation exists.
+        ...(LOCALES.length > 1 ? [{ type: 'localeDropdown', position: 'right' } as const] : []),
       ],
     },
     footer: {

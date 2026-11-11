@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
+import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css'
 import { InlineBadges } from './DownloadBadges';
@@ -32,10 +33,12 @@ export default function Banner(): ReactNode {
       <div className={clsx('container', styles.inner)}>
         <div className={styles.text}>
           <h1 className={styles.title}>
-            Feature-rich &amp; customizable music player
+            <Translate id='home.banner.title' description='Main headline on the homepage'>
+              Feature-rich &amp; customizable music player
+            </Translate>
           </h1>
           <Link className={styles.docsLink} to='/dev'>
-            Read docs <span aria-hidden='true'>→</span>
+            <Translate id='home.banner.readDocs'>Read docs</Translate> <span aria-hidden='true'>→</span>
           </Link>
           <InlineBadges className={styles.badges} />
         </div>
@@ -44,12 +47,12 @@ export default function Banner(): ReactNode {
           <Phone
             className={styles.back}
             src='/img/screenshots/09-artist-details-3.webp'
-            alt='Artist details screen'
+            alt={translate({ id: 'home.banner.artistPreviewAlt', message: 'Artist details screen', description: 'Alt text of an app screenshot' })}
           />
           <Phone
             className={styles.front}
             src='/img/screenshots/01-player.webp'
-            alt='Now playing screen'
+            alt={translate({ id: 'home.banner.playerPreviewAlt', message: 'Now playing screen', description: 'Alt text of an app screenshot' })}
           />
         </div>
       </div>

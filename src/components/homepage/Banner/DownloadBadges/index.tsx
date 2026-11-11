@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
+import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css'
 
@@ -14,7 +15,10 @@ function Badge( { platform, className, to }: BadgeProps ): ReactNode {
   const source = `/img/get-it-on/${platform}.webp`
   return(
     <a className={clsx('padding--none', className || '')} href={`/download/${to}`} >
-      <img className={styles.badge} src={source} alt={`${platform}'s download page`} />
+      <img className={styles.badge} src={source} alt={translate(
+        { id: 'home.badge.alt', message: '{platform} download page', description: 'Alt text of a "Get it on" badge; {platform} is a store name like F-Droid' },
+        { platform },
+      )} />
     </a>
   )
 }

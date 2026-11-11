@@ -1,0 +1,50 @@
+# Crowdin CLI config for the website (https://crowdin.github.io/crowdin-cli/configuration)
+#
+# Sources are English; translations land in i18n/<lang>/, which docusaurus.config.ts
+# scans to build the locale list. After changing UI strings, refresh the sources with:
+#   pnpm write-translations --locale en
+#
+# Shares the Kreate project with the app, which syncs the `kreate3` branch. Everything
+# here goes to its own `docs` branch (Kreate / docs), so the two never touch each
+# other's files. Don't use --delete-obsolete without a --dryrun first.
+#
+# Credentials come from the environment, never from this file:
+#   CROWDIN_PROJECT_ID      numeric id of the Kreate project (same as the app)
+#   CROWDIN_PERSONAL_TOKEN  personal access token with write access
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+base_path: .
+preserve_hierarchy: true
+branch: docs
+
+# %two_letters_code% gives short URL prefixes (/vi/, /fr/). Languages whose two-letter
+# code is shared with another project language get an explicit folder name instead
+# (also used as the URL prefix).
+languages_mapping: &languages_mapping
+  two_letters_code:
+    zh-CN: zh-Hans
+    zh-TW: zh-Hant
+    pt-BR: pt-BR
+    sr-CS: sr-Latn
+
+files:
+  # UI strings: code.json (React components), navbar, footer, docs sidebar labels.
+  - source: /i18n/en/**/*.json
+    translation: /i18n/%two_letters_code%/**/%original_file_name%
+    languages_mapping: *languages_mapping
+    # The blog is English-only, so its title and sidebar labels stay English too.
+    ignore:
+      - /i18n/en/docusaurus-plugin-content-blog/**/*
+    # Docusaurus JSON is { "id": { "message", "description" } }: the Chrome JSON layout,
+    # so descriptions reach translators as context instead of as strings to translate.
+    type: chrome
+    # Untranslated strings are left out rather than exported in English, so Docusaurus
+    # falls back to its own built-in theme translations (and English) for them.
+    skip_untranslated_strings: true
+
+  # Docs pages (.md and .mdx). Images and _category_.json stay put; category labels are
+  # translated through i18n/en/docusaurus-plugin-content-docs/current.json above.
+  # The blog is English-only and deliberately not listed.
+  - source: /docs/**/*.md*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    languages_mapping: *languages_mapping

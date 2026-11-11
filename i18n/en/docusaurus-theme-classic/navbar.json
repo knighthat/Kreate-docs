@@ -1,0 +1,34 @@
+{
+  "title": {
+    "message": "Kreate",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Kreate's logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.I'm a": {
+    "message": "I'm a",
+    "description": "Navbar item with label I'm a"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.Github": {
+    "message": "Github",
+    "description": "Navbar item with label Github"
+  },
+  "item.label.Developers": {
+    "message": "Developers",
+    "description": "Navbar item with label Developers"
+  },
+  "item.label.Users": {
+    "message": "Users",
+    "description": "Navbar item with label Users"
+  }
+}

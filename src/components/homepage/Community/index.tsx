@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
+import Translate from '@docusaurus/Translate';
 
 import TopTranslators from '@components/homepage/TopTranslators';
 import Discord from './Discord';
@@ -14,7 +15,9 @@ export default function Community(): ReactNode {
         <TopTranslators />
 
         <div className={styles.side}>
-          <h2 className={styles.heading}>Join the community</h2>
+          <h2 className={styles.heading}>
+            <Translate id='home.community.heading'>Join the community</Translate>
+          </h2>
           <Discord />
           <Crowdin />
         </div>

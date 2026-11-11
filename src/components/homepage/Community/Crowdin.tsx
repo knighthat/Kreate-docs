@@ -1,5 +1,6 @@
 import type { ReactNode, CSSProperties } from 'react';
 import { usePluginData } from '@docusaurus/useGlobalData';
+import Translate, { translate } from '@docusaurus/Translate';
 
 import translators from '@site/src/pages/translators/translators.json';
 import styles from './crowdin.module.css';
@@ -25,9 +26,9 @@ export default function Crowdin(): ReactNode {
   const stats = usePluginData( 'crowdin-stats-plugin' ) as CrowdinStats;
 
   const metrics = [
-    stats.available && { value: `${stats.progress}%`, label: 'Translated' },
-    { value: stats.languages ?? contributedLanguages, label: 'Languages' },
-    { value: translatorCount, label: 'Translators' },
+    stats.available && { value: `${stats.progress}%`, label: translate({ id: 'home.crowdin.translated', message: 'Translated', description: 'Label above the overall translation percentage' }) },
+    { value: stats.languages ?? contributedLanguages, label: translate({ id: 'home.crowdin.languages', message: 'Languages', description: 'Label above the number of languages' }) },
+    { value: translatorCount, label: translate({ id: 'home.crowdin.translators', message: 'Translators', description: 'Label above the number of translators' }) },
   ].filter( Boolean ) as { value: string | number, label: string }[];
 
   return(
@@ -48,7 +49,12 @@ export default function Crowdin(): ReactNode {
           <span className={styles.progressBar} aria-hidden='true' />
           {stats.completed !== null && (
             <span className={styles.progressNote}>
-              {stats.completed} of {stats.languages} languages fully translated
+              <Translate
+                id='home.crowdin.completed'
+                values={{ completed: stats.completed, total: stats.languages }}
+              >
+                {'{completed} of {total} languages fully translated'}
+              </Translate>
             </span>
           )}
         </div>
@@ -56,10 +62,10 @@ export default function Crowdin(): ReactNode {
 
       <div className={styles.actions}>
         <a className={styles.solid} href={TRANSLATE_URL} target='_blank' rel='noopener noreferrer'>
-          Translate
+          <Translate id='home.crowdin.translate' description='Button that opens the Crowdin project'>Translate</Translate>
         </a>
         <a className={styles.outline} href={REQUEST_LANGUAGE_URL} target='_blank' rel='noopener noreferrer'>
-          Request language
+          <Translate id='home.crowdin.requestLanguage'>Request language</Translate>
         </a>
       </div>
     </div>

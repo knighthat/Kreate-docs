@@ -2,12 +2,15 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@Iconify';
 import Link from '@docusaurus/Link';
+import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 import Highlights from './Highlights';
 
 
 type Source = {
+  /** Stable React key; titles are translated. */
+  key: string
   title: string
   icon: string
   points: string[]
@@ -15,32 +18,36 @@ type Source = {
   to: string
 };
 
-const sources: Source[] = [
+// A function so translate() runs at render time, in the visitor's locale.
+const getSources = (): Source[] => [
   {
+    key: 'youtube-music',
     title: 'YouTube Music',
     to: '/usr/features/sources/youtube-music',
     icon: 'simple-icons:youtubemusic',
     points: [
-      'Search and stream its huge catalogue',
-      'Albums, artists and playlists',
+      translate({ id: 'home.sources.youtube.point1', message: 'Search and stream its huge catalogue' }),
+      translate({ id: 'home.sources.youtube.point2', message: 'Albums, artists and playlists' }),
     ],
   },
   {
-    title: 'OpenSubsonic server',
+    key: 'opensubsonic',
+    title: translate({ id: 'home.sources.opensubsonic.title', message: 'OpenSubsonic server' }),
     to: '/usr/features/sources/opensubsonic',
     icon: 'mdi:server-network',
     points: [
-      'Connect to your own music server',
-      'Works with OpenSubsonic-compatible servers',
+      translate({ id: 'home.sources.opensubsonic.point1', message: 'Connect to your own music server' }),
+      translate({ id: 'home.sources.opensubsonic.point2', message: 'Works with OpenSubsonic-compatible servers' }),
     ],
   },
   {
-    title: 'On-device media',
+    key: 'local-files',
+    title: translate({ id: 'home.sources.local.title', message: 'On-device media' }),
     to: '/usr/features/sources/local-files',
     icon: 'mdi:folder-music',
     points: [
-      'Play music files stored on your phone',
-      'No internet connection needed',
+      translate({ id: 'home.sources.local.point1', message: 'Play music files stored on your phone' }),
+      translate({ id: 'home.sources.local.point2', message: 'No internet connection needed' }),
     ],
   },
 ];
@@ -73,14 +80,14 @@ export default function Features(): ReactNode {
     <section className={clsx(styles.section, 'padding-vert--xl')}>
       <div className='container'>
         <div className={styles.sources}>
-          {sources.map( source => <SourceCard key={source.title} {...source} /> )}
+          {getSources().map( source => <SourceCard {...source} key={source.key} /> )}
         </div>
 
         <Highlights />
 
         <div className={styles.more}>
           <Link className={styles.moreLink} to='/usr/features'>
-            And many more features <span aria-hidden='true'>→</span>
+            <Translate id='home.features.more'>And many more features</Translate> <span aria-hidden='true'>→</span>
           </Link>
         </div>
       </div>

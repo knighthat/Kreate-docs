@@ -54,5 +54,9 @@
   "copyright": {
     "message": "Copyright © 2026 Kreate. Built with <a href='https://docusaurus.io/' target=\"_blank\">Docusaurus</a>. Powered by <a href='https://vercel.com/' target=\"_blank\">Vercel</a>",
     "description": "The footer copyright"
+  },
+  "link.item.label.Credits": {
+    "message": "Credits",
+    "description": "The label of footer link with label=Credits linking to usr/credits"
   }
 }

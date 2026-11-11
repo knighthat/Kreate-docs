@@ -198,6 +198,10 @@ const config: Config = {
               label: 'Translators',
               to: 'translators',
             },
+            {
+              label: 'Credits',
+              to: 'usr/credits',
+            },
           ],
         },
       ],

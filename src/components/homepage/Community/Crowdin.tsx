@@ -2,7 +2,7 @@ import type { ReactNode, CSSProperties } from 'react';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import Translate, { translate } from '@docusaurus/Translate';
 
-import translators from '@site/src/pages/translators/translators.json';
+import translators from '@site/.generated/translators.json';
 import styles from './crowdin.module.css';
 
 

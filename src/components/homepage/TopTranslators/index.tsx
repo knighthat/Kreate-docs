@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate from '@docusaurus/Translate';
 
-import translators from '@site/src/pages/translators/translators.json';
+import translators from '@site/.generated/translators.json';
 import styles from './styles.module.css';
 
 
@@ -17,7 +17,7 @@ type Translator = {
 const LIMIT = 5;
 const MEDALS = [ styles.gold, styles.silver, styles.bronze ];
 
-// translators.json is refreshed by the update-translators workflow; sort here
+// .generated/translators.json is built by crowdin-translators-plugin.js; sort here
 // rather than relying on its order.
 const top = ( translators as Translator[] )
   .slice()

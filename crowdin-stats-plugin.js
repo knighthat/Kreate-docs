@@ -2,13 +2,13 @@
  * Fetches translation progress from the Crowdin API at build time (server side)
  * and exposes it as global data (`usePluginData('crowdin-stats-plugin')`).
  *
- * Environment variables (same names as .github/workflows/update-translators.yaml):
+ * Environment variables (shared with crowdin-translators-plugin.js):
  *   CROWDIN_TOKEN       Personal access token with read access to the project
  *   CROWDIN_PROJECT_ID  Numeric project id
  *
  * The token never reaches the browser; only the aggregated numbers below do.
  * When either variable is missing or the request fails, `available` is false
- * and the site falls back to counts from translators.json.
+ * and the site falls back to counts from .generated/translators.json.
  */
 export default function CrowdinStatsPlugin() {
   return {

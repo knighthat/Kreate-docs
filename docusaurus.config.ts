@@ -282,6 +282,7 @@ const config: Config = {
       },
     ],
     './recent-posts-plugin.js',
+    './crowdin-translators-plugin.js',
     './crowdin-stats-plugin.js',
     ['./github-stats-plugin.js', { repo: APP_REPO_PATH }],
     [

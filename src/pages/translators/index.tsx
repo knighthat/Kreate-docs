@@ -1,6 +1,6 @@
 import React, { type ReactNode } from 'react';
 
-import rawJson from './translators.json';
+import rawJson from '@site/.generated/translators.json';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';

@@ -7,21 +7,6 @@
     "message": "Feature-rich & customizable music player",
     "description": "Homepage meta description"
   },
-  "translators.avatarAlt": {
-    "message": "{name} avatar"
-  },
-  "translators.table.name": {
-    "message": "Name"
-  },
-  "translators.table.translated": {
-    "message": "Translated (words)"
-  },
-  "translators.table.languages": {
-    "message": "Languages"
-  },
-  "translators.table.joined": {
-    "message": "Member since"
-  },
   "translators.title": {
     "message": "Translators"
   },
@@ -996,5 +981,25 @@
   },
   "download.leadBuilds": {
     "message": "{app} comes in three builds. Pick one below, or read {link} for a full comparison."
+  },
+  "translators.languages": {
+    "message": "Languages"
+  },
+  "translators.words": {
+    "message": "{count} words",
+    "description": "Number of words a translator has translated; {count} is already formatted"
+  },
+  "translators.since": {
+    "message": "Since {date}",
+    "description": "{date} is a month and year, e.g. \"Apr 2025\""
+  },
+  "translators.heading": {
+    "message": "Translators"
+  },
+  "translators.lead": {
+    "message": "{app} is translated by {count} volunteers. Thank you for bringing it to your language."
+  },
+  "translators.join": {
+    "message": "Help translate"
   }
 }

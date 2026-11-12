@@ -3,5 +3,15 @@
 }
 
 .badge:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    transition: none;
+  }
+
+  .badge:hover {
+    transform: none;
+  }
 }

@@ -913,15 +913,6 @@
   "download.heading": {
     "message": "Download {app}"
   },
-  "download.lead": {
-    "message": "Pick wherever you prefer to get your apps from."
-  },
-  "download.verify": {
-    "message": "Not sure an APK is genuine? You can {link}."
-  },
-  "download.verifyLink": {
-    "message": "verify it here"
-  },
   "home.banner.moreDownloads": {
     "message": "More downloads",
     "description": "Button above the download badges, opens the page listing every download source"
@@ -960,5 +951,50 @@
   "theme.SearchBar.label": {
     "message": "Search",
     "description": "The ARIA label and placeholder for search button"
+  },
+  "download.foss.title": {
+    "message": "FOSS build"
+  },
+  "download.foss.description": {
+    "message": "Fully open source, with no telemetry and no closed-source libraries. Updates come through the store you install it from."
+  },
+  "download.github.title": {
+    "message": "GitHub build"
+  },
+  "download.github.description": {
+    "message": "The newest version as soon as it is released, with a built-in updater and opt-in telemetry. Obtainium and OpenAPK install the same APK."
+  },
+  "download.patreon.title": {
+    "message": "Patreon build"
+  },
+  "download.patreon.description": {
+    "message": "Advanced features for paid supporters. Some of its libraries are closed source, so it comes under a separate license."
+  },
+  "download.next.whichApk": {
+    "message": "Which APK do I need?"
+  },
+  "download.next.install": {
+    "message": "Installing the APK"
+  },
+  "download.next.verify": {
+    "message": "Verify your download"
+  },
+  "download.leadLink": {
+    "message": "Choosing your build"
+  },
+  "download.learnMore": {
+    "message": "Learn more"
+  },
+  "download.switching": {
+    "message": "Switching to a different build may not install as an update. If Android refuses it, {link}, uninstall, then install the new build and restore."
+  },
+  "download.switchingLink": {
+    "message": "back up your library"
+  },
+  "download.next.label": {
+    "message": "Next steps"
+  },
+  "download.leadBuilds": {
+    "message": "{app} comes in three builds. Pick one below, or read {link} for a full comparison."
   }
 }

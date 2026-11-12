@@ -60,7 +60,7 @@ F-Droid repository. New versions usually appear there within a few hours of a re
 add the IzzyOnDroid repository to your F-Droid client, or use a client that includes it, such as
 Droid-ify or Neo Store.
 
-## <Icon icon='mdi:github' /> GitHub build
+## <Icon icon='mdi:github' /> GitHub build {#github-build}
 
 The GitHub build is published on the
 [releases page](https://github.com/knighthat/Kreate/releases/latest) the moment a version is
@@ -83,7 +83,7 @@ You can also get the GitHub build through:
 - <OpenAPKLogo width='20px' /> **[OpenAPK](https://www.openapk.net/kreate/me.knighthat.kreate/)**,
   a website that mirrors the APK.
 
-## <Icon icon='simple-icons:patreon' /> Patreon build
+## <Icon icon='simple-icons:patreon' /> Patreon build {#patreon-build}
 
 The Patreon build is only available on [Patreon](https://www.patreon.com/knighthat), for paid
 supporters. It offers more advanced features than the other builds.

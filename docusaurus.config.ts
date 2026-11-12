@@ -252,6 +252,9 @@ const config: Config = {
     ],
   ],
 
+  // Click an image in a doc or blog post to see it full screen.
+  clientModules: ['./src/clientModules/imageLightbox.ts'],
+
   plugins: [
     './custom-paths-plugin.js',
     ['./offline-icons-plugin.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],

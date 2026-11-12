@@ -1,4 +1,4 @@
-// Written at build time by offline-icons-plugin.js (see contentLoaded → createData).
+// Written at build time by offline-icons.js (see contentLoaded → createData).
 declare module '@generated/offline-icons-plugin/default/icons.json' {
   import type { IconifyJSON } from '@iconify/react';
 

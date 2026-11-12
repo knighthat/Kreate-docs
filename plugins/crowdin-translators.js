@@ -5,7 +5,7 @@ import path from 'node:path';
  * Builds .generated/translators.json (gitignored) from Crowdin's "top members"
  * report at build time, before the pages that import it are bundled.
  *
- * Environment variables (shared with crowdin-stats-plugin.js):
+ * Environment variables (shared with crowdin-stats.js):
  *   CROWDIN_TOKEN       Personal access token with access to the project's reports
  *   CROWDIN_PROJECT_ID  Numeric project id
  *   PROJECT_OWNER_ID    Optional. Crowdin user id left out of the list; defaults to

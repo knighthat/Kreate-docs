@@ -1,5 +1,5 @@
 /**
- * Registers the icons bundled by offline-icons-plugin.js with @iconify/react.
+ * Registers the icons bundled by offline-icons.js with @iconify/react.
  * Client modules load before the first render, on the server too, so icons
  * render straight into the HTML without any request to api.iconify.design.
  */

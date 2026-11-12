@@ -17,7 +17,7 @@ type Translator = {
 const LIMIT = 5;
 const MEDALS = [ styles.gold, styles.silver, styles.bronze ];
 
-// .generated/translators.json is built by crowdin-translators-plugin.js; sort here
+// .generated/translators.json is built by crowdin-translators.js; sort here
 // rather than relying on its order.
 const top = ( translators as Translator[] )
   .slice()

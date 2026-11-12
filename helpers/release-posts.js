@@ -10,7 +10,7 @@ import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:
 import path from 'node:path';
 
 // Docusaurus loads config files as CommonJS, so `import.meta` isn't available here.
-export const RELEASE_POSTS_DIR = path.join(__dirname, '.generated/releases');
+export const RELEASE_POSTS_DIR = path.join(__dirname, '../.generated/releases');
 
 const yaml = (value) => JSON.stringify(value); // a JSON string is a valid YAML scalar
 

@@ -2,7 +2,7 @@
  * Fetches translation progress from the Crowdin API at build time (server side)
  * and exposes it as global data (`usePluginData('crowdin-stats-plugin')`).
  *
- * Environment variables (shared with crowdin-translators-plugin.js):
+ * Environment variables (shared with crowdin-translators.js):
  *   CROWDIN_TOKEN       Personal access token with read access to the project
  *   CROWDIN_PROJECT_ID  Numeric project id
  *

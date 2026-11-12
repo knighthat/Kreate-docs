@@ -14,7 +14,7 @@ import { Resvg } from '@resvg/resvg-js';
 import sharp from 'sharp';
 
 // Docusaurus loads config files as CommonJS, so `import.meta` isn't available here.
-const ROOT = __dirname;
+const ROOT = path.join(__dirname, '..');
 const BASE_IMAGE = path.join(ROOT, 'static/img/blog_background.png');
 const FONT = path.join(ROOT, 'static/fonts/JetBrainsMono-ExtraBold.ttf');
 

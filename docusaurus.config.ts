@@ -4,8 +4,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { APP_NAME, APP_REPO_PATH, DOC_REPO_PATH, GITHUB_URL, OWNER } from './constants';
-import { addReleaseThumbnails, GENERATED_STATIC_DIR } from './release-thumbnails.js';
-import { generateReleasePosts, RELEASE_POSTS_DIR } from './release-posts.js';
+import { addReleaseThumbnails, GENERATED_STATIC_DIR } from '#helpers/release-thumbnails.js';
+import { generateReleasePosts, RELEASE_POSTS_DIR } from '#helpers/release-posts.js';
 
 // Build-time images (release thumbnails) are served from here as well as static/.
 fs.mkdirSync(GENERATED_STATIC_DIR, { recursive: true });
@@ -256,8 +256,8 @@ const config: Config = {
   clientModules: ['./src/clientModules/imageLightbox.ts'],
 
   plugins: [
-    './custom-paths-plugin.js',
-    ['./offline-icons-plugin.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],
+    '#plugins/custom-paths.js',
+    ['#plugins/offline-icons.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],
     [
       // The latest GitHub releases as posts, written at build time by release-posts.js
       // (see createConfig below). A second blog, kept out of /blog but using its layout;
@@ -281,12 +281,12 @@ const config: Config = {
         processBlogPosts: addReleaseThumbnails,
       },
     ],
-    './recent-posts-plugin.js',
-    './crowdin-translators-plugin.js',
-    './crowdin-stats-plugin.js',
-    ['./github-stats-plugin.js', { repo: APP_REPO_PATH }],
+    '#plugins/recent-posts.js',
+    '#plugins/crowdin-translators.js',
+    '#plugins/crowdin-stats.js',
+    ['#plugins/github-stats.js', { repo: APP_REPO_PATH }],
     [
-      './discord-invite-plugin.js',
+      '#plugins/discord-invite.js',
       {
         code: 'WYr9ZgJzpx',
         fallback: {

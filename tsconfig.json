@@ -8,7 +8,9 @@
       "@site/*": [ "./*" ],
       "@components/*": [ "./src/components/*" ],
       "@utils/*": [ "./src/util/*" ],
-      "@Iconify": [ "./src/components/Iconify" ]
+      "@Iconify": [ "./src/components/Iconify" ],
+      "#plugins/*": [ "./plugins/*" ],
+      "#helpers/*": [ "./helpers/*" ]
     }
   },
   "exclude": [".docusaurus", "build"]

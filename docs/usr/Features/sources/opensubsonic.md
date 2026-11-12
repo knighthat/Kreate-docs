@@ -10,6 +10,12 @@ other servers.
 
 Settings: **Settings → Network → Configure OpenSubsonic**.
 
+<div className="screens">
+
+![OpenSubsonic settings page, signed in to a Navidrome server](../img/configure-opensubsonic.webp)
+
+</div>
+
 ## Connecting
 
 1. Turn on the page's main switch. While it's off, the server is never contacted.
@@ -27,7 +33,9 @@ If your server uses a certificate it signed itself:
 
 1. Turn on **Allow self-signed certificate**.
 2. Kreate shows the certificate (issued to, valid from/until, SHA-256 fingerprint) and asks
-   **Trust this certificate?** Trust it only if you set up this server.
+   **Trust this certificate?** Tap **Accept** only if you set up this server; otherwise tap **Deny**.
+
+![Trust this certificate? dialog showing who the certificate is issued to, its validity dates and SHA-256 fingerprint](../img/trust-certificate.webp)
 
 From then on only that certificate is accepted. If the server presents a **different** one,
 Kreate stops and asks again (**Certificate changed**): if you didn't replace it, someone may be

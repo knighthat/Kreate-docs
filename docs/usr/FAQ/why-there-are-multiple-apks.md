@@ -1,64 +1,72 @@
 ---
 id: multiple-apks
 title: Why are there multiple APKs?
-description: "Why Kreate ships several APKs per release, what R8 and ABI splits do, and which file to download for your phone."
+description: "Why each Kreate release has several APKs, what the CPU-specific ones are and which file to download for your phone."
+slug: /usr/faq/multiple-apks
 ---
 
-The developers of Kreate always aim for better performance. Consequencially,
-some actions require us to make separate builds of the same app to achive
-this goal.
+Each Kreate release on GitHub comes with several APKs. They are the same app, built for different
+phones.
 
-## 📋 What are these processes?
+## The files
 
-Currently, Kreate uses 2 main optimization processes. These optmizations include:
+| File | Build | For |
+| --- | --- | --- |
+| `kreate-universal.apk` | GitHub | Every phone |
+| `kreate-arm64.apk` | GitHub | 64-bit ARM phones (most phones) |
+| `kreate-armv7.apk` | GitHub | 32-bit ARM phones (older or low-end phones) |
+| `kreate-x86_64.apk` | GitHub | 64-bit Intel/AMD devices |
+| `kreate-x86.apk` | GitHub | 32-bit Intel/AMD devices |
+| `kreate-foss.apk` | FOSS | Every phone |
 
-1. [R8](https://www.thelasttech.com/android/what-is-r8-optimizer-in-android-development) for _code minification_ (remove unused code and assets)
-2. Build app for a specific [instruction set](https://en.wikipedia.org/wiki/Instruction_set_architecture) ([ABI](https://developer.android.com/ndk/guides/abis))
+The Patreon build comes in the same five variants (universal plus four CPU types) and is downloaded
+from Patreon. See [Choosing your build](/usr/choosing-your-build) for how the GitHub, FOSS and
+Patreon builds differ.
 
-## ❓ Why?
+## Why build for each CPU?
 
-R8 is just a process of removing unused code, assets and alike during the build
-process to ensure what's needed are kept and nothing else.
+Kreate is written in Kotlin, but some of the libraries it uses contain native code: code compiled
+directly for a phone's processor. Native code has to be compiled separately for each type of
+processor (each *ABI*), so an app that runs everywhere has to carry one copy for each.
 
-ABI is a bit more complicated than that.  But it can be distilled down to:
-***Remove binaries that the CPU can't process***.
+Your phone only ever uses one of those copies. A CPU-specific APK carries only the copy for one
+type of processor, so it is a smaller download and takes less space once installed.
 
-### In-depth explanation
+## Which one should I download?
 
-Even though Kreate is written in [Kotlin](https://kotlinlang.org) - a
-[high-level programing language](https://en.wikipedia.org/wiki/High-level_programming_language).
-Kreate uses some 3rd party libraries that compiled partially or wholy to binaries.
+**If you are not sure, download `kreate-universal.apk`.** It works on every phone.
 
-Due to the nature of lowlevel binary code,
-it must be written for each intruction set.\
-This means multiple binaries for the same function. And ofcourse, it is wasteful
-because your phone can only process 1 of the binary files, other files are there
-for the just-in-case situation.
+If you want the smaller file, pick the one for your phone's processor:
 
-Here comes the ABI splitting, this process tells the compiler that the output APK
-can only be installed by CPU with this instruciton set,
-so remove other binaries file.
+- Almost every phone from the last several years is **64-bit ARM**: `kreate-arm64.apk`.
+- Some older or low-end phones are **32-bit ARM**: `kreate-armv7.apk`.
+- **x86** files are for Chromebooks, emulators and a few older Intel tablets.
 
-Combining this process with R8 produces the smallest file possible with truly needed
-code and nothing else.
+To check, install a hardware info app such as CPU-Z and look for the instruction set, or ABI. You
+can also drop an APK onto the [verify page](/verify), which shows the CPU types the file supports.
 
-## 🤔 What can it do to profit the users?
+A CPU-specific APK won't install on a phone with a different processor. Android refuses it with
+an error like this one, here from installing `kreate-x86_64.apk` on an ARM phone:
 
-The R8's lifting most of the weight in current builds,
-as it reduces the size (aprox.) by half.
+![Android dialog: App not installed as app is not compatible with your phone](./img/multiple-apks-not-compatible.webp)
 
-APKs for inidividual architecture are sitll in experimental
-phrases. The change will have more impact as we implement more
-features, but for now, the impact is minimal.
+If you see it, download `kreate-universal.apk` or the APK for your phone's processor instead.
 
-## 📱 Available options
+## Can I switch between them?
 
-Currently, there are 4 main architectures:
-`armeabi-v7a`, `arm64-v8a`, `x86`, and `x86_64`.
+Yes. All the GitHub APKs are the same app with the same signature, so you can install one over
+another, for example to move from `kreate-universal.apk` to `kreate-arm64.apk`. Your library and
+settings are kept.
 
-You must confirm your phone's cpu before downloading the appropriate
-version, because one can't be installed on another.
+Moving between the GitHub, FOSS and Patreon builds is different. If the installed build is signed
+with a different key, Android refuses the new APK:
 
-## ♾️ Is there a universal build?
+![Android dialog: App not installed as package conflicts with an existing package](./img/multiple-apks-package-conflict.webp)
 
-**YES**! `Kreate-release.apk` and `Kreate-uncompressed.apk` are universal builds.
+See [Switching between builds](/usr/choosing-your-build#switching-between-builds) for how to move
+without losing your library.
+
+## What about F-Droid and IzzyOnDroid?
+
+They ship `kreate-foss.apk`. Your store installs and updates it for you, so there is no file to
+pick.

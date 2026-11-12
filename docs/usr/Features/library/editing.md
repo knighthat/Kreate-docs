@@ -16,6 +16,12 @@ Open **Edit** from:
 
 ## Fields
 
+<div className="screens">
+
+![Edit song screen with picture, title and artists](./img/edit-song.webp) ![Edit album screen with picture, title and artists](./img/edit-album.webp) ![Edit artist screen with picture and name](./img/edit-artist.webp)
+
+</div>
+
 | Field | Notes |
 |-------|-------|
 | **Title** / **Name** | |

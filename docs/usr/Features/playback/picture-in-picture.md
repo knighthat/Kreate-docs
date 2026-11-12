@@ -14,6 +14,12 @@ Turn it on under **Settings → General → Picture in picture**.
 - The **cover**, in a square window, or
 - the **synced lyrics**, in a wide window, when you left the app from the Lyrics page.
 
+<div className="screens">
+
+![Picture-in-picture window showing the cover over the home screen](./img/pip-cover.webp) ![Picture-in-picture window showing synced lyrics over the home screen](./img/pip-lyrics.webp)
+
+</div>
+
 The window has **previous**, **play/pause** and **next** buttons.
 
 On Android 12 and newer the window opens by itself when you go home; on Android 11 it opens when you

@@ -14,6 +14,10 @@ delete them, separate from the [song cache](./storage.md#song-cache).
 - A cached song: tap **Cached** in its menu and move it to your downloads. If the cached copy is
   worse than the download quality set now, the song is downloaded again in the better quality.
 
+The button in the song menu shows where the song stands:
+
+![Song menu button in its four states: Download, Downloading, Downloaded and Cached](./img/download-states.webp)
+
 Downloads use the stream quality of the song's source for the current network.
 
 Downloaded songs show a **downloaded** badge, cached ones a **cached** badge.

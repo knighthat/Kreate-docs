@@ -69,6 +69,12 @@ long playlists. Playlists you can't change show their rows grayed out.
 
 ⋮ → **Edit**:
 
+<div className="screens">
+
+![Edit playlist screen for a local playlist, with name and Pin to the top](./img/edit-playlist.webp) ![Edit playlist screen for a YouTube Music playlist, with name, description and Who can see it](./img/edit-online-playlist.webp)
+
+</div>
+
 - **Local**: name, **Pin to the top** and a picture from your device (tap the pencil over the
   picture). **Reset** drops your changes; **Apply** saves them.
 - **YouTube Music / OpenSubsonic**: name, description and visibility, sent to the source on

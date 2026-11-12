@@ -12,6 +12,12 @@ Signing in brings **your** library along and makes suggestions yours.
 
 Settings: **Settings → Network → Configure YouTube Music**.
 
+<div className="screens">
+
+![YouTube Music settings page, signed in, with the sync switches](../img/configure-youtube-music.webp)
+
+</div>
+
 ## Signing in
 
 1. Turn on **Use YouTube Music account**.

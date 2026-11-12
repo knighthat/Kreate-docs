@@ -190,3 +190,25 @@
     scroll-snap-align: start;
   }
 }
+
+/* Annotated step-by-step screenshots (callouts are part of the image), so they stay big enough to
+   read: <div className="tutorial">…</div> */
+.tutorial {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: var(--ifm-leading);
+}
+
+.tutorial p {
+  display: contents;
+}
+
+.tutorial img {
+  flex: 1 1 280px;
+  min-width: 0;
+  max-width: 340px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}

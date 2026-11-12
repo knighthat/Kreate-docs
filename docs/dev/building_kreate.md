@@ -53,7 +53,7 @@ and paste it in `composeApp/src/androidMain/res/raw/release_notes.txt`
 
 ## 🔠 Your options
 
-There's no difference between these 2 options, only their sizes. Find explanation [here](/usr/faq/minified_and_full)
+There's no difference between these 2 options, only their sizes.
 
 ### Release (compressed)
 

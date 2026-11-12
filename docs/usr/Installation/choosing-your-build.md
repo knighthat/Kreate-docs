@@ -23,7 +23,7 @@ how they update and where you get them.
 | **Features** | Core features | Core features | Core features plus advanced ones |
 | **License** | Open source | Open source | A separate license |
 | **Price** | Free | Free | For paid supporters |
-| **Get it from** | F-Droid, IzzyOnDroid | GitHub, Obtainium, OpenAPK | Patreon |
+| **Get it from** | F-Droid, IzzyOnDroid, GitHub (`kreate-foss.apk`) | GitHub, Obtainium, OpenAPK | Patreon |
 
 :::tip Not sure which one to pick?
 
@@ -64,7 +64,9 @@ Droid-ify or Neo Store.
 
 The GitHub build is published on the
 [releases page](https://github.com/knighthat/Kreate/releases/latest) the moment a version is
-ready, so it is always the newest.
+ready, so it is always the newest. Each release has a universal APK and one for each type of
+processor; [Why are there multiple APKs?](/usr/faq/multiple-apks) explains which to pick. The
+same page also has `kreate-foss.apk`, the FOSS build.
 
 It includes some third-party services that the FOSS build leaves out:
 
@@ -79,8 +81,7 @@ You can also get the GitHub build through:
   GitHub releases page and notifies you of new versions. It installs the same APK as GitHub, so you
   get the built-in updater either way.
 - <OpenAPKLogo width='20px' /> **[OpenAPK](https://www.openapk.net/kreate/me.knighthat.kreate/)**,
-  a website that mirrors the APK. It serves the
-  [uncompressed](/usr/faq/minified_and_full) APK, which is a larger download.
+  a website that mirrors the APK.
 
 ## <Icon icon='simple-icons:patreon' /> Patreon build
 
@@ -106,3 +107,6 @@ refuses to install it over your current app:
 
 To check that an APK really comes from Kreate, see
 [How to verify signatures](/usr/how-to-verify-signatures).
+
+Downloaded an APK from GitHub or Patreon? [Installing the APK](./installing-the-apk.md) walks you
+through installing it.

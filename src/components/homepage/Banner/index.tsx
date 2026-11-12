@@ -38,7 +38,7 @@ export default function Banner(): ReactNode {
             </Translate>
           </h1>
           <div className={styles.actions}>
-            <Link className='button button--primary button--lg' to='/dev'>
+            <Link className='button button--primary button--lg' to='/usr'>
               <Translate id='home.banner.readDocs'>Read docs</Translate>
             </Link>
             <Link className={clsx('button button--outline button--lg', styles.action)} to='/download'>

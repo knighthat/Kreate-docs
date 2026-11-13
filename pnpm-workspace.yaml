@@ -1,2 +1,6 @@
 allowBuilds:
   core-js: false
+overrides:
+  # webpack-dev-server's proxy (http-proxy-middleware@2) pulls in http-proxy, unmaintained
+  # since 2020 and still calling the deprecated util._extend (DEP0060). Drop-in rewrite.
+  http-proxy: npm:http-proxy-3@2.0.2

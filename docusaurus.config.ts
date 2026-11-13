@@ -257,6 +257,7 @@ const config: Config = {
 
   plugins: [
     '#plugins/custom-paths.js',
+    '#plugins/dev-api-proxy.js',
     ['#plugins/offline-icons.js', { prefixes: ['mdi', 'bi', 'simple-icons'] }],
     [
       // The latest GitHub releases as posts, written at build time by release-posts.js

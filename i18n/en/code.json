@@ -132,29 +132,11 @@
   "verify.scan.errorDetail": {
     "message": "Uploading this release to VirusTotal failed, so there is no report for it."
   },
-  "verify.scan.izzy": {
-    "message": "Scanned by IzzyOnDroid"
-  },
-  "verify.scan.izzyDetail": {
-    "message": "This is the IzzyOnDroid (FOSS) build. Kreate doesn't upload it to VirusTotal itself: IzzyOnDroid scans every APK it publishes, so VirusTotal should already have a report for this exact file. A very new release may take up to a day to appear."
-  },
-  "verify.scan.unknown": {
-    "message": "This build isn't in Kreate's scan records"
-  },
-  "verify.scan.unknownDetail": {
-    "message": "That doesn't mean anything is wrong: the signature check above already confirms the file is genuine. Releases published before scanning was switched on, very new GitLab releases (they take about 15 minutes to be recorded) and FOSS builds have no scan record."
-  },
   "verify.scan.unavailable": {
     "message": "Scan records are unavailable right now"
   },
-  "verify.scan.unavailableDetail": {
-    "message": "Kreate's scan service couldn't be reached. Try again in a few minutes."
-  },
   "verify.scan.failed": {
     "message": "The scan report couldn't be loaded"
-  },
-  "verify.scan.failedDetail": {
-    "message": "Something went wrong on our side. Please report this on GitHub."
   },
   "verify.scan.heading": {
     "message": "VirusTotal scan"
@@ -205,9 +187,6 @@
   "verify.zone.valid": {
     "message": "Genuine {app} APK"
   },
-  "verify.zone.validHint": {
-    "message": "Signed by {signer}. Safe to install."
-  },
   "verify.zone.invalid": {
     "message": "Not a genuine {app} APK"
   },
@@ -219,9 +198,6 @@
   },
   "verify.official.summary": {
     "message": "Official signing certificate"
-  },
-  "verify.official.body": {
-    "message": "Official APKs from GitHub and IzzyOnDroid are signed with this certificate. You can also check an APK yourself with {command}."
   },
   "verify.sdk.preview": {
     "message": "Preview \"{codename}\"",
@@ -1001,5 +977,41 @@
   },
   "translators.join": {
     "message": "Help translate"
+  },
+  "verify.scan.foss": {
+    "message": "FOSS build, scanned by IzzyOnDroid"
+  },
+  "verify.scan.fossDetail": {
+    "message": "This is the FOSS build. {app} doesn't upload it to VirusTotal itself, but IzzyOnDroid scans every APK it publishes, and F-Droid and GitHub ship the same file. VirusTotal should already have a report for it, though a very new release may take up to a day to appear."
+  },
+  "verify.scan.notRecorded": {
+    "message": "This build isn't in {app}'s scan records"
+  },
+  "verify.scan.notRecordedDetail": {
+    "message": "That doesn't mean anything is wrong: the signature check above already confirms the file is genuine. Releases published before scanning was switched on have no scan record, and very new releases take about 15 minutes to be recorded."
+  },
+  "verify.scan.serviceUnreachable": {
+    "message": "{app}'s scan service couldn't be reached. Try again in a few minutes."
+  },
+  "verify.scan.failedReport": {
+    "message": "Something went wrong on our side. Please {link}."
+  },
+  "verify.scan.failedReportLink": {
+    "message": "report this on GitHub"
+  },
+  "verify.zone.validGenuine": {
+    "message": "Signed by {app}'s developers and not modified since."
+  },
+  "verify.getOfficial": {
+    "message": "Get {app} from an official source"
+  },
+  "verify.official.text": {
+    "message": "Official APKs from GitHub, F-Droid, IzzyOnDroid and Patreon are all signed with this certificate. You can also check an APK yourself with {command}."
+  },
+  "verify.moreInfo": {
+    "message": "Want to know why signatures matter, or check on the command line? Read {link}."
+  },
+  "verify.moreInfoLink": {
+    "message": "How to verify signatures"
   }
 }

@@ -152,6 +152,13 @@
   text-align: center;
 }
 
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 .fingerprint {
   margin-top: 1rem;
   font-size: 0.85rem;
@@ -179,6 +186,11 @@
 
 .details li {
   margin-bottom: 0.75rem;
+}
+
+.moreInfo {
+  margin-top: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
 }
 
 /* APK details (shown after a valid result) */

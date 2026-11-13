@@ -1,8 +1,10 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import clsx from 'clsx';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 
 import { checkScan, reportUrl, type ScanResult } from '@utils/apk/scan';
+import { APP_NAME, APP_REPO_PATH, GITHUB_URL } from '@site/constants';
 import styles from './styles.module.css';
 
 
@@ -16,13 +18,14 @@ function ReportLink({ href }: { href: string }): ReactNode {
   );
 }
 
-function formatDate(iso: string): string | undefined {
+function formatDate(iso: string, locale: string): string | undefined {
   const d = new Date(iso);
-  return isNaN(d.getTime()) ? undefined : d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+  return isNaN(d.getTime()) ? undefined : d.toLocaleString(locale, { dateStyle: 'medium', timeStyle: 'short' });
 }
 
 
-function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isIzzy: boolean; retry: () => void }): ReactNode {
+function Body({ view, sha256, isFoss, retry }: { view: View; sha256: string; isFoss: boolean; retry: () => void }): ReactNode {
+  const { i18n } = useDocusaurusContext();
   const retryButton = <button className="button button--secondary button--sm" onClick={retry}>
     <Translate id='verify.scan.checkAgain'>Check again</Translate>
   </button>;
@@ -37,7 +40,7 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
       );
 
     case 'clean': {
-      const date = formatDate(view.checkedAt);
+      const date = formatDate(view.checkedAt, i18n.currentLocale);
       return (
         <>
           <p className={clsx(styles.scanHeadline, styles.scanClean)}>
@@ -54,7 +57,7 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
     }
 
     case 'flagged': {
-      const date = formatDate(view.checkedAt);
+      const date = formatDate(view.checkedAt, i18n.currentLocale);
       const parts =
         view.malicious > 0 && view.suspicious > 0
           ? translate({ id: 'verify.scan.flaggedBoth', message: 'Flagged {malicious} as malicious and {suspicious} as suspicious.' }, { malicious: view.malicious, suspicious: view.suspicious })
@@ -109,12 +112,12 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
       );
 
     case 'unknown':
-      if (isIzzy) return (
+      if (isFoss) return (
         <>
-          <p className={styles.scanHeadline}><Translate id='verify.scan.izzy'>Scanned by IzzyOnDroid</Translate></p>
+          <p className={styles.scanHeadline}><Translate id='verify.scan.foss'>FOSS build, scanned by IzzyOnDroid</Translate></p>
           <p className={styles.muted}>
-            <Translate id='verify.scan.izzyDetail'>
-              {'This is the IzzyOnDroid (FOSS) build. Kreate doesn\'t upload it to VirusTotal itself: IzzyOnDroid scans every APK it publishes, so VirusTotal should already have a report for this exact file. A very new release may take up to a day to appear.'}
+            <Translate id='verify.scan.fossDetail' values={{ app: APP_NAME }}>
+              {'This is the FOSS build. {app} doesn\'t upload it to VirusTotal itself, but IzzyOnDroid scans every APK it publishes, and F-Droid and GitHub ship the same file. VirusTotal should already have a report for it, though a very new release may take up to a day to appear.'}
             </Translate>
           </p>
           <ReportLink href={reportUrl(sha256)} />
@@ -122,10 +125,10 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
       );
       return (
         <>
-          <p className={styles.scanHeadline}><Translate id='verify.scan.unknown'>This build isn't in Kreate's scan records</Translate></p>
+          <p className={styles.scanHeadline}><Translate id='verify.scan.notRecorded' values={{ app: APP_NAME }}>{'This build isn\'t in {app}\'s scan records'}</Translate></p>
           <p className={styles.muted}>
-            <Translate id='verify.scan.unknownDetail'>
-              {'That doesn\'t mean anything is wrong: the signature check above already confirms the file is genuine. Releases published before scanning was switched on, very new GitLab releases (they take about 15 minutes to be recorded) and FOSS builds have no scan record.'}
+            <Translate id='verify.scan.notRecordedDetail'>
+              {'That doesn\'t mean anything is wrong: the signature check above already confirms the file is genuine. Releases published before scanning was switched on have no scan record, and very new releases take about 15 minutes to be recorded.'}
             </Translate>
           </p>
           <ReportLink href={reportUrl(sha256)} />
@@ -137,7 +140,7 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
         <>
           <p className={styles.scanHeadline}><Translate id='verify.scan.unavailable'>Scan records are unavailable right now</Translate></p>
           <p className={styles.muted}>
-            <Translate id='verify.scan.unavailableDetail'>Kreate's scan service couldn't be reached. Try again in a few minutes.</Translate>
+            <Translate id='verify.scan.serviceUnreachable' values={{ app: APP_NAME }}>{'{app}\'s scan service couldn\'t be reached. Try again in a few minutes.'}</Translate>
           </p>
           {retryButton}
         </>
@@ -148,7 +151,12 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
         <>
           <p className={styles.scanHeadline}><Translate id='verify.scan.failed'>The scan report couldn't be loaded</Translate></p>
           <p className={styles.muted}>
-            <Translate id='verify.scan.failedDetail'>Something went wrong on our side. Please report this on GitHub.</Translate>
+            <Translate
+              id='verify.scan.failedReport'
+              values={{ link: <a href={`${GITHUB_URL}/${APP_REPO_PATH}/issues`} target="_blank" rel="noopener noreferrer"><Translate id='verify.scan.failedReportLink'>report this on GitHub</Translate></a> }}
+            >
+              {'Something went wrong on our side. Please {link}.'}
+            </Translate>
           </p>
         </>
       );
@@ -159,9 +167,9 @@ function Body({ view, sha256, isIzzy, retry }: { view: View; sha256: string; isI
 /**
  * VirusTotal report for a verified APK. Only the file's SHA-256 is sent to Kreate's API.
  *
- * @param isIzzy The IzzyOnDroid (FOSS) build, which Kreate doesn't upload: IzzyOnDroid scans it instead.
+ * @param isFoss The FOSS build, which Kreate doesn't upload: IzzyOnDroid scans it instead.
  */
-export default function ScanReport({ sha256, isIzzy = false }: { sha256: string; isIzzy?: boolean }): ReactNode {
+export default function ScanReport({ sha256, isFoss = false }: { sha256: string; isFoss?: boolean }): ReactNode {
   const [view, setView] = useState<View>({ status: 'loading' });
   const [run, setRun] = useState(0);
 
@@ -177,7 +185,7 @@ export default function ScanReport({ sha256, isIzzy = false }: { sha256: string;
   return (
     <section className={clsx(styles.card, styles.scanCard)} aria-live="polite">
       <h2><Translate id='verify.scan.heading'>VirusTotal scan</Translate></h2>
-      <Body view={view} sha256={sha256} isIzzy={isIzzy} retry={() => setRun(n => n + 1)} />
+      <Body view={view} sha256={sha256} isFoss={isFoss} retry={() => setRun(n => n + 1)} />
       <p className={styles.sha}>
         SHA-256 <code>{sha256}</code>
       </p>

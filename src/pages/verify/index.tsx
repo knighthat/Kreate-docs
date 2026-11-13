@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type DragEvent, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 
 import { verifyApk, formatFingerprint, normalizeFingerprint, ApkFormatError } from '@utils/apk/verify';
@@ -17,7 +18,7 @@ const MAX_SIZE = 512 * 1024 * 1024;
 type State =
   | { kind: 'idle' }
   | { kind: 'checking'; fileName: string }
-  | { kind: 'valid'; fileName: string; signer: string; fingerprint: string; sha256: string; info?: ApkInfo }
+  | { kind: 'valid'; fileName: string; fingerprint: string; sha256: string; info?: ApkInfo }
   | { kind: 'invalid'; fileName: string; reason: string; fingerprint?: string };
 
 
@@ -33,7 +34,6 @@ async function check(file: File): Promise<State> {
     switch (result.status) {
       case 'valid': {
         const fp = result.fingerprints[0];
-        const signer = TRUSTED_SIGNERS.find(s => normalizeFingerprint(s.sha256) === fp)!;
         // Only read details from verified APKs: the signature covers every byte, so they're authentic.
         let info: ApkInfo | undefined;
         try {
@@ -43,7 +43,7 @@ async function check(file: File): Promise<State> {
         }
         // Hash of the whole file, used to look up the VirusTotal report.
         const sha256 = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('');
-        return { kind: 'valid', fileName, signer: signer.label(), fingerprint: fp, sha256, info };
+        return { kind: 'valid', fileName, fingerprint: fp, sha256, info };
       }
       case 'untrusted':
         return {
@@ -183,7 +183,7 @@ export default function Verify(): ReactNode {
                 </div>
                 <div className={styles.fileName}>{state.fileName}</div>
                 <div className={styles.zoneHint}>
-                  <Translate id='verify.zone.validHint' values={{ signer: state.signer }}>{'Signed by {signer}. Safe to install.'}</Translate>
+                  <Translate id='verify.zone.validGenuine' values={{ app: APP_NAME }}>{'Signed by {app}\'s developers and not modified since.'}</Translate>
                 </div>
               </>
             )}
@@ -203,9 +203,16 @@ export default function Verify(): ReactNode {
 
         {(state.kind === 'valid' || state.kind === 'invalid') && (
           <div className={styles.actions}>
-            <button className="button button--primary" onClick={reset}>
-              <Translate id='verify.checkAnother'>Check another file</Translate>
-            </button>
+            <div className={styles.actionButtons}>
+              <button className="button button--primary" onClick={reset}>
+                <Translate id='verify.checkAnother'>Check another file</Translate>
+              </button>
+              {state.kind === 'invalid' && (
+                <Link className="button button--secondary" to="/download">
+                  <Translate id='verify.getOfficial' values={{ app: APP_NAME }}>{'Get {app} from an official source'}</Translate>
+                </Link>
+              )}
+            </div>
             {state.fingerprint && (
               <p className={styles.fingerprint}>
                 <Translate id='verify.signerFingerprint'>Signer certificate SHA-256:</Translate><br />
@@ -219,8 +226,8 @@ export default function Verify(): ReactNode {
         {state.kind === 'valid' && (
           <ScanReport
             sha256={state.sha256}
-            // FOSS builds are published by IzzyOnDroid: "2.2.5-izzy" up to now, "<version>+foss" from now on.
-            isIzzy={/(-izzy|\+foss)$/i.test(state.info?.versionName ?? '')}
+            // FOSS builds: "2.2.5-izzy" up to now, "<version>+foss" from now on.
+            isFoss={/(-izzy|\+foss)$/i.test(state.info?.versionName ?? '')}
           />
         )}
         {state.kind === 'valid' && state.info && <ApkDetails info={state.info} />}
@@ -229,10 +236,10 @@ export default function Verify(): ReactNode {
           <summary><Translate id='verify.official.summary'>Official signing certificate</Translate></summary>
           <p>
             <Translate
-              id='verify.official.body'
-              values={{ command: <code>apksigner verify --print-certs Kreate.apk</code> }}
+              id='verify.official.text'
+              values={{ command: <code>apksigner verify --print-certs kreate-universal.apk</code> }}
             >
-              {'Official APKs from GitHub and IzzyOnDroid are signed with this certificate. You can also check an APK yourself with {command}.'}
+              {'Official APKs from GitHub, F-Droid, IzzyOnDroid and Patreon are all signed with this certificate. You can also check an APK yourself with {command}.'}
             </Translate>
           </p>
           <ul>
@@ -244,6 +251,15 @@ export default function Verify(): ReactNode {
             ))}
           </ul>
         </details>
+
+        <p className={styles.moreInfo}>
+          <Translate
+            id='verify.moreInfo'
+            values={{ link: <Link to='/usr/how-to-verify-signatures'><Translate id='verify.moreInfoLink'>How to verify signatures</Translate></Link> }}
+          >
+            {'Want to know why signatures matter, or check on the command line? Read {link}.'}
+          </Translate>
+        </p>
       </main>
     </Layout>
   );

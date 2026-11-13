@@ -2,7 +2,7 @@
  * SHA-256 fingerprints of the certificates that sign official Kreate APKs.
  *
  * These are public values, not secrets. Get one with:
- *   apksigner verify --print-certs Kreate.apk          (line "Signer #1 certificate SHA-256 digest")
+ *   apksigner verify --print-certs kreate-universal.apk (line "Signer #1 certificate SHA-256 digest")
  *   keytool -list -v -keystore release.jks -alias <alias>   (line "SHA256:")
  *
  * If the signing key is ever rotated, ADD the new fingerprint; keep the old one

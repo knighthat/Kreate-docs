@@ -4,7 +4,7 @@ name: Crowdin
 on:
   # Upload sources whenever the files crowdin.yml uploads change.
   push:
-    branches: [ main ]
+    branches: [ kreate3 ]
     # Same files crowdin.yml uploads. Keep the two in sync.
     paths:
       - 'i18n/en/**/*.json'
@@ -12,15 +12,23 @@ on:
       - 'docs/**/*.md'
       - 'docs/**/*.mdx'
       - 'crowdin.yml'
-      - '.github/workflows/crowdin.yaml'
 
   # Pull translations weekly into kreate3_l10n.
   schedule:
     - cron: '0 13 * * 1'   # Every Monday at 1 PM (UTC)
 
-  # Manual run: pulls translations into <selected branch>_l10n.
-  # Run from main, it also uploads sources first.
+  # Manual run: pick what to do.
+  #   push - upload sources (kreate3 only)
+  #   pull - pull translations into <selected branch>_l10n
   workflow_dispatch:
+    inputs:
+      action:
+        description: 'push = upload sources (kreate3 only), pull = download translations'
+        type: choice
+        options:
+          - pull
+          - push
+        default: pull
 
 
 # Queue runs instead of racing them: Crowdin rejects parallel builds of the same project.
@@ -37,10 +45,16 @@ jobs:
   upload-sources:
     name: Upload sources
     runs-on: ubuntu-latest
-    # Only main holds the sources translators should see; other branches would push drafts.
-    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref_name == 'main')
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.action == 'push')
 
     steps:
+      # Only kreate3 holds the sources translators should see; other branches would push drafts.
+      - name: Require kreate3
+        if: github.ref_name != 'kreate3'
+        run: |
+          echo "::error::Sources can only be uploaded from kreate3 (got '${{ github.ref_name }}')."
+          exit 1
+
       - uses: actions/checkout@v5
 
       # Files go to the "docs" branch of the Kreate project (set in crowdin.yml),
@@ -66,9 +80,7 @@ jobs:
   download-translations:
     name: Download translations
     runs-on: ubuntu-latest
-    # After the upload when both run, so the download includes the newest sources.
-    needs: upload-sources
-    if: ${{ !cancelled() && github.event_name != 'push' }}
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.action == 'pull')
 
     permissions:
       contents: write

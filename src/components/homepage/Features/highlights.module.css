@@ -27,6 +27,12 @@
   border-color: var(--ifm-color-primary);
 }
 
+/* Tiles without a doc to link to don't lift on hover. */
+.static:hover {
+  transform: none;
+  border-color: var(--ifm-color-emphasis-200);
+}
+
 /* Wide tiles get a soft pink-to-blue wash, echoing the hero banner. */
 .wide {
   grid-column: span 2;

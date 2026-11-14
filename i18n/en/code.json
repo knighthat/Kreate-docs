@@ -369,20 +369,32 @@
   "home.highlights.loudness.description": {
     "message": "Brings each song as close as possible to your target level, with a built-in loudness analyzer for local media."
   },
-  "home.highlights.opensubsonic.description": {
-    "message": "Connect to your OpenSubsonic-compatible server to stream music you own."
+  "home.highlights.discordRpc.description": {
+    "message": "Shows what you're doing in Kreate on your Discord profile."
   },
-  "home.highlights.opensubsonic.tagAuth": {
-    "message": "Password or API key"
+  "home.highlights.discordRpc.tagStreaming": {
+    "message": "Streaming music"
   },
-  "home.highlights.opensubsonic.tagCerts": {
-    "message": "Self-signed certificates"
+  "home.highlights.discordRpc.tagBrowsing": {
+    "message": "Browsing albums, artists & playlists"
   },
-  "home.highlights.opensubsonic.tagDirectPlay": {
-    "message": "Direct play"
+  "home.highlights.discordRpc.tagSearch": {
+    "message": "Searching"
   },
-  "home.highlights.youtube.description": {
-    "message": "Supports sign-in, channel switching, library syncing and region settings."
+  "home.highlights.profiles.title": {
+    "message": "Profiles"
+  },
+  "home.highlights.profiles.description": {
+    "message": "Several people, or several moods, can share one install, each with their own profile."
+  },
+  "home.highlights.profiles.tagLibrary": {
+    "message": "Own library"
+  },
+  "home.highlights.profiles.tagSettings": {
+    "message": "Own settings"
+  },
+  "home.highlights.profiles.tagSignIns": {
+    "message": "Own sign-ins"
   },
   "home.highlights.quality.title": {
     "message": "Stream quality"
@@ -390,11 +402,11 @@
   "home.highlights.quality.description": {
     "message": "Set quality separately for Wi-Fi and mobile data, on each source."
   },
-  "home.highlights.sync.title": {
-    "message": "Per-source sync"
+  "home.highlights.statistics.title": {
+    "message": "Statistics"
   },
-  "home.highlights.sync.description": {
-    "message": "Separate sync switches for songs, playlists, albums and artists on every source."
+  "home.highlights.statistics.description": {
+    "message": "Time listened, top songs, albums and artists, and charts for any of them."
   },
   "home.highlights.musicbrainz.title": {
     "message": "MusicBrainz details"

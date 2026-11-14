@@ -14,8 +14,8 @@ type Highlight = {
   icon: string
   description: string
   tags?: string[]
-  /** Doc the tile links to. */
-  to: string
+  /** Doc the tile links to; without one the tile is a plain card. */
+  to?: string
   /** Spans two columns on wider screens. */
   wide?: boolean
 };
@@ -47,24 +47,28 @@ const getHighlights = (): Highlight[] => [
     description: translate({ id: 'home.highlights.loudness.description', message: 'Brings each song as close as possible to your target level, with a built-in loudness analyzer for local media.' }),
   },
   {
-    key: 'opensubsonic',
-    title: 'OpenSubsonic',
-    to: '/usr/features/sources/opensubsonic',
-    icon: 'mdi:server-network',
-    description: translate({ id: 'home.highlights.opensubsonic.description', message: 'Connect to your OpenSubsonic-compatible server to stream music you own.' }),
+    key: 'discord-rpc',
+    title: 'Discord RPC',
+    icon: 'bi:discord',
+    description: translate({ id: 'home.highlights.discordRpc.description', message: 'Shows what you\'re doing in Kreate on your Discord profile.' }),
     tags: [
-      translate({ id: 'home.highlights.opensubsonic.tagAuth', message: 'Password or API key' }),
-      translate({ id: 'home.highlights.opensubsonic.tagCerts', message: 'Self-signed certificates' }),
-      translate({ id: 'home.highlights.opensubsonic.tagDirectPlay', message: 'Direct play' }),
+      translate({ id: 'home.highlights.discordRpc.tagStreaming', message: 'Streaming music' }),
+      translate({ id: 'home.highlights.discordRpc.tagBrowsing', message: 'Browsing albums, artists & playlists' }),
+      translate({ id: 'home.highlights.discordRpc.tagSearch', message: 'Searching' }),
     ],
     wide: true,
   },
   {
-    key: 'youtube-music',
-    title: 'YouTube Music',
-    to: '/usr/features/sources/youtube-music',
-    icon: 'simple-icons:youtubemusic',
-    description: translate({ id: 'home.highlights.youtube.description', message: 'Supports sign-in, channel switching, library syncing and region settings.' }),
+    key: 'profiles',
+    title: translate({ id: 'home.highlights.profiles.title', message: 'Profiles' }),
+    to: '/usr/features/account/profiles',
+    icon: 'mdi:account-switch',
+    description: translate({ id: 'home.highlights.profiles.description', message: 'Several people, or several moods, can share one install, each with their own profile.' }),
+    tags: [
+      translate({ id: 'home.highlights.profiles.tagLibrary', message: 'Own library' }),
+      translate({ id: 'home.highlights.profiles.tagSettings', message: 'Own settings' }),
+      translate({ id: 'home.highlights.profiles.tagSignIns', message: 'Own sign-ins' }),
+    ],
     wide: true,
   },
   {
@@ -75,11 +79,11 @@ const getHighlights = (): Highlight[] => [
     description: translate({ id: 'home.highlights.quality.description', message: 'Set quality separately for Wi-Fi and mobile data, on each source.' }),
   },
   {
-    key: 'sync',
-    title: translate({ id: 'home.highlights.sync.title', message: 'Per-source sync' }),
-    to: '/usr/features/sources/overview',
-    icon: 'mdi:sync',
-    description: translate({ id: 'home.highlights.sync.description', message: 'Separate sync switches for songs, playlists, albums and artists on every source.' }),
+    key: 'statistics',
+    title: translate({ id: 'home.highlights.statistics.title', message: 'Statistics' }),
+    to: '/usr/features/account/statistics',
+    icon: 'mdi:chart-bar',
+    description: translate({ id: 'home.highlights.statistics.description', message: 'Time listened, top songs, albums and artists, and charts for any of them.' }),
   },
   {
     key: 'musicbrainz',
@@ -98,8 +102,9 @@ const getHighlights = (): Highlight[] => [
 ];
 
 function Tile( { title, icon, description, tags, wide, to }: Highlight ): ReactNode {
-  return(
-    <Link to={to} className={clsx(styles.tile, wide && styles.wide)}>
+  const className = clsx(styles.tile, wide && styles.wide, !to && styles.static);
+  const content = (
+    <>
       <span className={styles.icon}>
         <Icon icon={icon} />
       </span>
@@ -111,8 +116,12 @@ function Tile( { title, icon, description, tags, wide, to }: Highlight ): ReactN
           {tags.map( tag => <li key={tag}>{tag}</li> )}
         </ul>
       )}
-    </Link>
-  )
+    </>
+  );
+
+  return to
+    ? <Link to={to} className={className}>{content}</Link>
+    : <div className={className}>{content}</div>
 }
 
 export default function Highlights(): ReactNode {

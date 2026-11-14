@@ -44,7 +44,7 @@ const getHighlights = (): Highlight[] => [
     title: translate({ id: 'home.highlights.loudness.title', message: 'Loudness normalization' }),
     to: '/usr/features/playback/loudness',
     icon: 'mdi:waveform',
-    description: translate({ id: 'home.highlights.loudness.description', message: 'Brings each song as close as possible to your target level. Uses the server\'s ReplayGain when available, and a built-in loudness analyzer for local media.' }),
+    description: translate({ id: 'home.highlights.loudness.description', message: 'Brings each song as close as possible to your target level, with a built-in loudness analyzer for local media.' }),
   },
   {
     key: 'opensubsonic',
@@ -56,7 +56,6 @@ const getHighlights = (): Highlight[] => [
       translate({ id: 'home.highlights.opensubsonic.tagAuth', message: 'Password or API key' }),
       translate({ id: 'home.highlights.opensubsonic.tagCerts', message: 'Self-signed certificates' }),
       translate({ id: 'home.highlights.opensubsonic.tagDirectPlay', message: 'Direct play' }),
-      translate({ id: 'home.highlights.opensubsonic.tagReplayGain', message: 'Server ReplayGain' }),
     ],
     wide: true,
   },

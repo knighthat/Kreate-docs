@@ -367,7 +367,7 @@
     "message": "Loudness normalization"
   },
   "home.highlights.loudness.description": {
-    "message": "Brings each song as close as possible to your target level. Uses the server's ReplayGain when available, and a built-in loudness analyzer for local media."
+    "message": "Brings each song as close as possible to your target level, with a built-in loudness analyzer for local media."
   },
   "home.highlights.opensubsonic.description": {
     "message": "Connect to your OpenSubsonic-compatible server to stream music you own."
@@ -380,9 +380,6 @@
   },
   "home.highlights.opensubsonic.tagDirectPlay": {
     "message": "Direct play"
-  },
-  "home.highlights.opensubsonic.tagReplayGain": {
-    "message": "Server ReplayGain"
   },
   "home.highlights.youtube.description": {
     "message": "Supports sign-in, channel switching, library syncing and region settings."

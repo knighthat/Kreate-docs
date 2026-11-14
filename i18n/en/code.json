@@ -447,54 +447,6 @@
   "home.posts.seeMore": {
     "message": "See more"
   },
-  "home.screenshots.player": {
-    "message": "Player"
-  },
-  "home.screenshots.queue": {
-    "message": "Queue"
-  },
-  "home.screenshots.lyrics": {
-    "message": "Lyrics"
-  },
-  "home.screenshots.songs": {
-    "message": "Songs"
-  },
-  "home.screenshots.albums": {
-    "message": "Albums"
-  },
-  "home.screenshots.artists": {
-    "message": "Artists"
-  },
-  "home.screenshots.playlists": {
-    "message": "Playlists"
-  },
-  "home.screenshots.albumDetails": {
-    "message": "Album details"
-  },
-  "home.screenshots.artistDetails": {
-    "message": "Artist details"
-  },
-  "home.screenshots.playlistDetails": {
-    "message": "Playlist details"
-  },
-  "home.screenshots.history": {
-    "message": "History"
-  },
-  "home.screenshots.statistics": {
-    "message": "Statistics"
-  },
-  "home.screenshots.searchSuggestions": {
-    "message": "Search suggestions"
-  },
-  "home.screenshots.albumMenu": {
-    "message": "Album menu"
-  },
-  "home.screenshots.artistMenu": {
-    "message": "Artist menu"
-  },
-  "home.screenshots.playlistMenu": {
-    "message": "Playlist menu"
-  },
   "home.screenshots.label": {
     "message": "App screenshots"
   },

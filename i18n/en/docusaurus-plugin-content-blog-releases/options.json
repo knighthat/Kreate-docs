@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Releases",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Every Kreate release and its changelog",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "All releases",
+    "description": "The label for the left sidebar"
+  }
+}

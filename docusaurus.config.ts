@@ -98,7 +98,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/social-card.webp',
     navbar: {
-      title: APP_NAME,
+      // No `title` here: it would be extracted for translation. Navbar/Logo renders APP_NAME instead.
       logo: {
         alt: `${APP_NAME}\'s logo`,
         src: 'img/logo_transparent.svg',
@@ -135,7 +135,8 @@ const config: Config = {
           icon: {
             icon: 'bi:discord'
           },
-          label: 'Discord'
+          // `brand` instead of `label` keeps brand names out of navbar.json (see NavbarNavLink)
+          brand: 'Discord'
         },
         {
           position: 'right',
@@ -143,7 +144,7 @@ const config: Config = {
           icon: {
             icon: 'mdi:github'
           },
-          label: 'Github'
+          brand: 'GitHub'
         },
         // Hidden until at least one translation exists.
         ...(LOCALES.length > 1 ? [{ type: 'localeDropdown', position: 'right' } as const] : []),

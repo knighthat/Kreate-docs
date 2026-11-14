@@ -13,6 +13,8 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 interface NavItenProps extends Props {
   icon?: IconProps
+  /** Untranslated label for brand names; Docusaurus only extracts `label` for translation. */
+  brand?: string
 }
 
 export default function NavbarNavLink({
@@ -20,7 +22,8 @@ export default function NavbarNavLink({
   activeBaseRegex,
   to,
   href,
-  label,
+  label: translatedLabel,
+  brand,
   html,
   isDropdownLink,
   prependBaseUrlToHref,
@@ -29,6 +32,7 @@ export default function NavbarNavLink({
 }: NavItenProps): ReactNode {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
+  const label = translatedLabel ?? brand;
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});

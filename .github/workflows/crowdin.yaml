@@ -9,8 +9,8 @@ on:
     paths:
       - 'i18n/en/**/*.json'
       - '!i18n/en/docusaurus-plugin-content-blog/**'
-      - 'docs/**/*.md'
-      - 'docs/**/*.mdx'
+      - '!i18n/en/docusaurus-plugin-content-blog-releases/**'
+      - '!i18n/en/docusaurus-plugin-content-docs/**'
       - 'crowdin.yml'
 
   # Pull translations weekly into kreate3_l10n.

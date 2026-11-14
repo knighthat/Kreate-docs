@@ -3,28 +3,20 @@
     "message": "Kreate's logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.I'm a": {
-    "message": "I'm a",
-    "description": "Navbar item with label I'm a"
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
   },
   "item.label.Blog": {
     "message": "Blog",
     "description": "Navbar item with label Blog"
   },
-  "item.label.Developers": {
-    "message": "Developers",
-    "description": "Navbar item with label Developers"
-  },
-  "item.label.Users": {
-    "message": "Users",
-    "description": "Navbar item with label Users"
+  "item.label.Releases": {
+    "message": "Releases",
+    "description": "Navbar item with label Releases"
   },
   "item.label.Download": {
     "message": "Download",
     "description": "Navbar item with label Download"
-  },
-  "item.label.Releases": {
-    "message": "Releases",
-    "description": "Navbar item with label Releases"
   }
 }

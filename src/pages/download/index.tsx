@@ -9,7 +9,7 @@ import { APP_NAME } from '@site/constants';
 import styles from './styles.module.css';
 
 
-const CHOOSING_BUILD = '/usr/choosing-your-build';
+const CHOOSING_BUILD = '/docs/choosing-your-build';
 
 type Section = {
   build: Build
@@ -48,8 +48,8 @@ const SECTIONS: Section[] = [
 ];
 
 const NEXT_STEPS: { to: string, label: ReactNode }[] = [
-  { to: '/usr/faq/multiple-apks', label: <Translate id='download.next.whichApk'>Which APK do I need?</Translate> },
-  { to: '/usr/installing-the-apk', label: <Translate id='download.next.install'>Installing the APK</Translate> },
+  { to: '/docs/faq/multiple-apks', label: <Translate id='download.next.whichApk'>Which APK do I need?</Translate> },
+  { to: '/docs/installing-the-apk', label: <Translate id='download.next.install'>Installing the APK</Translate> },
   { to: '/verify', label: <Translate id='download.next.verify'>Verify your download</Translate> },
 ];
 
@@ -90,7 +90,7 @@ export default function Download(): ReactNode {
         <div className={clsx('alert alert--warning', styles.switching)} role='note'>
           <Translate
             id='download.switching'
-            values={{ link: <Link to='/usr/features/backup/backup-and-restore'><Translate id='download.switchingLink'>back up your library</Translate></Link> }}
+            values={{ link: <Link to='/docs/features/backup/backup-and-restore'><Translate id='download.switchingLink'>back up your library</Translate></Link> }}
           >
             {'Switching to a different build may not install as an update. If Android refuses it, {link}, uninstall, then install the new build and restore.'}
           </Translate>

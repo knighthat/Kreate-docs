@@ -3,112 +3,104 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.devDocSidebar.category.Guides": {
-    "message": "Guides",
-    "description": "The label for category 'Guides' in sidebar 'devDocSidebar'"
-  },
-  "sidebar.devDocSidebar.category.Contributing": {
-    "message": "Contributing",
-    "description": "The label for category 'Contributing' in sidebar 'devDocSidebar'"
-  },
-  "sidebar.usrDocSidebar.category.Installation": {
+  "sidebar.docSidebar.category.Installation": {
     "message": "Installation",
-    "description": "The label for category 'Installation' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Installation' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Getting started": {
+  "sidebar.docSidebar.category.Getting started": {
     "message": "Getting started",
-    "description": "The label for category 'Getting started' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Getting started' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Getting started.link.generated-index.description": {
+  "sidebar.docSidebar.category.Getting started.link.generated-index.description": {
     "message": "Finish the first-run setup and learn your way around the app.",
-    "description": "The generated-index page description for category 'Getting started' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Getting started' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Features": {
+  "sidebar.docSidebar.category.Features": {
     "message": "Features",
-    "description": "The label for category 'Features' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Features' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Features.link.generated-index.title": {
+  "sidebar.docSidebar.category.Features.link.generated-index.title": {
     "message": "Features",
-    "description": "The generated-index page title for category 'Features' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page title for category 'Features' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Features.link.generated-index.description": {
+  "sidebar.docSidebar.category.Features.link.generated-index.description": {
     "message": "Everything Kreate can do, grouped by area.",
-    "description": "The generated-index page description for category 'Features' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Features' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Music sources": {
+  "sidebar.docSidebar.category.Music sources": {
     "message": "Music sources",
-    "description": "The label for category 'Music sources' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Music sources' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Music sources.link.generated-index.description": {
+  "sidebar.docSidebar.category.Music sources.link.generated-index.description": {
     "message": "Where Kreate gets its music: files on the device, YouTube Music and OpenSubsonic servers.",
-    "description": "The generated-index page description for category 'Music sources' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Music sources' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Library": {
+  "sidebar.docSidebar.category.Library": {
     "message": "Library",
-    "description": "The label for category 'Library' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Library' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Library.link.generated-index.description": {
+  "sidebar.docSidebar.category.Library.link.generated-index.description": {
     "message": "Browse, search and organize your music.",
-    "description": "The generated-index page description for category 'Library' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Library' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Playback": {
+  "sidebar.docSidebar.category.Playback": {
     "message": "Playback",
-    "description": "The label for category 'Playback' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Playback' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Playback.link.generated-index.description": {
+  "sidebar.docSidebar.category.Playback.link.generated-index.description": {
     "message": "The player, the queue, lyrics and everything about how songs play.",
-    "description": "The generated-index page description for category 'Playback' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Playback' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Downloads and storage": {
+  "sidebar.docSidebar.category.Downloads and storage": {
     "message": "Downloads and storage",
-    "description": "The label for category 'Downloads and storage' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Downloads and storage' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Downloads and storage.link.generated-index.description": {
+  "sidebar.docSidebar.category.Downloads and storage.link.generated-index.description": {
     "message": "Keep songs on the device and control how much room Kreate takes.",
-    "description": "The generated-index page description for category 'Downloads and storage' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Downloads and storage' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Account": {
+  "sidebar.docSidebar.category.Account": {
     "message": "Account",
-    "description": "The label for category 'Account' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Account' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Account.link.generated-index.description": {
+  "sidebar.docSidebar.category.Account.link.generated-index.description": {
     "message": "Your history, statistics and profiles.",
-    "description": "The generated-index page description for category 'Account' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Account' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Integrations": {
+  "sidebar.docSidebar.category.Integrations": {
     "message": "Integrations",
-    "description": "The label for category 'Integrations' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Integrations' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Integrations.link.generated-index.description": {
+  "sidebar.docSidebar.category.Integrations.link.generated-index.description": {
     "message": "Android Auto, voice search, opening files and links.",
-    "description": "The generated-index page description for category 'Integrations' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Integrations' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Customization": {
+  "sidebar.docSidebar.category.Customization": {
     "message": "Customization",
-    "description": "The label for category 'Customization' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Customization' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Customization.link.generated-index.description": {
+  "sidebar.docSidebar.category.Customization.link.generated-index.description": {
     "message": "Make Kreate look and behave the way you like.",
-    "description": "The generated-index page description for category 'Customization' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Customization' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Backup and restore": {
+  "sidebar.docSidebar.category.Backup and restore": {
     "message": "Backup and restore",
-    "description": "The label for category 'Backup and restore' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Backup and restore' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Backup and restore.link.generated-index.description": {
+  "sidebar.docSidebar.category.Backup and restore.link.generated-index.description": {
     "message": "Move your data between devices, or bring it over from the old Kreate app.",
-    "description": "The generated-index page description for category 'Backup and restore' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Backup and restore' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Reference": {
+  "sidebar.docSidebar.category.Reference": {
     "message": "Reference",
-    "description": "The label for category 'Reference' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'Reference' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.Reference.link.generated-index.description": {
+  "sidebar.docSidebar.category.Reference.link.generated-index.description": {
     "message": "Every setting with its default, and help when something goes wrong.",
-    "description": "The generated-index page description for category 'Reference' in sidebar 'usrDocSidebar'"
+    "description": "The generated-index page description for category 'Reference' in sidebar 'docSidebar'"
   },
-  "sidebar.usrDocSidebar.category.FAQ": {
+  "sidebar.docSidebar.category.FAQ": {
     "message": "FAQ",
-    "description": "The label for category 'FAQ' in sidebar 'usrDocSidebar'"
+    "description": "The label for category 'FAQ' in sidebar 'docSidebar'"
   }
 }

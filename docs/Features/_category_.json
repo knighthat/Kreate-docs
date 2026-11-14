@@ -1,0 +1,10 @@
+{
+  "label": "Features",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/docs/features",
+    "title": "Features",
+    "description": "Everything Kreate can do, grouped by area."
+  }
+}

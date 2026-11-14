@@ -104,24 +104,7 @@ const config: Config = {
         src: 'img/logo_transparent.svg',
       },
       items: [
-        {
-          label: 'I\'m a',
-          position: 'left',
-          items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'devDocSidebar',
-              label: 'Developers',
-              to: '/dev'
-            },
-            {
-              type: 'docSidebar',
-              sidebarId: 'usrDocSidebar',
-              label: 'Users',
-              to: '/usr'
-            }
-          ]
-        },
+        { type: 'docSidebar', sidebarId: 'docSidebar', label: 'Docs', position: 'left' },
         { label: 'Blog', position: 'left', to: 'blog' },
         // Release posts have their own section (/releases); the navbar goes to GitHub.
         { label: 'Releases', position: 'left', href: `${GITHUB_URL}/${APP_REPO_PATH}/releases` },
@@ -157,12 +140,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'For developers',
-              to: '/dev',
-            },
-            {
-              label: 'For users',
-              to: '/usr',
+              label: 'Documentation',
+              to: '/docs',
             },
           ],
         },
@@ -209,7 +188,7 @@ const config: Config = {
             },
             {
               label: 'Credits',
-              to: 'usr/credits',
+              to: 'docs/credits',
             },
           ],
         },

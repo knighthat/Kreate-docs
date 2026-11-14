@@ -43,61 +43,52 @@ Kreate v3 is a rewrite from scratch. Versions up to v2 were a fork of RiMusic bu
 
 ## User guide
 
-- [What is Kreate](https://kreate.knighthat.me/usr): What Kreate is: one music library for files on your device, YouTube Music and your own OpenSubsonic server.
-- [First launch](https://kreate.knighthat.me/usr/getting-started/first-launch): Walk through the setup wizard: permissions, sign-in, importing a backup and basic settings.
-- [Finding your way](https://kreate.knighthat.me/usr/getting-started/finding-your-way): The main screen, the mini player, long-press menus, badges and messages.
-- [How sources work](https://kreate.knighthat.me/usr/features/sources/overview): How device files, YouTube Music and OpenSubsonic share one library, what gets stored and stream quality.
-- [Music on your device](https://kreate.knighthat.me/usr/features/sources/local-files): Scan the music files on your phone, measure their loudness and reorder device albums.
-- [YouTube Music](https://kreate.knighthat.me/usr/features/sources/youtube-music): Use YouTube Music with or without an account: sign-in, sync, region, quality and login for playback.
-- [OpenSubsonic servers](https://kreate.knighthat.me/usr/features/sources/opensubsonic): Connect Navidrome or another OpenSubsonic server: sign-in, self-signed certificates, sync and quality.
-- [Network and proxies](https://kreate.knighthat.me/usr/features/sources/proxy): Network timeouts and retries, plus HTTP or SOCKS5 proxies for every source or just one.
-- [Home tabs](https://kreate.knighthat.me/usr/features/library/home): The Songs, Albums, Artists and Playlists tabs: source chips, pull to refresh and each tab's actions and filters.
-- [Search](https://kreate.knighthat.me/usr/features/library/search): Search your library, YouTube Music or your server, with suggestions, recent searches and results by kind.
-- [Song and item menus](https://kreate.knighthat.me/usr/features/library/song-menu): Everything in the long-press menu of a song, album, artist or playlist, and the download button's states.
-- [Likes and dislikes](https://kreate.knighthat.me/usr/features/library/likes-and-dislikes): How likes and dislikes work, how they sync with YouTube Music and your server, and the Liked and Disliked pages.
-- [Playlists](https://kreate.knighthat.me/usr/features/library/playlists): Create, edit, reorder and delete local, YouTube Music and OpenSubsonic playlists.
-- [Album and artist pages](https://kreate.knighthat.me/usr/features/library/albums-and-artists): Album and artist pages: the page button, bookmarking albums, following artists and reordering device albums.
-- [Editing songs, albums and artists](https://kreate.knighthat.me/usr/features/library/editing): Give a song, album or artist your own title, artists and picture without changing the source.
-- [Details from MusicBrainz](https://kreate.knighthat.me/usr/features/library/details): Look up a song, album or artist on MusicBrainz and pick the right match.
-- [The player](https://kreate.knighthat.me/usr/features/playback/player): The mini player and full player: controls, shuffle and repeat, radio and the media notification.
-- [Queue](https://kreate.knighthat.me/usr/features/playback/queue): See, reorder and clear what plays next; the queue is kept across restarts.
-- [Lyrics](https://kreate.knighthat.me/usr/features/playback/lyrics): Synced lyrics word by word or line by line, lyrics sources and lyrics settings.
-- [Loudness](https://kreate.knighthat.me/usr/features/playback/loudness): Even out the volume between songs using YouTube's loudness, your server's ReplayGain or Kreate's analyzer.
-- [Sleep timer](https://kreate.knighthat.me/usr/features/playback/sleep-timer): Pause playback after a set time or at the end of the song, and control the timer from its notification.
-- [Picture in picture](https://kreate.knighthat.me/usr/features/playback/picture-in-picture): Keep the cover or synced lyrics in a small floating window when you leave the app.
-- [Playback settings](https://kreate.knighthat.me/usr/features/playback/playback-settings): Queue, buffering, failure handling, sleep timer and history settings of the player.
-- [Downloads](https://kreate.knighthat.me/usr/features/offline/downloads): Download songs for offline listening, follow progress in notifications and manage the download queue.
-- [Storage and caches](https://kreate.knighthat.me/usr/features/offline/storage): See how much room Kreate takes and set or clear the song cache, downloads and image cache.
-- [Profiles](https://kreate.knighthat.me/usr/features/account/profiles): Separate libraries, settings and sign-ins for several people on one install.
-- [History](https://kreate.knighthat.me/usr/features/account/history): Every song you played, grouped by day, with filters by source and date.
-- [Statistics](https://kreate.knighthat.me/usr/features/account/statistics): Time listened, top songs, albums and artists, and charts for any song, album or artist.
-- [Backup and restore](https://kreate.knighthat.me/usr/features/backup/backup-and-restore): Save every profile, setting and your library to one file, and restore it on any device.
-- [Import from the old Kreate app](https://kreate.knighthat.me/usr/features/backup/import-from-old-kreate): Bring profiles, likes, history and playlists over from the old Kreate app.
-- [Appearance](https://kreate.knighthat.me/usr/features/customization/appearance): Theme, contrast, language, layout options, custom fonts and the app icon.
-- [General behavior](https://kreate.knighthat.me/usr/features/customization/behavior): Library scanning, back-button behavior, page buttons and the restart button.
-- [Android Auto](https://kreate.knighthat.me/usr/features/integrations/android-auto): Browse your library in the car and play music by voice with Android Auto.
-- [Open with and links](https://kreate.knighthat.me/usr/features/integrations/open-with-and-links): Open audio files and YouTube Music links in Kreate, and share links to songs and playlists.
-- [Settings map](https://kreate.knighthat.me/usr/features/reference/settings): Every settings page, what's on it and which page explains it.
-- [Troubleshooting](https://kreate.knighthat.me/usr/features/reference/troubleshooting): Fixes for songs that won't play, unreachable servers, missing local songs and other common problems.
-- [Logs and crash reports](https://kreate.knighthat.me/usr/features/reference/logs-and-crashes): Collect logs and crash reports to report a problem.
+- [What is Kreate](https://kreate.knighthat.me/docs): What Kreate is: one music library for files on your device, YouTube Music and your own OpenSubsonic server.
+- [First launch](https://kreate.knighthat.me/docs/getting-started/first-launch): Walk through the setup wizard: permissions, sign-in, importing a backup and basic settings.
+- [Finding your way](https://kreate.knighthat.me/docs/getting-started/finding-your-way): The main screen, the mini player, long-press menus, badges and messages.
+- [How sources work](https://kreate.knighthat.me/docs/features/sources/overview): How device files, YouTube Music and OpenSubsonic share one library, what gets stored and stream quality.
+- [Music on your device](https://kreate.knighthat.me/docs/features/sources/local-files): Scan the music files on your phone, measure their loudness and reorder device albums.
+- [YouTube Music](https://kreate.knighthat.me/docs/features/sources/youtube-music): Use YouTube Music with or without an account: sign-in, sync, region, quality and login for playback.
+- [OpenSubsonic servers](https://kreate.knighthat.me/docs/features/sources/opensubsonic): Connect Navidrome or another OpenSubsonic server: sign-in, self-signed certificates, sync and quality.
+- [Network and proxies](https://kreate.knighthat.me/docs/features/sources/proxy): Network timeouts and retries, plus HTTP or SOCKS5 proxies for every source or just one.
+- [Home tabs](https://kreate.knighthat.me/docs/features/library/home): The Songs, Albums, Artists and Playlists tabs: source chips, pull to refresh and each tab's actions and filters.
+- [Search](https://kreate.knighthat.me/docs/features/library/search): Search your library, YouTube Music or your server, with suggestions, recent searches and results by kind.
+- [Song and item menus](https://kreate.knighthat.me/docs/features/library/song-menu): Everything in the long-press menu of a song, album, artist or playlist, and the download button's states.
+- [Likes and dislikes](https://kreate.knighthat.me/docs/features/library/likes-and-dislikes): How likes and dislikes work, how they sync with YouTube Music and your server, and the Liked and Disliked pages.
+- [Playlists](https://kreate.knighthat.me/docs/features/library/playlists): Create, edit, reorder and delete local, YouTube Music and OpenSubsonic playlists.
+- [Album and artist pages](https://kreate.knighthat.me/docs/features/library/albums-and-artists): Album and artist pages: the page button, bookmarking albums, following artists and reordering device albums.
+- [Editing songs, albums and artists](https://kreate.knighthat.me/docs/features/library/editing): Give a song, album or artist your own title, artists and picture without changing the source.
+- [Details from MusicBrainz](https://kreate.knighthat.me/docs/features/library/details): Look up a song, album or artist on MusicBrainz and pick the right match.
+- [The player](https://kreate.knighthat.me/docs/features/playback/player): The mini player and full player: controls, shuffle and repeat, radio and the media notification.
+- [Queue](https://kreate.knighthat.me/docs/features/playback/queue): See, reorder and clear what plays next; the queue is kept across restarts.
+- [Lyrics](https://kreate.knighthat.me/docs/features/playback/lyrics): Synced lyrics word by word or line by line, lyrics sources and lyrics settings.
+- [Loudness](https://kreate.knighthat.me/docs/features/playback/loudness): Even out the volume between songs using YouTube's loudness, your server's ReplayGain or Kreate's analyzer.
+- [Sleep timer](https://kreate.knighthat.me/docs/features/playback/sleep-timer): Pause playback after a set time or at the end of the song, and control the timer from its notification.
+- [Picture in picture](https://kreate.knighthat.me/docs/features/playback/picture-in-picture): Keep the cover or synced lyrics in a small floating window when you leave the app.
+- [Playback settings](https://kreate.knighthat.me/docs/features/playback/playback-settings): Queue, buffering, failure handling, sleep timer and history settings of the player.
+- [Downloads](https://kreate.knighthat.me/docs/features/offline/downloads): Download songs for offline listening, follow progress in notifications and manage the download queue.
+- [Storage and caches](https://kreate.knighthat.me/docs/features/offline/storage): See how much room Kreate takes and set or clear the song cache, downloads and image cache.
+- [Profiles](https://kreate.knighthat.me/docs/features/account/profiles): Separate libraries, settings and sign-ins for several people on one install.
+- [History](https://kreate.knighthat.me/docs/features/account/history): Every song you played, grouped by day, with filters by source and date.
+- [Statistics](https://kreate.knighthat.me/docs/features/account/statistics): Time listened, top songs, albums and artists, and charts for any song, album or artist.
+- [Backup and restore](https://kreate.knighthat.me/docs/features/backup/backup-and-restore): Save every profile, setting and your library to one file, and restore it on any device.
+- [Import from the old Kreate app](https://kreate.knighthat.me/docs/features/backup/import-from-old-kreate): Bring profiles, likes, history and playlists over from the old Kreate app.
+- [Appearance](https://kreate.knighthat.me/docs/features/customization/appearance): Theme, contrast, language, layout options, custom fonts and the app icon.
+- [General behavior](https://kreate.knighthat.me/docs/features/customization/behavior): Library scanning, back-button behavior, page buttons and the restart button.
+- [Android Auto](https://kreate.knighthat.me/docs/features/integrations/android-auto): Browse your library in the car and play music by voice with Android Auto.
+- [Open with and links](https://kreate.knighthat.me/docs/features/integrations/open-with-and-links): Open audio files and YouTube Music links in Kreate, and share links to songs and playlists.
+- [Settings map](https://kreate.knighthat.me/docs/features/reference/settings): Every settings page, what's on it and which page explains it.
+- [Troubleshooting](https://kreate.knighthat.me/docs/features/reference/troubleshooting): Fixes for songs that won't play, unreachable servers, missing local songs and other common problems.
+- [Logs and crash reports](https://kreate.knighthat.me/docs/features/reference/logs-and-crashes): Collect logs and crash reports to report a problem.
 
 ## Installation and FAQ
 
-- [Choosing your build](https://kreate.knighthat.me/usr/choosing-your-build): Where to get Kreate (GitHub, F-Droid, IzzyOnDroid, Obtainium or OpenAPK) and the pros and cons of each.
-- [How to verify signatures](https://kreate.knighthat.me/usr/how-to-verify-signatures): Why APK signatures matter and how to check that your Kreate download is genuine with apksigner or Java's keytool.
-- [Why are there multiple APKs?](https://kreate.knighthat.me/usr/FAQ/multiple-apks): Why Kreate ships several APKs per release, what R8 and ABI splits do, and which file to download for your phone.
-- [Release and Uncompressed](https://kreate.knighthat.me/usr/faq/minified_and_full): The difference between Kreate's release and uncompressed APKs, which one to install and how to switch.
-- [Playback stops halfway through](https://kreate.knighthat.me/usr/faq/playback-stops-halfway-through): Why songs stop partway through, from YouTube blocks to corrupted cache, and how to tell whether Kreate is at fault.
-- [How to make a good issue ticket](https://kreate.knighthat.me/usr/faq/how-to-make-a-good-issue-ticket): What to check before reporting a bug and how to fill out each part of the issue form so it gets fixed faster.
-
-## Developer docs
-
-- [Getting Started](https://kreate.knighthat.me/dev/getting_started): Requirements, then how to fork and clone the Kreate repo, commit your changes and open a pull request.
-- [Building Kreate](https://kreate.knighthat.me/dev/building_kreate): Build your own Kreate APK with Gradle: prerequisites, release notes setup, and release vs uncompressed builds.
-- [How to install Java 21](https://kreate.knighthat.me/dev/guides/how-to-install-java-21): Download and install JDK 21 or newer on Windows, macOS or Linux to compile Kreate.
-- [How to install build tools](https://kreate.knighthat.me/dev/guides/how-to-install-buildtools): Install Android build tools from the command-line tools without installing Android Studio.
-- [Custom assets](https://kreate.knighthat.me/dev/contributing/custom-assets): Add your own SVG assets to Kreate by converting them to Android vector drawables in Android Studio.
-- [App icons](https://kreate.knighthat.me/dev/contributing/app-icons): Design and add a new launcher icon to Kreate: adaptive icon specs, naming, layers and monochrome variants.
+- [Choosing your build](https://kreate.knighthat.me/docs/choosing-your-build): Where to get Kreate (GitHub, F-Droid, IzzyOnDroid, Obtainium or OpenAPK) and the pros and cons of each.
+- [How to verify signatures](https://kreate.knighthat.me/docs/how-to-verify-signatures): Why APK signatures matter and how to check that your Kreate download is genuine with apksigner or Java's keytool.
+- [Why are there multiple APKs?](https://kreate.knighthat.me/docs/FAQ/multiple-apks): Why Kreate ships several APKs per release, what R8 and ABI splits do, and which file to download for your phone.
+- [Release and Uncompressed](https://kreate.knighthat.me/docs/faq/minified_and_full): The difference between Kreate's release and uncompressed APKs, which one to install and how to switch.
+- [Playback stops halfway through](https://kreate.knighthat.me/docs/faq/playback-stops-halfway-through): Why songs stop partway through, from YouTube blocks to corrupted cache, and how to tell whether Kreate is at fault.
+- [How to make a good issue ticket](https://kreate.knighthat.me/docs/faq/how-to-make-a-good-issue-ticket): What to check before reporting a bug and how to fill out each part of the issue form so it gets fixed faster.
 
 ## Links
 

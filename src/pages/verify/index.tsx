@@ -255,7 +255,7 @@ export default function Verify(): ReactNode {
         <p className={styles.moreInfo}>
           <Translate
             id='verify.moreInfo'
-            values={{ link: <Link to='/usr/how-to-verify-signatures'><Translate id='verify.moreInfoLink'>How to verify signatures</Translate></Link> }}
+            values={{ link: <Link to='/docs/how-to-verify-signatures'><Translate id='verify.moreInfoLink'>How to verify signatures</Translate></Link> }}
           >
             {'Want to know why signatures matter, or check on the command line? Read {link}.'}
           </Translate>

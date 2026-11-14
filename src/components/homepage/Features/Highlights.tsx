@@ -26,7 +26,7 @@ const getHighlights = (): Highlight[] => [
   {
     key: 'lyrics',
     title: translate({ id: 'home.highlights.lyrics.title', message: 'Synced & plain lyrics' }),
-    to: '/usr/features/playback/lyrics',
+    to: '/docs/features/playback/lyrics',
     icon: 'mdi:microphone-variant',
     description: translate({ id: 'home.highlights.lyrics.description', message: 'Lyrics from several providers, highlighted word by word when the source has it.' }),
     tags: [ 'BetterLyrics', 'LyricsPlus', 'LRCLIB', translate({ id: 'home.highlights.lyrics.tagMore', message: 'and more' }) ],
@@ -35,14 +35,14 @@ const getHighlights = (): Highlight[] => [
   {
     key: 'android-auto',
     title: 'Android Auto',
-    to: '/usr/features/integrations/android-auto',
+    to: '/docs/features/integrations/android-auto',
     icon: 'simple-icons:androidauto',
     description: translate({ id: 'home.highlights.androidAuto.description', message: 'Browse, play and search by voice from your car, with voice search settings.' }),
   },
   {
     key: 'loudness',
     title: translate({ id: 'home.highlights.loudness.title', message: 'Loudness normalization' }),
-    to: '/usr/features/playback/loudness',
+    to: '/docs/features/playback/loudness',
     icon: 'mdi:waveform',
     description: translate({ id: 'home.highlights.loudness.description', message: 'Brings each song as close as possible to your target level, with a built-in loudness analyzer for local media.' }),
   },
@@ -61,7 +61,7 @@ const getHighlights = (): Highlight[] => [
   {
     key: 'profiles',
     title: translate({ id: 'home.highlights.profiles.title', message: 'Profiles' }),
-    to: '/usr/features/account/profiles',
+    to: '/docs/features/account/profiles',
     icon: 'mdi:account-switch',
     description: translate({ id: 'home.highlights.profiles.description', message: 'Several people, or several moods, can share one install, each with their own profile.' }),
     tags: [
@@ -74,28 +74,28 @@ const getHighlights = (): Highlight[] => [
   {
     key: 'stream-quality',
     title: translate({ id: 'home.highlights.quality.title', message: 'Stream quality' }),
-    to: '/usr/features/sources/overview#stream-quality',
+    to: '/docs/features/sources/overview#stream-quality',
     icon: 'mdi:wifi',
     description: translate({ id: 'home.highlights.quality.description', message: 'Set quality separately for Wi-Fi and mobile data, on each source.' }),
   },
   {
     key: 'statistics',
     title: translate({ id: 'home.highlights.statistics.title', message: 'Statistics' }),
-    to: '/usr/features/account/statistics',
+    to: '/docs/features/account/statistics',
     icon: 'mdi:chart-bar',
     description: translate({ id: 'home.highlights.statistics.description', message: 'Time listened, top songs, albums and artists, and charts for any of them.' }),
   },
   {
     key: 'musicbrainz',
     title: translate({ id: 'home.highlights.musicbrainz.title', message: 'MusicBrainz details' }),
-    to: '/usr/features/library/details',
+    to: '/docs/features/library/details',
     icon: 'simple-icons:musicbrainz',
     description: translate({ id: 'home.highlights.musicbrainz.description', message: 'First release, ISRCs, genres, releases and links for songs, albums and artists.' }),
   },
   {
     key: 'sharing',
     title: translate({ id: 'home.highlights.sharing.title', message: 'Sharing' }),
-    to: '/usr/features/integrations/open-with-and-links#sharing',
+    to: '/docs/features/integrations/open-with-and-links#sharing',
     icon: 'mdi:share-variant',
     description: translate({ id: 'home.highlights.sharing.description', message: 'Share YouTube links, OpenSubsonic share links, or the local file itself.' }),
   },

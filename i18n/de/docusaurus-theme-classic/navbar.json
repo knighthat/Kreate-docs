@@ -1,0 +1,22 @@
+{
+  "logo.alt": {
+    "message": "Logo von Kreate",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Dokumentation",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Releases": {
+    "message": "Veröffentlichungen",
+    "description": "Navbar item with label Releases"
+  },
+  "item.label.Download": {
+    "message": "Herunterladen",
+    "description": "Navbar item with label Download"
+  }
+}

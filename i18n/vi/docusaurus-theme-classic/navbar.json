@@ -1,0 +1,18 @@
+{
+  "logo.alt": {
+    "message": "Biểu tượng của Kreate",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Blog": {
+    "message": "Bài đăng",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Releases": {
+    "message": "Bản phát hành",
+    "description": "Navbar item with label Releases"
+  },
+  "item.label.Download": {
+    "message": "Tải xuống",
+    "description": "Navbar item with label Download"
+  }
+}

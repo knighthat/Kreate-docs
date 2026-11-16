@@ -1,0 +1,978 @@
+{
+  "home.title": {
+    "message": "App de música",
+    "description": "Homepage <title>, shown after the app name"
+  },
+  "home.description": {
+    "message": "Reproductor de música personalizable y lleno de funciones",
+    "description": "Homepage meta description"
+  },
+  "translators.title": {
+    "message": "Traductores"
+  },
+  "translators.description": {
+    "message": "Transforman el inglés a tu idioma nativo"
+  },
+  "verify.details.notFound": {
+    "message": "No encontrado"
+  },
+  "verify.details.app": {
+    "message": "Aplicación",
+    "description": "Heading of the APK details card about the app"
+  },
+  "verify.details.packageName": {
+    "message": "Nombre del paquete"
+  },
+  "verify.details.versionName": {
+    "message": "Nombre de la versión"
+  },
+  "verify.details.versionCode": {
+    "message": "(build {code})"
+  },
+  "verify.details.minSdk": {
+    "message": "SDK mínimo"
+  },
+  "verify.details.targetSdk": {
+    "message": "SDK objetivo"
+  },
+  "verify.details.build": {
+    "message": "Build",
+    "description": "Heading of the APK details card about how it was built"
+  },
+  "verify.details.cpu": {
+    "message": "Arquitectura de CPU"
+  },
+  "verify.details.anyAbi": {
+    "message": "Cualquiera (sin código nativo)"
+  },
+  "verify.details.gitCommit": {
+    "message": "Commit de Git"
+  },
+  "verify.details.buildTools": {
+    "message": "Herramientas del build"
+  },
+  "verify.details.permissions": {
+    "message": "Permisos"
+  },
+  "verify.details.permissionsUnreadable": {
+    "message": "No se pudo leer."
+  },
+  "verify.details.noPermissions": {
+    "message": "La aplicación no pide permisos."
+  },
+  "verify.details.maxSdk": {
+    "message": "sólo en {sdk} y anteriores"
+  },
+  "verify.details.libraries": {
+    "message": "Versiones de biblioteca"
+  },
+  "verify.details.noLibraries": {
+    "message": "El APK no incluye información de la versión de biblioteca."
+  },
+  "verify.details.showLibraries": {
+    "message": "Mostrar todas las bibliotecas"
+  },
+  "verify.details.library": {
+    "message": "Biblioteca"
+  },
+  "verify.details.version": {
+    "message": "Versión"
+  },
+  "verify.scan.fullReport": {
+    "message": "Ver todo el informe en VirusTotal"
+  },
+  "verify.scan.checkAgain": {
+    "message": "Comprobar de nuevo"
+  },
+  "verify.scan.loading": {
+    "message": "Buscando el informe de escaneo…"
+  },
+  "verify.scan.clean": {
+    "message": "Ningún motor consideró el archivo peligroso"
+  },
+  "verify.scan.cleanDetailDated": {
+    "message": "Escaneado por los motores de antivirus {engines}, última actualización el {date}."
+  },
+  "verify.scan.cleanDetail": {
+    "message": "Escaneado por los motores de antivirus {engines}."
+  },
+  "verify.scan.flaggedBoth": {
+    "message": "Marcados {malicious} como maliciosos y {suspicious} como sospechosos."
+  },
+  "verify.scan.flaggedMalicious": {
+    "message": "Marcados {count} como maliciosos."
+  },
+  "verify.scan.flaggedSuspicious": {
+    "message": "Marcados {count} como sospechosos."
+  },
+  "verify.scan.flagged": {
+    "message": "{flagged} de {engines} motores consideraron el archivo sospechoso"
+  },
+  "verify.scan.falsePositives": {
+    "message": "Las aplicaciones Android pueden tener uno o dos falsos positivos, comprueba el informe y juzga por ti mismo."
+  },
+  "verify.scan.lastUpdated": {
+    "message": "Última actualización el {date}."
+  },
+  "verify.scan.inProgress": {
+    "message": "Escaneo en progreso"
+  },
+  "verify.scan.notFinished": {
+    "message": "VirusTotal no ha acabado de escanear el archivo."
+  },
+  "verify.scan.retryIn": {
+    "message": "Comprobando de nuevo en {seconds} segundos."
+  },
+  "verify.scan.checkLater": {
+    "message": "Los nuevos lanzamientos suelen acabar en unos minutos, comprueba de nuevo más tarde."
+  },
+  "verify.scan.error": {
+    "message": "No se pudo escanear el archivo"
+  },
+  "verify.scan.errorDetail": {
+    "message": "Fallo al subir la versión a VirusTotal, por lo que no hay informe de ella."
+  },
+  "verify.scan.unavailable": {
+    "message": "Los informes de escaneo no están disponibles en este momento"
+  },
+  "verify.scan.failed": {
+    "message": "El informe de escaneo no se pudo cargar"
+  },
+  "verify.scan.heading": {
+    "message": "Escaneo en VirusTotal"
+  },
+  "verify.reason.tooLarge": {
+    "message": "El archivo es demasiado grande para ser un APK de {app}."
+  },
+  "verify.reason.untrusted": {
+    "message": "La firma está intacta, pero no fue firmada por los desarrolladores de {app}. No la instales."
+  },
+  "verify.reason.invalid": {
+    "message": "{reason}. No la instales.",
+    "description": "{reason} is a technical error in English, e.g. \"Signature does not verify\""
+  },
+  "verify.reason.unsupported": {
+    "message": "No se pudo comprobar el archivo. Puede que tu navegador no lo admita."
+  },
+  "verify.title": {
+    "message": "Verificar APK"
+  },
+  "verify.description": {
+    "message": "Comprueba que el APK de {app} sea genuina y no esté modificada. El archivo se comprueba en tu navegador y nunca se sube."
+  },
+  "verify.heading": {
+    "message": "Verifica tu APK"
+  },
+  "verify.lead": {
+    "message": "Comprueba que el APK de {app} fuera firmada por sus desarrolladores y no esté modificada. Todo ocurre en tu navegador."
+  },
+  "verify.leadNoUpload": {
+    "message": "Tu archivo nunca se sube."
+  },
+  "verify.zone.label": {
+    "message": "Elige o suelta un APK para verificar"
+  },
+  "verify.zone.drop": {
+    "message": "Suéltalo aquí"
+  },
+  "verify.zone.idle": {
+    "message": "Arrastra y suelta un APK aquí"
+  },
+  "verify.zone.idleHint": {
+    "message": "o haz clic para elegir archivo"
+  },
+  "verify.zone.checking": {
+    "message": "Comprobando firma…"
+  },
+  "verify.zone.valid": {
+    "message": "APK de {app} genuino"
+  },
+  "verify.zone.invalid": {
+    "message": "No es un APK de {app} genuino"
+  },
+  "verify.checkAnother": {
+    "message": "Comprobar otro archivo"
+  },
+  "verify.signerFingerprint": {
+    "message": "Certificado SHA-256 del firmante:"
+  },
+  "verify.official.summary": {
+    "message": "Certificado de firma oficial"
+  },
+  "verify.sdk.preview": {
+    "message": "Previsualizar \"{codename}\"",
+    "description": "Unreleased Android version; {codename} is e.g. \"Baklava\""
+  },
+  "verify.abi.arm64_v8a": {
+    "message": "ARM de 64-bits"
+  },
+  "verify.abi.armeabi_v7a": {
+    "message": "ARM de 32-bits"
+  },
+  "verify.abi.x86_64": {
+    "message": "Intel/AMD de 64-bits"
+  },
+  "verify.abi.x86": {
+    "message": "Intel/AMD de 32-bits"
+  },
+  "verify.permission.INTERNET": {
+    "message": "Acceder a Internet"
+  },
+  "verify.permission.ACCESS_NETWORK_STATE": {
+    "message": "Ver si estás en línea o no"
+  },
+  "verify.permission.ACCESS_WIFI_STATE": {
+    "message": "Ver detalles de la conexión Wi-Fi"
+  },
+  "verify.permission.POST_NOTIFICATIONS": {
+    "message": "Ver notificaciones"
+  },
+  "verify.permission.FOREGROUND_SERVICE": {
+    "message": "Sigue funcionando en segundo plano"
+  },
+  "verify.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK": {
+    "message": "Escucha música de fondo"
+  },
+  "verify.permission.FOREGROUND_SERVICE_DATA_SYNC": {
+    "message": "Sincroniza o descarga datos de fondo"
+  },
+  "verify.permission.WAKE_LOCK": {
+    "message": "Mantener dispositivo encendido en la reproducción"
+  },
+  "verify.permission.RECEIVE_BOOT_COMPLETED": {
+    "message": "Iniciar al reiniciar el dispositivo"
+  },
+  "verify.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS": {
+    "message": "Pedir exclusión de optimizaciones de batería"
+  },
+  "verify.permission.REQUEST_INSTALL_PACKAGES": {
+    "message": "Pedir instalar actualizaciones"
+  },
+  "verify.permission.READ_MEDIA_AUDIO": {
+    "message": "Leer archivos de música en el dispositivo"
+  },
+  "verify.permission.READ_EXTERNAL_STORAGE": {
+    "message": "Leer archivos en almacenamiento compartido"
+  },
+  "verify.permission.WRITE_EXTERNAL_STORAGE": {
+    "message": "Escribir archivos en almacenamiento compartido"
+  },
+  "verify.permission.RECORD_AUDIO": {
+    "message": "Usar el micrófono"
+  },
+  "verify.permission.MODIFY_AUDIO_SETTINGS": {
+    "message": "Cambiar ajustes de audio"
+  },
+  "verify.permission.SET_WALLPAPER": {
+    "message": "Establecer fondo de pantalla"
+  },
+  "verify.permission.VIBRATE": {
+    "message": "Vibración"
+  },
+  "verify.permission.BLUETOOTH_CONNECT": {
+    "message": "Conectar con dispositivos Bluetooth"
+  },
+  "verify.permission.internal": {
+    "message": "Interno, usado solo por la propia aplicación"
+  },
+  "verify.signer.official": {
+    "message": "Versiones oficiales"
+  },
+  "home.banner.title": {
+    "message": "Reproductor de música personalizable y lleno de funciones",
+    "description": "Main headline on the homepage"
+  },
+  "home.banner.readDocs": {
+    "message": "Leer documentos"
+  },
+  "home.banner.artistPreviewAlt": {
+    "message": "Pantalla de detalles del artista",
+    "description": "Alt text of an app screenshot"
+  },
+  "home.banner.playerPreviewAlt": {
+    "message": "Pantalla de en reproducción",
+    "description": "Alt text of an app screenshot"
+  },
+  "home.crowdin.translated": {
+    "message": "Traducido",
+    "description": "Label above the overall translation percentage"
+  },
+  "home.crowdin.languages": {
+    "message": "Idiomas",
+    "description": "Label above the number of languages"
+  },
+  "home.crowdin.translators": {
+    "message": "Traductores",
+    "description": "Label above the number of translators"
+  },
+  "home.crowdin.completed": {
+    "message": "{completed} de {total} idiomas traducidos al completo"
+  },
+  "home.crowdin.translate": {
+    "message": "Traducir",
+    "description": "Button that opens the Crowdin project"
+  },
+  "home.crowdin.requestLanguage": {
+    "message": "Solicitar idioma"
+  },
+  "home.discord.online": {
+    "message": "{count} en línea"
+  },
+  "home.discord.members": {
+    "message": "{count} miembros"
+  },
+  "home.discord.join": {
+    "message": "Unirse al servidor"
+  },
+  "home.community.heading": {
+    "message": "Únete a la comunidad"
+  },
+  "home.donation.patreonNote": {
+    "message": "Apoyo mensual"
+  },
+  "home.donation.liberapayNote": {
+    "message": "Donaciones recurrentes"
+  },
+  "home.donation.copiedLabel": {
+    "message": "Dirección de {name} copiada",
+    "description": "{name} is a cryptocurrency, e.g. Bitcoin"
+  },
+  "home.donation.copyLabel": {
+    "message": "Copiar dirección de {name}",
+    "description": "{name} is a cryptocurrency, e.g. Bitcoin"
+  },
+  "home.donation.copied": {
+    "message": "Copiado"
+  },
+  "home.donation.copy": {
+    "message": "Copiar",
+    "description": "Button that copies a wallet address"
+  },
+  "home.donation.heading": {
+    "message": "Apoya a {app}"
+  },
+  "home.highlights.lyrics.title": {
+    "message": "Letra sincronizada y simple"
+  },
+  "home.highlights.lyrics.description": {
+    "message": "Letra de varios proveedores, resaltada palabra por palabra si la tiene la fuente."
+  },
+  "home.highlights.lyrics.tagMore": {
+    "message": "y más"
+  },
+  "home.highlights.androidAuto.description": {
+    "message": "Busca y reproduce por voz desde tu coche con ajustes de búsqueda por voz."
+  },
+  "home.highlights.loudness.title": {
+    "message": "Normalización de volumen"
+  },
+  "home.highlights.loudness.description": {
+    "message": "Lleva cada canción lo más cerca posible de tu volumen objetivo, con un analizador de volumen de archivos locales incluido."
+  },
+  "home.highlights.discordRpc.description": {
+    "message": "Muestra tu actividad de Kreate en tu perfil de Discord."
+  },
+  "home.highlights.discordRpc.tagStreaming": {
+    "message": "Música en streaming"
+  },
+  "home.highlights.discordRpc.tagBrowsing": {
+    "message": "Navegar álbumes, artistas y listas de reproducción"
+  },
+  "home.highlights.discordRpc.tagSearch": {
+    "message": "Buscando"
+  },
+  "home.highlights.profiles.title": {
+    "message": "Perfiles"
+  },
+  "home.highlights.profiles.description": {
+    "message": "Varias personas, o varios estados de ánimo, pueden compartir una instalación, cada una con su propio perfil."
+  },
+  "home.highlights.profiles.tagLibrary": {
+    "message": "Biblioteca propia"
+  },
+  "home.highlights.profiles.tagSettings": {
+    "message": "Ajustes propios"
+  },
+  "home.highlights.profiles.tagSignIns": {
+    "message": "Inicios de sesión propios"
+  },
+  "home.highlights.quality.title": {
+    "message": "Calidad de transmisión"
+  },
+  "home.highlights.quality.description": {
+    "message": "Establecer la calidad por separado para Wi-Fi y datos móviles, en cada fuente."
+  },
+  "home.highlights.statistics.title": {
+    "message": "Estadísticas"
+  },
+  "home.highlights.statistics.description": {
+    "message": "Tiempo de escucha, top de canciones, álbumes y artistas, y gráficos para todo ello."
+  },
+  "home.highlights.musicbrainz.title": {
+    "message": "Detalles de MusicBrainz"
+  },
+  "home.highlights.musicbrainz.description": {
+    "message": "Primera versión, ISRCs, géneros, lanzamientos y enlaces para canciones, álbumes y artistas."
+  },
+  "home.highlights.sharing.title": {
+    "message": "Compartir"
+  },
+  "home.highlights.sharing.description": {
+    "message": "Comparte enlaces de YouTube u OpenSubsonic, o el propio archivo local."
+  },
+  "home.sources.youtube.point1": {
+    "message": "Busca y transmite su enorme catálogo"
+  },
+  "home.sources.youtube.point2": {
+    "message": "Albumes, artistas y listas de reproducción"
+  },
+  "home.sources.opensubsonic.title": {
+    "message": "Servidor de OpenSubsonic"
+  },
+  "home.sources.opensubsonic.point1": {
+    "message": "Conectar a tu propio servidor de música"
+  },
+  "home.sources.opensubsonic.point2": {
+    "message": "Funciona con servidores compatibles con OpenSubsonic"
+  },
+  "home.sources.local.title": {
+    "message": "Archivos en el dispositivo"
+  },
+  "home.sources.local.point1": {
+    "message": "Reproduce archivos de música guardados en tu teléfono"
+  },
+  "home.sources.local.point2": {
+    "message": "No requiere conexión a internet"
+  },
+  "home.features.more": {
+    "message": "Y muchas más funciones"
+  },
+  "home.posts.readingTime": {
+    "message": "Lectura de {minutes} min"
+  },
+  "home.posts.heading": {
+    "message": "Publicaciones recientes"
+  },
+  "home.posts.seeMore": {
+    "message": "Ver más"
+  },
+  "home.screenshots.label": {
+    "message": "Capturas de pantalla de la aplicación"
+  },
+  "home.screenshots.previous": {
+    "message": "Captura de pantalla anterior"
+  },
+  "home.screenshots.alt": {
+    "message": "Pantalla {screen}",
+    "description": "Alt text of the centered screenshot; {screen} is its caption"
+  },
+  "home.screenshots.next": {
+    "message": "Captura de pantalla siguiente"
+  },
+  "home.translators.heading": {
+    "message": "Mejores traductores"
+  },
+  "home.translators.seeAll": {
+    "message": "Ver todos"
+  },
+  "home.translators.words": {
+    "message": "palabras",
+    "description": "Unit under a translated-words count"
+  },
+  "footer.tagline": {
+    "message": "Música a tu manera",
+    "description": "Site tagline under the logo in the footer"
+  },
+  "navbar.repoStats.stars": {
+    "message": "{count} Estrellas"
+  },
+  "navbar.repoStats.starsLabel": {
+    "message": "{count} Estrellas en GitHub"
+  },
+  "navbar.repoStats.forks": {
+    "message": "{count} Forks"
+  },
+  "navbar.repoStats.forksLabel": {
+    "message": "{count} Forks en GitHub"
+  },
+  "home.badge.alt": {
+    "message": "Página de descarga en {platform}",
+    "description": "Alt text of a \"Get it on\" badge; {platform} is a store name like F-Droid"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Esta página ha fallado.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Desplazar hacia arriba",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archivo",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archivo",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Navegación por la página de la lista de blogs",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Entradas más recientes",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Entradas más antiguas",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Navegación por la página de publicaciones del blog",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Publicación más reciente",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Publicación más antigua",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Ver todas las etiquetas",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "modo del sistema",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "modo claro",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "modo oscuro",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Alternar entre modo oscuro y claro (actualmente {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Migas de pan",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Páginas de documentos",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Anterior",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Siguiente",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Un documento etiquetado|{count} documentos etiquetados",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} con \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Versión: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Esta es documentación no publicada para la versión {versionLabel} de {siteTitle}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Esta es documentación para la versión {versionLabel}, que fue discontinuada, de {siteTitle}.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Para la documentación actualizada, vea la {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "última versión",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Editar esta página",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Enlace directo a {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " el {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " por {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Última actualización {atDate} {byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "Página no encontrada",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versiones",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Etiquetas:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "precaución",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "peligro",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "nota",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "consejo",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "aviso",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Cerrar",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Navegación de publicaciones del blog recientes",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expandir la categoría '{label}' de la barra lateral",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Colapsar la categoría '{label}' de la barra lateral",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(se abre en una pestaña nueva)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Principal",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "No pudimos encontrar lo que buscabas.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Ponte en contacto con el propietario del sitio que te enlazó a la URL original y hazle saber que su enlace está roto.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Idiomas",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "En esta página",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Leer más",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Leer más sobre {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Un min de lectura|{readingTime} min de lectura",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copiar",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copiado",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copiar código al portapapeles",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Alternar ajuste de línea",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Página de inicio",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Colapsar barra lateral",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Colapsar barra lateral",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Barra lateral de la documentación",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Cerrar barra de navegación",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Volver al menú principal",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Alternar barra de navegación",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Desplegar el menú",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Colapsar el menú",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expandir barra lateral",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expandir barra lateral",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Una publicación|{count} publicaciones",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} etiquetados con \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Autores",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "Ver todos los autores",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "Este autor aún no ha escrito publicaciones.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Página sin clasificar",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "Esta página está sin clasificar. Los motores de búsqueda no la indexarán, y solo los usuarios con el enlace directo podrán acceder a ella.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Borrador de página",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "Esta página es un borrador. Solo será visible en desarrollo y se excluirá de la versión de producción.",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 elemento|{count} elementos",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Inténtalo de nuevo",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Saltar al contenido principal",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Etiquetas",
+    "description": "The title of the tag list page"
+  },
+  "download.title": {
+    "message": "Descarga"
+  },
+  "download.description": {
+    "message": "Los lugares donde puedes descargar {app}."
+  },
+  "download.heading": {
+    "message": "Descargar {app}"
+  },
+  "home.banner.moreDownloads": {
+    "message": "Más descargas",
+    "description": "Button above the download badges, opens the page listing every download source"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Resultados de búsqueda para \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Buscar en la documentación",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.searchContext.everywhere": {
+    "message": "En todas partes"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "Un documento encontrado|{count} documentos encontrados",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "No se encontraron documentos",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchBar.noResultsText": {
+    "message": "No hay resultados"
+  },
+  "theme.SearchBar.seeAllOutsideContext": {
+    "message": "Ver los resultados fuera de \"{context}\""
+  },
+  "theme.SearchBar.searchInContext": {
+    "message": "Ver los resultados dentro de \"{context}\""
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "Ver todos los resultados"
+  },
+  "theme.SearchBar.label": {
+    "message": "Buscar",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "download.foss.title": {
+    "message": "Versión FOSS"
+  },
+  "download.foss.description": {
+    "message": "Totalmente de código abierto, sin telemetría ni bibliotecas de código cerrado. Las actualizaciones llegan a través de la tienda en la que lo instalas."
+  },
+  "download.github.title": {
+    "message": "Versión de GitHub"
+  },
+  "download.github.description": {
+    "message": "La versión más reciente tan pronto como sea lanzada, con actualizador integrado y telemetría opcional. Obtainium y OpenAPK instalan el mismo APK."
+  },
+  "download.patreon.title": {
+    "message": "Versión de Patreon"
+  },
+  "download.patreon.description": {
+    "message": "Características avanzadas para los seguidores de pago. Algunas de sus bibliotecas son de código cerrado, por lo que se encuentra bajo licencia independiente."
+  },
+  "download.next.whichApk": {
+    "message": "¿Qué APK necesito?"
+  },
+  "download.next.install": {
+    "message": "Instalando APK"
+  },
+  "download.next.verify": {
+    "message": "Verifica tu descarga"
+  },
+  "download.leadLink": {
+    "message": "Elegir tu versión"
+  },
+  "download.learnMore": {
+    "message": "Más información"
+  },
+  "download.switching": {
+    "message": "Cambiar a una versión diferente puede no instalarla como actualización. Si Android se niega, {link}, desinstala, y reinstala y restaura la nueva versión."
+  },
+  "download.switchingLink": {
+    "message": "copia de seguridad de tu biblioteca"
+  },
+  "download.next.label": {
+    "message": "Siguientes pasos"
+  },
+  "download.leadBuilds": {
+    "message": "{app} viene en tres compilaciones. Elige una abajo, o lee {link} para una comparación completa."
+  },
+  "translators.languages": {
+    "message": "Idiomas"
+  },
+  "translators.words": {
+    "message": "{count} palabras",
+    "description": "Number of words a translator has translated; {count} is already formatted"
+  },
+  "translators.since": {
+    "message": "Desde {date}",
+    "description": "{date} is a month and year, e.g. \"Apr 2025\""
+  },
+  "translators.heading": {
+    "message": "Traductores"
+  },
+  "translators.lead": {
+    "message": "{app} ha sido traducido por {count} voluntarios. Gracias por traerlo a tu idioma."
+  },
+  "translators.join": {
+    "message": "Ayuda a traducir"
+  },
+  "verify.scan.foss": {
+    "message": "Versión FOSS, escaneada por IzzyOnDroid"
+  },
+  "verify.scan.fossDetail": {
+    "message": "Esta es la versión de FOSS. {app} no la sube a VirusTotal en sí, pero IzzyOnDroid escanea cada APK que publica, y F-Droid y GitHub envían el mismo archivo. VirusTotal ya debería tener un informe para ella, aunque una versión nueva puede tardar hasta un día en aparecer."
+  },
+  "verify.scan.notRecorded": {
+    "message": "Esta versión no está en los registros de escaneo de {app}"
+  },
+  "verify.scan.notRecordedDetail": {
+    "message": "Esto no significa que algo esté mal: la verificación de firmas de arriba ya confirma que el archivo es original. Las versiones publicadas antes de que se activara el escaneo no tienen registro de escaneo y las versiones nuevas tardan unos 15 minutos en ser grabadas."
+  },
+  "verify.scan.serviceUnreachable": {
+    "message": "No se pudo alcanzar el servicio de escaneo de {app}. Vuelve a intentarlo en unos minutos."
+  },
+  "verify.scan.failedReport": {
+    "message": "Algo salió mal en nuestro lado. Por favor {link}."
+  },
+  "verify.scan.failedReportLink": {
+    "message": "reporta esto en GitHub"
+  },
+  "verify.zone.validGenuine": {
+    "message": "Firmado por los desarrolladores de {app} y sin modificar."
+  },
+  "verify.getOfficial": {
+    "message": "Obtén {app} de una fuente oficial"
+  },
+  "verify.official.text": {
+    "message": "Los APKs oficiales de GitHub, F-Droid, IzzyOnDroid y Patreon están todos firmados con este certificado. También puedes revisar un APK tú mismo con {command}."
+  },
+  "verify.moreInfo": {
+    "message": "¿Quieres saber por qué las firmas importan o comprobar en la línea de comandos? Lee {link}."
+  },
+  "verify.moreInfoLink": {
+    "message": "Cómo verificar firmas"
+  }
+}

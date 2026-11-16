@@ -1,0 +1,535 @@
+{
+  "home.title": {
+    "message": "Ứng dụng nghe nhạc",
+    "description": "Homepage <title>, shown after the app name"
+  },
+  "home.description": {
+    "message": "Ứng dụng phát nhạc đa chức năng",
+    "description": "Homepage meta description"
+  },
+  "translators.title": {
+    "message": "Phiên dịch viên"
+  },
+  "translators.description": {
+    "message": "Dịch tiếng Anh sang ngôn ngữ của bạn"
+  },
+  "verify.details.notFound": {
+    "message": "Không tìm thấy"
+  },
+  "verify.details.app": {
+    "message": "Ứng dụng",
+    "description": "Heading of the APK details card about the app"
+  },
+  "verify.details.packageName": {
+    "message": "Tên gói"
+  },
+  "verify.details.versionName": {
+    "message": "Phiên bản"
+  },
+  "verify.details.versionCode": {
+    "message": "(gốc {code})"
+  },
+  "verify.details.minSdk": {
+    "message": "Hỗ trợ tối thiểu"
+  },
+  "verify.details.targetSdk": {
+    "message": "Viết cho phiên bản"
+  },
+  "verify.details.build": {
+    "message": "Bản",
+    "description": "Heading of the APK details card about how it was built"
+  },
+  "verify.details.cpu": {
+    "message": "Cấu trúc CPU"
+  },
+  "verify.details.anyAbi": {
+    "message": "Bất kỳ CPU nào"
+  },
+  "verify.details.buildTools": {
+    "message": "Công cụ xây"
+  },
+  "verify.details.permissions": {
+    "message": "Yêu cầu các quyền sau"
+  },
+  "verify.details.permissionsUnreadable": {
+    "message": "Không thể đọc."
+  },
+  "verify.details.noPermissions": {
+    "message": "Ứng dụng này không yêu cầu quyền."
+  },
+  "verify.details.libraries": {
+    "message": "Phiên bản thư viện"
+  },
+  "verify.details.noLibraries": {
+    "message": "Tệp APK này không có thông tìn về các thư viện"
+  },
+  "verify.details.showLibraries": {
+    "message": "Hiển thị các thư viện"
+  },
+  "verify.details.library": {
+    "message": "Thư viện"
+  },
+  "verify.details.version": {
+    "message": "Phiên bản"
+  },
+  "verify.scan.fullReport": {
+    "message": "Xem chi tiết trên VirusTotal"
+  },
+  "verify.scan.checkAgain": {
+    "message": "Kiểm tra lại"
+  },
+  "verify.scan.loading": {
+    "message": "Đang tìm bản báo cáo…"
+  },
+  "verify.scan.clean": {
+    "message": "Không có phần mềm náo báo cáo tệp náy"
+  },
+  "verify.scan.cleanDetailDated": {
+    "message": "Duyệt bởi {engines} trính quét, cập nhật lần cuối lúc {date}."
+  },
+  "verify.scan.cleanDetail": {
+    "message": "Duyệt bởi {engines} trính quét."
+  },
+  "verify.scan.flaggedMalicious": {
+    "message": "{count} trình quét báo có vấn để."
+  },
+  "verify.scan.flaggedSuspicious": {
+    "message": "{count} trình quét nghi vấn tệp."
+  },
+  "verify.scan.flagged": {
+    "message": "{flagged} / {engines} trính quét báo có vấn đề"
+  },
+  "verify.scan.falsePositives": {
+    "message": "Ứng dụng Android hay bị đánh giá sai, kiểm tra lại và tự đưa ra quyết định"
+  },
+  "verify.scan.lastUpdated": {
+    "message": "Cập nhật lần cuối {date}."
+  },
+  "verify.scan.inProgress": {
+    "message": "Trình quét đang chạy"
+  },
+  "verify.scan.notFinished": {
+    "message": "VirusTotal vẫn đang quét tệp này."
+  },
+  "verify.scan.retryIn": {
+    "message": "Hãy thử lại trong {seconds} giây nữa."
+  },
+  "verify.scan.checkLater": {
+    "message": "Các phiên bản mới thường sẽ được quét trong vài phút, hãy chờ một chút."
+  },
+  "verify.scan.error": {
+    "message": "Tệp này không thể được quét"
+  },
+  "verify.scan.errorDetail": {
+    "message": "Gửi tệp đến VirusTotal thất bại, báo cáo sẽ không thể được hiển thị."
+  },
+  "verify.scan.unavailable": {
+    "message": "Báo cáo không khả dụng ở thời điểm hiện tại"
+  },
+  "verify.scan.failed": {
+    "message": "Không thể tải báo cáo"
+  },
+  "verify.scan.heading": {
+    "message": "VirusTotal"
+  },
+  "verify.reason.tooLarge": {
+    "message": "Tệp APK quá lớn so với {app} thông thường."
+  },
+  "verify.reason.untrusted": {
+    "message": "Tệp được ký, nhưng không phải chữ ký của {app}. Đừng cài bản này."
+  },
+  "verify.reason.invalid": {
+    "message": "{reason}. Đừng cài bản này.",
+    "description": "{reason} is a technical error in English, e.g. \"Signature does not verify\""
+  },
+  "verify.reason.unsupported": {
+    "message": "Không thể đọc tệp này. Có thể vì trình duyệt không hỗ trợ."
+  },
+  "verify.title": {
+    "message": "Xác minh tệp APK"
+  },
+  "verify.description": {
+    "message": "Kiểm tra nếu tệp APK là chính gốc và không bị chỉnh sửa. Mọi kiểm tra sẽ được làm trên trình duyệt của bạn."
+  },
+  "verify.heading": {
+    "message": "Xác minh tệp APK"
+  },
+  "verify.lead": {
+    "message": "Kiểm tra nếu tệp APK là chính gốc và không bị chỉnh sửa. Mọi kiểm tra sẽ được làm trên trình duyệt của bạn."
+  },
+  "verify.leadNoUpload": {
+    "message": "Tệp của bạn sẽ không được tải lên máy chủ nào hết."
+  },
+  "verify.zone.label": {
+    "message": "Chọn hoặc thả tệp APK vào đây để xác minh"
+  },
+  "verify.zone.drop": {
+    "message": "Thả vào đây"
+  },
+  "verify.zone.idle": {
+    "message": "Kéo và thả tệp APK vào đây"
+  },
+  "verify.zone.idleHint": {
+    "message": "hoặc nhấn để chọn tệp"
+  },
+  "verify.zone.checking": {
+    "message": "Đang kiểm tra chữ ký…"
+  },
+  "verify.zone.valid": {
+    "message": "Tệp {app} là chính gốc"
+  },
+  "verify.zone.invalid": {
+    "message": "{app} không chính gốc"
+  },
+  "verify.checkAnother": {
+    "message": "Kiểm tra tệp khác"
+  },
+  "verify.signerFingerprint": {
+    "message": "SHA-256 của chữ ký"
+  },
+  "verify.official.summary": {
+    "message": "Chữ ký chính gốc"
+  },
+  "verify.sdk.preview": {
+    "message": "Xem trước \"{codename}\"",
+    "description": "Unreleased Android version; {codename} is e.g. \"Baklava\""
+  },
+  "verify.abi.arm64_v8a": {
+    "message": "ARM 64-bit"
+  },
+  "verify.abi.armeabi_v7a": {
+    "message": "ARM 32-bit"
+  },
+  "verify.abi.x86_64": {
+    "message": "Intel/AMD 64-bit"
+  },
+  "verify.abi.x86": {
+    "message": "Intel/AMD 32-bit"
+  },
+  "verify.permission.INTERNET": {
+    "message": "Truy cập mạng"
+  },
+  "verify.permission.ACCESS_NETWORK_STATE": {
+    "message": "Biết được nếu thiết bị có mạng"
+  },
+  "verify.permission.ACCESS_WIFI_STATE": {
+    "message": "Xem thông tin Wi-Fi"
+  },
+  "verify.permission.POST_NOTIFICATIONS": {
+    "message": "Hiển thị thông báo"
+  },
+  "verify.permission.FOREGROUND_SERVICE": {
+    "message": "Cho phép tác vụ chạy ngầm"
+  },
+  "verify.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK": {
+    "message": "Phát nhạc bằng tác vụ chạy ngầm"
+  },
+  "verify.permission.FOREGROUND_SERVICE_DATA_SYNC": {
+    "message": "Tải nhạc bằng tác vụ chạy ngầm"
+  },
+  "verify.permission.WAKE_LOCK": {
+    "message": "Giữ màn hình khi đang phát nhạc"
+  },
+  "verify.permission.RECEIVE_BOOT_COMPLETED": {
+    "message": "Chạy ứng dụng khi thiết bị khởi động lại"
+  },
+  "verify.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS": {
+    "message": "Hỏi để bỏ ứng dụng ra khỏi chế độ tối ưu pin"
+  },
+  "verify.permission.REQUEST_INSTALL_PACKAGES": {
+    "message": "Hỏi để cài đặt cập nhật"
+  },
+  "verify.permission.READ_MEDIA_AUDIO": {
+    "message": "Đọc nhạc trên máy"
+  },
+  "verify.permission.READ_EXTERNAL_STORAGE": {
+    "message": "Đọc tệp trên máy"
+  },
+  "verify.permission.WRITE_EXTERNAL_STORAGE": {
+    "message": "Ghi vào ổ cứng"
+  },
+  "verify.permission.RECORD_AUDIO": {
+    "message": "Dùng microphone"
+  },
+  "verify.permission.MODIFY_AUDIO_SETTINGS": {
+    "message": "Thay đổi cài đặt âm thanh"
+  },
+  "verify.permission.SET_WALLPAPER": {
+    "message": "Đặt hình nền"
+  },
+  "verify.permission.VIBRATE": {
+    "message": "Báo rung"
+  },
+  "verify.permission.BLUETOOTH_CONNECT": {
+    "message": "Kết nối với thiết bị Bluetooth"
+  },
+  "verify.permission.internal": {
+    "message": "Nội bộ, chỉ dùng bởi ứng dụng này"
+  },
+  "verify.signer.official": {
+    "message": "Các bản phát hành chính thức"
+  },
+  "home.banner.title": {
+    "message": "Ứng dụng phát nhạc đa chức năng",
+    "description": "Main headline on the homepage"
+  },
+  "home.banner.readDocs": {
+    "message": "Tài liệu"
+  },
+  "home.banner.artistPreviewAlt": {
+    "message": "Thông tin chi tiết về nghệ sĩ",
+    "description": "Alt text of an app screenshot"
+  },
+  "home.banner.playerPreviewAlt": {
+    "message": "Trình phát",
+    "description": "Alt text of an app screenshot"
+  },
+  "home.crowdin.translated": {
+    "message": "Đã phiên dịch",
+    "description": "Label above the overall translation percentage"
+  },
+  "home.crowdin.languages": {
+    "message": "Số ngôn ngữ",
+    "description": "Label above the number of languages"
+  },
+  "home.crowdin.translators": {
+    "message": "Phiên dịch viên",
+    "description": "Label above the number of translators"
+  },
+  "home.crowdin.completed": {
+    "message": "{completed} / {total} đã được phiên dịch hoàn toàn"
+  },
+  "home.crowdin.translate": {
+    "message": "Phiên dịch",
+    "description": "Button that opens the Crowdin project"
+  },
+  "home.crowdin.requestLanguage": {
+    "message": "Yêu cầu"
+  },
+  "home.discord.online": {
+    "message": "{count} đang trực tuyến"
+  },
+  "home.discord.members": {
+    "message": "{count} thành viên"
+  },
+  "home.discord.join": {
+    "message": "Tham gia"
+  },
+  "home.community.heading": {
+    "message": "Tham gia cộng đồng"
+  },
+  "home.donation.patreonNote": {
+    "message": "Ủng hộ hằng tháng"
+  },
+  "home.donation.liberapayNote": {
+    "message": "Ủng hộ định ký"
+  },
+  "home.donation.copiedLabel": {
+    "message": "Đã sao chép địa chỉ {name}",
+    "description": "{name} is a cryptocurrency, e.g. Bitcoin"
+  },
+  "home.donation.copyLabel": {
+    "message": "Sao chép địa chỉ {name}",
+    "description": "{name} is a cryptocurrency, e.g. Bitcoin"
+  },
+  "home.donation.copied": {
+    "message": "Đã sao chép"
+  },
+  "home.donation.copy": {
+    "message": "Sao chép",
+    "description": "Button that copies a wallet address"
+  },
+  "home.donation.heading": {
+    "message": "Ủng hộ {app}"
+  },
+  "home.highlights.lyrics.title": {
+    "message": "Đồng bộ lời bài hát"
+  },
+  "home.highlights.lyrics.description": {
+    "message": "Tải lời từ nhiều nguồn khác nhau, đồng bộ từng lời hoặc từng dòng."
+  },
+  "home.highlights.lyrics.tagMore": {
+    "message": "và thêm nữa"
+  },
+  "home.highlights.androidAuto.description": {
+    "message": "Xem, phát và tìm kiếm bằng giọng nói trên xe."
+  },
+  "home.highlights.loudness.title": {
+    "message": "Cân bằng độ ồn"
+  },
+  "home.highlights.discordRpc.tagStreaming": {
+    "message": "Nhạc đang phát"
+  },
+  "home.highlights.discordRpc.tagBrowsing": {
+    "message": "Xem album, nghệ sĩ và danh sách nhạc"
+  },
+  "home.highlights.discordRpc.tagSearch": {
+    "message": "Tìm kiếm"
+  },
+  "home.highlights.profiles.title": {
+    "message": "Hồ sơ"
+  },
+  "home.highlights.profiles.description": {
+    "message": "Nhiều người dùng trên một thiết bị, tất cả mọi thứ sẽ được tách riêng biệt."
+  },
+  "home.highlights.profiles.tagLibrary": {
+    "message": "Thư viện"
+  },
+  "home.highlights.profiles.tagSettings": {
+    "message": "Cài đặt"
+  },
+  "home.highlights.profiles.tagSignIns": {
+    "message": "Đăng nhập"
+  },
+  "home.highlights.quality.title": {
+    "message": "Chất lượng nhạc"
+  },
+  "home.highlights.quality.description": {
+    "message": "Đặt chất lượng cho Wi-Fi và dữ liệu di động, cho mỗi nguồn, để tiết kiệm dữ liệu."
+  },
+  "home.highlights.statistics.title": {
+    "message": "Thống kê"
+  },
+  "home.highlights.statistics.description": {
+    "message": "Số lần nghe, bài hát/album/nghệ sĩ được nghe nhiều nhất kèm biều đồ."
+  },
+  "home.highlights.musicbrainz.title": {
+    "message": "Lấy thông tin từ MusicBrainz"
+  },
+  "home.highlights.musicbrainz.description": {
+    "message": "Ngày phát sóng, mã định danh quốc tế, thể loại, album, và nghệ sĩ."
+  },
+  "home.highlights.sharing.title": {
+    "message": "Chia sẻ"
+  },
+  "home.highlights.sharing.description": {
+    "message": "YouTube Music và OpenSubsonic qua liên kết, tệp nếu là nhạc trên hệ thống."
+  },
+  "home.sources.youtube.point1": {
+    "message": "Tìm và nghe nhạc trên nền tảng khổng lồ"
+  },
+  "home.sources.youtube.point2": {
+    "message": "Album, nghệ sĩ và danh sách nahc5"
+  },
+  "home.sources.opensubsonic.title": {
+    "message": "Máy chủ OpenSubsonic"
+  },
+  "home.sources.opensubsonic.point1": {
+    "message": "Nơi lưu trữ nhạc nội bộ của bạn"
+  },
+  "home.sources.opensubsonic.point2": {
+    "message": "Hỗ trợ máy chủ chấp nhận OpenSubsonic"
+  },
+  "home.sources.local.title": {
+    "message": "Nhạc trên hệ thống"
+  },
+  "home.sources.local.point1": {
+    "message": "Phát nhạc có sẵn trên máy"
+  },
+  "home.sources.local.point2": {
+    "message": "Không yêu cầu mạng"
+  },
+  "home.features.more": {
+    "message": "Và nhiều chức năng khác"
+  },
+  "home.posts.readingTime": {
+    "message": "{minutes} phút đọc"
+  },
+  "home.posts.heading": {
+    "message": "Bài đăng gần đây"
+  },
+  "home.posts.seeMore": {
+    "message": "Xem thêm"
+  },
+  "home.screenshots.label": {
+    "message": "Các bản chụp màn hình"
+  },
+  "home.screenshots.previous": {
+    "message": "Hình trước"
+  },
+  "home.screenshots.next": {
+    "message": "Hình kế"
+  },
+  "home.translators.heading": {
+    "message": "Bảng xếp hạng"
+  },
+  "home.translators.seeAll": {
+    "message": "Xem tất cả"
+  },
+  "home.translators.words": {
+    "message": "từ",
+    "description": "Unit under a translated-words count"
+  },
+  "navbar.repoStats.stars": {
+    "message": "{count} sao"
+  },
+  "navbar.repoStats.starsLabel": {
+    "message": "{count} sao trên GitHub"
+  },
+  "navbar.repoStats.forks": {
+    "message": "{count} lần được fork"
+  },
+  "navbar.repoStats.forksLabel": {
+    "message": "{count} lần được fork trên GitHub"
+  },
+  "home.badge.alt": {
+    "message": "Tải từ {platform}",
+    "description": "Alt text of a \"Get it on\" badge; {platform} is a store name like F-Droid"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Trang này bị lỗi.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Lên đầu trang",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Lưu trữ",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Lưu trữ",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Bài mới hơn",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Bài cũ hơn",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Bài mới hơn",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Bài cũ hơn",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Xem tất cả các thẻ",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "theo hệ thống",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "sáng",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "tối",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Chuyển đổi chế độ sáng và tối (hiện tại {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Liên kết điều hướng",
+    "description": "The ARIA label for the breadcrumbs"
+  }
+}

@@ -5,7 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ThemeClassNames } from '@docusaurus/theme-common';
 import type { Props } from '@theme/Footer/Layout';
 import { Icon } from '@Iconify';
-import { translate } from '@docusaurus/Translate';
 
 import { APP_NAME, APP_REPO_PATH, GITHUB_URL } from '@site/constants';
 import styles from './styles.module.css';
@@ -41,7 +40,7 @@ export default function FooterLayout( { style, links, logo, copyright }: Props )
             {/* Message mirrors `tagline` in docusaurus.config.ts; keep them in sync. */}
             {siteConfig.tagline && (
               <p className={styles.tagline}>
-                {translate({ id: 'footer.tagline', message: 'Music your way', description: 'Site tagline under the logo in the footer' })}
+                Music your way
               </p>
             )}
 

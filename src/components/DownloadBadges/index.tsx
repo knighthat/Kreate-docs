@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css'
 
@@ -31,10 +30,7 @@ export const PLATFORMS: Platform[] = [
 export function Badge( { name, slug, className }: Pick<Platform, 'name' | 'slug'> & { className?: string } ): ReactNode {
   return(
     <a className={clsx('padding--none', className)} href={`/download/${slug}`} >
-      <img className={styles.badge} src={`/img/get-it-on/${name}.webp`} width={388} height={150} alt={translate(
-        { id: 'home.badge.alt', message: '{platform} download page', description: 'Alt text of a "Get it on" badge; {platform} is a store name like F-Droid' },
-        { platform: name },
-      )} />
+      <img className={styles.badge} src={`/img/get-it-on/${name}.webp`} width={388} height={150} alt={`${name} download page`} />
     </a>
   )
 }

@@ -18,19 +18,6 @@ try {
   process.loadEnvFile();
 } catch {}
 
-// Every folder in i18n/ is a locale (pulled from Crowdin). `en` is skipped because
-// i18n/en/ only holds the source strings uploaded to Crowdin.
-const I18N_DIR = path.join(__dirname, 'i18n');
-const LOCALES = [
-  'en',
-  ...(fs.existsSync(I18N_DIR)
-    ? fs.readdirSync(I18N_DIR, { withFileTypes: true })
-        .filter((entry) => entry.isDirectory() && entry.name !== 'en')
-        .map((entry) => entry.name)
-        .sort()
-    : []),
-];
-
 const config: Config = {
   staticDirectories: ['static', GENERATED_STATIC_DIR],
   title: APP_NAME,
@@ -49,11 +36,6 @@ const config: Config = {
   projectName: APP_NAME, // Usually your repo name.
 
   onBrokenLinks: 'throw',
-
-  i18n: {
-    defaultLocale: 'en',
-    locales: LOCALES,
-  },
 
   presets: [
     [
@@ -98,7 +80,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/social-card.webp',
     navbar: {
-      // No `title` here: it would be extracted for translation. Navbar/Logo renders APP_NAME instead.
+      title: APP_NAME,
       logo: {
         alt: `${APP_NAME}\'s logo`,
         src: 'img/logo_transparent.svg',
@@ -118,8 +100,7 @@ const config: Config = {
           icon: {
             icon: 'bi:discord'
           },
-          // `brand` instead of `label` keeps brand names out of navbar.json (see NavbarNavLink)
-          brand: 'Discord'
+          label: 'Discord'
         },
         {
           position: 'right',
@@ -127,10 +108,8 @@ const config: Config = {
           icon: {
             icon: 'mdi:github'
           },
-          brand: 'GitHub'
+          label: 'GitHub'
         },
-        // Hidden until at least one translation exists.
-        ...(LOCALES.length > 1 ? [{ type: 'localeDropdown', position: 'right' } as const] : []),
       ],
     },
     footer: {

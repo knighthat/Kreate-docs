@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
-import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css'
 import { InlineBadges } from '@site/src/components/DownloadBadges';
@@ -33,16 +32,14 @@ export default function Banner(): ReactNode {
       <div className={clsx('container', styles.inner)}>
         <div className={styles.text}>
           <h1 className={styles.title}>
-            <Translate id='home.banner.title' description='Main headline on the homepage'>
-              Feature-rich &amp; customizable music player
-            </Translate>
+            Feature-rich &amp; customizable music player
           </h1>
           <div className={styles.actions}>
             <Link className='button button--primary button--lg' to='/docs'>
-              <Translate id='home.banner.readDocs'>Read docs</Translate>
+              Read docs
             </Link>
             <Link className={clsx('button button--outline button--lg', styles.action)} to='/download'>
-              <Translate id='home.banner.moreDownloads' description='Button above the download badges, opens the page listing every download source'>More downloads</Translate>
+              More downloads
             </Link>
           </div>
           <InlineBadges className={styles.badges} />
@@ -52,12 +49,12 @@ export default function Banner(): ReactNode {
           <Phone
             className={styles.back}
             src='/img/screenshots/09-artist-details-3.webp'
-            alt={translate({ id: 'home.banner.artistPreviewAlt', message: 'Artist details screen', description: 'Alt text of an app screenshot' })}
+            alt='Artist details screen'
           />
           <Phone
             className={styles.front}
             src='/img/screenshots/01-player.webp'
-            alt={translate({ id: 'home.banner.playerPreviewAlt', message: 'Now playing screen', description: 'Alt text of an app screenshot' })}
+            alt='Now playing screen'
           />
         </div>
       </div>

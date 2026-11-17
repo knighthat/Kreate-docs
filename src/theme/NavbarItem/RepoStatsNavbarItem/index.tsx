@@ -2,8 +2,6 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@Iconify';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
@@ -23,22 +21,21 @@ type Props = {
  */
 export default function RepoStatsNavbarItem( { mobile }: Props ): ReactNode {
   const { stars, forks } = usePluginData( 'github-stats-plugin' ) as RepoStats;
-  const { i18n } = useDocusaurusContext();
   if( stars === null && forks === null ) return null;
 
-  const compactFormat = new Intl.NumberFormat( i18n.currentLocale, { notation: 'compact', maximumFractionDigits: 1 } );
-  const fullFormat = new Intl.NumberFormat( i18n.currentLocale );
+  const compactFormat = new Intl.NumberFormat( 'en', { notation: 'compact', maximumFractionDigits: 1 } );
+  const fullFormat = new Intl.NumberFormat( 'en' );
 
   const stats = [
     {
       key: 'stars', icon: 'mdi:star-outline', count: stars,
-      title: ( count: string ) => translate({ id: 'navbar.repoStats.stars', message: '{count} Stars' }, { count }),
-      label: ( count: string ) => translate({ id: 'navbar.repoStats.starsLabel', message: '{count} Stars on GitHub' }, { count }),
+      title: ( count: string ) => `${count} Stars`,
+      label: ( count: string ) => `${count} Stars on GitHub`,
     },
     {
       key: 'forks', icon: 'mdi:source-fork', count: forks,
-      title: ( count: string ) => translate({ id: 'navbar.repoStats.forks', message: '{count} Forks' }, { count }),
-      label: ( count: string ) => translate({ id: 'navbar.repoStats.forksLabel', message: '{count} Forks on GitHub' }, { count }),
+      title: ( count: string ) => `${count} Forks`,
+      label: ( count: string ) => `${count} Forks on GitHub`,
     },
   ].filter( s => s.count !== null );
 

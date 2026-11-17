@@ -1,7 +1,6 @@
 import type {ReactNode} from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
-import { translate } from '@docusaurus/Translate';
 
 import Banner from '@components/homepage/Banner';
 import Features from '@components/homepage/Features';
@@ -15,10 +14,10 @@ import { APP_NAME } from '@site/constants';
 
 export default function Home(): ReactNode {
   // Set via <Head> because Layout's `title` always appends " | <site title>".
-  const TITLE = `${APP_NAME} | ${translate({ id: 'home.title', message: 'Music app', description: 'Homepage <title>, shown after the app name' })}`;
+  const TITLE = `${APP_NAME} | Music app`;
 
   return (
-    <Layout description={translate({ id: 'home.description', message: 'Feature-rich & customizable music player', description: 'Homepage meta description' })}>
+    <Layout description='Feature-rich & customizable music player'>
       <Head>
         <title>{TITLE}</title>
         <meta property="og:title" content={TITLE} />

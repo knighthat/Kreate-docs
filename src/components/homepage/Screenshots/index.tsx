@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@Iconify';
-import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
@@ -79,14 +78,14 @@ export default function Screenshots(): ReactNode {
     <section
       className={styles.section}
       aria-roledescription='carousel'
-      aria-label={translate({ id: 'home.screenshots.label', message: 'App screenshots' })}
+      aria-label='App screenshots'
       onMouseEnter={() => setPaused( true )}
       onMouseLeave={() => setPaused( false )}
       onFocus={() => setPaused( true )}
       onBlur={() => setPaused( false )}
     >
       <div className={styles.viewport}>
-        <button type='button' className={clsx(styles.arrow, styles.prev)} onClick={() => go( -1 )} aria-label={translate({ id: 'home.screenshots.previous', message: 'Previous screenshot' })}>
+        <button type='button' className={clsx(styles.arrow, styles.prev)} onClick={() => go( -1 )} aria-label='Previous screenshot'>
           <Icon icon='mdi:chevron-left' />
         </button>
 
@@ -128,7 +127,7 @@ export default function Screenshots(): ReactNode {
                 className={styles.phone}
                 style={style}
                 src={`/img/screenshots/${file}.webp`}
-                alt={offset === 0 ? translate({ id: 'home.screenshots.alt', message: '{screen} screen', description: 'Alt text of the centered screenshot; {screen} is its caption' }, { screen: caption }) : ''}
+                alt={offset === 0 ? `${caption} screen` : ''}
                 aria-hidden={offset !== 0}
                 width={1080}
                 height={2400}
@@ -139,7 +138,7 @@ export default function Screenshots(): ReactNode {
           })}
         </div>
 
-        <button type='button' className={clsx(styles.arrow, styles.next)} onClick={() => go( 1 )} aria-label={translate({ id: 'home.screenshots.next', message: 'Next screenshot' })}>
+        <button type='button' className={clsx(styles.arrow, styles.next)} onClick={() => go( 1 )} aria-label='Next screenshot'>
           <Icon icon='mdi:chevron-right' />
         </button>
       </div>

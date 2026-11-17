@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Translate from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
@@ -17,8 +15,7 @@ type Post = {
 };
 
 function PostCard( { title, permalink, date, description, image, readingTime }: Post ): ReactNode {
-  const { i18n } = useDocusaurusContext();
-  const dateFormat = new Intl.DateTimeFormat(i18n.currentLocale, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const dateFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 
   return(
     <li className={styles.item}>
@@ -30,7 +27,7 @@ function PostCard( { title, permalink, date, description, image, readingTime }: 
         <div className={styles.content}>
           <p className={styles.meta}>
             <time dateTime={date}>{dateFormat.format(new Date(date))}</time>
-            {readingTime && <> · <Translate id='home.posts.readingTime' values={{ minutes: Math.ceil(readingTime) }}>{'{minutes} min read'}</Translate></>}
+            {readingTime && <> · {Math.ceil(readingTime)} min read</>}
           </p>
           <h3 className={styles.title}>{title}</h3>
           {description && <p className={styles.description}>{description}</p>}
@@ -46,7 +43,7 @@ function SeeMoreCard( { to }: { to: string } ): ReactNode {
     <li className={styles.item}>
       <Link to={to} className={`${styles.card} ${styles.more}`}>
         <span className={styles.moreArrow} aria-hidden='true'>→</span>
-        <Translate id='home.posts.seeMore'>See more</Translate>
+        See more
       </Link>
     </li>
   )
@@ -75,7 +72,7 @@ export default function RecentPosts(): ReactNode {
     <section className={styles.section}>
       <div className='container'>
         <h2 className={styles.heading}>
-          <Translate id='home.posts.heading'>Recent posts</Translate>
+          Recent posts
         </h2>
 
         {/* First row: blog posts. Second row: releases, each scrolling on its own. */}

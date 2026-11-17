@@ -1,6 +1,5 @@
 import { useEffect, useState, type ReactNode, type CSSProperties } from 'react';
 import { Icon } from '@Iconify';
-import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
@@ -21,21 +20,20 @@ type Wallet = {
   address: string
 };
 
-// A function so translate() runs at render time, in the visitor's locale.
-const getPlatforms = (): Platform[] => [
+const PLATFORMS: Platform[] = [
   {
     name: 'Patreon',
     icon: 'simple-icons:patreon',
     color: '#ff424d',
     url: 'https://patreon.com/knighthat',
-    note: translate({ id: 'home.donation.patreonNote', message: 'Monthly support' }),
+    note: 'Monthly support',
   },
   {
     name: 'Liberapay',
     icon: 'simple-icons:liberapay',
     color: '#f6c915',
     url: 'https://liberapay.com/knighthat',
-    note: translate({ id: 'home.donation.liberapayNote', message: 'Recurring donations' }),
+    note: 'Recurring donations',
   },
 ];
 
@@ -107,13 +105,13 @@ function WalletCard( { name, icon, color, ticker, address }: Wallet ): ReactNode
         className={styles.copy}
         onClick={copy}
         aria-label={copied
-          ? translate({ id: 'home.donation.copiedLabel', message: '{name} address copied', description: '{name} is a cryptocurrency, e.g. Bitcoin' }, { name })
-          : translate({ id: 'home.donation.copyLabel', message: 'Copy {name} address', description: '{name} is a cryptocurrency, e.g. Bitcoin' }, { name })}
+          ? `${name} address copied`
+          : `Copy ${name} address`}
       >
         <Icon icon={copied ? 'mdi:check' : 'mdi:content-copy'} aria-hidden='true' />
         <span aria-live='polite'>{copied
-          ? translate({ id: 'home.donation.copied', message: 'Copied' })
-          : translate({ id: 'home.donation.copy', message: 'Copy', description: 'Button that copies a wallet address' })}</span>
+          ? 'Copied'
+          : 'Copy'}</span>
       </button>
     </div>
   )
@@ -124,11 +122,11 @@ export default function Donation(): ReactNode {
     <section className={styles.section}>
       <div className='container'>
         <h2 className={styles.heading}>
-          <Translate id='home.donation.heading' values={{ app: 'Kreate' }}>{'Support {app}'}</Translate>
+          Support Kreate
         </h2>
 
         <div className={styles.grid}>
-          {getPlatforms().map( platform => <PlatformCard key={platform.name} {...platform} /> )}
+          {PLATFORMS.map( platform => <PlatformCard key={platform.name} {...platform} /> )}
           {wallets.map( wallet => <WalletCard key={wallet.name} {...wallet} /> )}
         </div>
       </div>

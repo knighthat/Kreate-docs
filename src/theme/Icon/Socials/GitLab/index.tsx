@@ -4,6 +4,8 @@ import { IonIcon } from '@ionic/react';
 import { logoGitlab } from 'ionicons/icons';
 
 
-export default function GitLab(props: SVGProps<SVGSVGElement>): ReactNode {
-  return <IonIcon icon={logoGitlab} {...props} style={{color: '#FCA326'}}/>;
+// Keeps the SVGProps signature of the other social icons, but IonIcon isn't an <svg>: spreading every SVG
+// attribute onto it clashes with Ionic's own props (e.g. `mode`). Callers only pass className.
+export default function GitLab({className}: SVGProps<SVGSVGElement>): ReactNode {
+  return <IonIcon icon={logoGitlab} className={className} style={{color: '#FCA326'}}/>;
 }

@@ -36,6 +36,17 @@ back, ready to play. Turning it off stops saving; the last saved queue stays.
 
 Kreate skips at most three songs in a row before stopping, and tells you why a song failed.
 
+#### Replaced YouTube Music songs
+
+YouTube sometimes takes a song down and publishes it again under a new address, so the old one
+stops playing. With a choice that tries again, Kreate checks such a song first:
+
+- if it plays after all, it's tried again;
+- if YouTube has a new upload of it (same length within 2 seconds, matching title), the new one
+  takes its place in the queue and plays. What your library keeps of the old song (likes,
+  places in playlists) moves over to it. A downloaded song is left as it is;
+- if there's none, it skips or stops as the setting says.
+
 ## Sound
 
 **Even out loudness** and **Target loudness**: see [Loudness](./loudness.md).

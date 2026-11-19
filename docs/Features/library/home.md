@@ -34,6 +34,7 @@ The settings button in each tab's toolbar opens a sheet of actions and filters.
 | Item | What it does |
 |------|--------------|
 | **Play all**, **Shuffle**, **Play next**, **Add to queue** | Act on the songs shown |
+| **Recognize song** | Find out what's playing around you, see [Song recognition](./song-recognition.md) |
 | **Show disliked** | Shows songs you disliked, which are hidden by default |
 | **Cached only** | Only songs in the song cache |
 | **Downloaded only** | Only downloaded songs |
@@ -62,6 +63,7 @@ on, a tapped song plays with songs like it instead.
 |------|--------------|
 | **Open random**, **Play random** | A random playlist |
 | **New playlist** | Opens [New playlist](./playlists.md#creating-a-playlist) |
+| **Import from file** | Imports playlists from a CSV file, see [Import and export playlists](./import-and-export.md) |
 | **Monthly only** | Only monthly playlists (offered when you have some, for example from the [old app](../backup/import-from-old-kreate.md)) |
 
 Pinned playlists come first.

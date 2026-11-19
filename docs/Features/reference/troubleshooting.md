@@ -12,6 +12,9 @@ description: "Fixes for songs that won't play, unreachable servers, missing loca
 - A YouTube Music song that's age-restricted needs **Login for playback** set to *On-failure* or
   *Always*, and a signed-in account.
 - If a song loads forever, lower **Give up loading after** so it fails (and skips) sooner.
+- A YouTube Music song that says it's unavailable may have been published again under a new
+  address. Kreate looks for it when **When a song fails** tries again: see
+  [Replaced YouTube Music songs](../playback/playback-settings.md#replaced-youtube-music-songs).
 
 ## My server can't be reached
 

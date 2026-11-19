@@ -85,6 +85,12 @@ long playlists. Playlists you can't change show their rows grayed out.
 ⋮ → **Delete playlist** asks first. The songs stay in your library. For server and YouTube Music
 playlists Kreate waits for the source to confirm.
 
+## Import and export
+
+A local playlist can be saved to a CSV file (⋮ → **Export playlist**), and playlist files,
+including Spotify playlists exported with Exportify, can be imported from the Playlists tab. See
+[Import and export playlists](./import-and-export.md).
+
 ## Monthly playlists
 
 Playlists marked monthly (brought over from the [old Kreate app](../backup/import-from-old-kreate.md))

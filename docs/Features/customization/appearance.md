@@ -22,8 +22,12 @@ description: "Theme, contrast, language, layout options, custom fonts and the ap
 
 ## Language
 
-**Language** picks the app's language for this profile. *System* follows the device. Changing the
-language in the system's app settings changes it here too.
+**Language** opens the list of languages; the pick is kept for this profile. *System* follows the
+device. Changing the language in the system's app settings changes it here too.
+
+In the **Patreon** build the app ships in English and the other languages are downloaded when you
+pick one, so translations stay up to date between releases: the list fills in after a moment, and
+Kreate checks for newer translations every two days.
 
 - **Translate this language**: help finish its translation on Crowdin (hidden for System and
   English).

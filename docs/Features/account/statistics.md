@@ -10,7 +10,14 @@ worked out on your device.
 
 ## Overview
 
-Choose **All time** or **This month**.
+The settings button in the top bar opens a sheet of filters:
+
+- **Source** chips: count only some sources. This applies to everything on the page, the donut
+  too.
+- **Date range**: **All time** (default), **This month**, **3 months**, **6 months**, **This
+  year**, or any range from the calendar. *3 months* and *6 months* end today.
+
+The top bar names the days shown. Filters reset when you leave the page.
 
 <div className="screens">
 
@@ -18,8 +25,8 @@ Choose **All time** or **This month**.
 
 </div>
 
-- **Summary tiles**: Time listened, Plays, Songs and Artists. *This month* compares each with last
-  month up to the same day.
+- **Summary tiles**: Time listened, Plays, Songs and Artists. With *This month* each is compared
+  with last month up to the same day.
 - **Top songs** (5), with minutes listened.
 - **Top albums** (3).
 - **Top artists** (10), as columns under their pictures, the first one crowned.

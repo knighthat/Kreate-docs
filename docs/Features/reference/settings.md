@@ -29,6 +29,7 @@ Every settings page and what's on it; tap a section to read about it. Settings b
 | [Storage](../offline/storage.md) *(shared)* | Disk cache, Song cache, Song downloads, clearing each |
 | [Downloads](../offline/downloads.md#settings) | Downloads at once, Download retries, Only download on Wi-Fi, Download on low battery, Download lyrics |
 | [Images](../offline/storage.md#memory-cache) *(shared)* | Memory cache |
+| [Database](./reset-and-cleanup.md#database) | Clear search history, Clear listening history, Clean up database (default profile only) |
 
 ## Player
 
@@ -65,12 +66,19 @@ Every settings page and what's on it; tap a section to read about it. Settings b
 | [Requests](../sources/proxy.md) | Connect timeout, Read timeout, Retries |
 | [Proxy](../sources/proxy.md#proxy) | Use a proxy, Server |
 | Sources | Configure YouTube Music, Configure OpenSubsonic |
+| Integrations | [Configure Discord](../integrations/discord.md), [Recognize songs with Shazam](../library/song-recognition.md#settings) (not in the FOSS build) |
 
 ### Configure YouTube Music
 
 Use YouTube Music account, Sign in / channel, Sync songs / albums / artists / playlists, Region,
-quality On Wi-Fi / On mobile data, Login for playback, Proxy.
+[Searches per second](../library/import-and-export.md#search-speed), quality On Wi-Fi / On mobile
+data, Login for playback, Proxy.
 See [YouTube Music](../sources/youtube-music.md).
+
+### Configure Discord
+
+Show activity on Discord, Sign in, YouTube Music / OpenSubsonic / On device switches, Uploaded
+covers: Largest cover, On Wi-Fi / On mobile data. See [Discord](../integrations/discord.md).
 
 ### Configure OpenSubsonic
 
@@ -82,6 +90,11 @@ See [OpenSubsonic servers](../sources/opensubsonic.md).
 
 *Save or restore your profiles, settings and library.* Back up, Restore (default profile only).
 See [Backup and restore](../backup/backup-and-restore.md).
+
+## Reset to default
+
+The last row of the settings list: puts this profile's settings back to their defaults and signs
+it out of everything. See [Reset and clean up](./reset-and-cleanup.md#reset-to-default).
 
 ## About
 

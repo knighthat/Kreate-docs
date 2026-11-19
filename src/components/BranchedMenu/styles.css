@@ -1,0 +1,245 @@
+/*
+ * Global (not a CSS module): every class is prefixed with `branched-menu`.
+ * Row rules are written as `.branched-menu .branched-menu__x` so they outrank Infima's `a` / `a:hover` styles.
+ * State lives on each element (data-open / data-active / data-path), never on an ancestor, so a state
+ * never leaks into nested sections.
+ */
+
+.branched-menu {
+  --bm-w: 240px;
+  --bm-ink: var(--ifm-font-color-base);
+  --bm-accent: var(--ifm-color-primary);
+  --bm-line: var(--ifm-color-emphasis-300);
+  --bm-font: 14px;
+  --bm-row: 36px;
+  --bm-indent: 40px;
+  --bm-line-w: 1.5;
+  --bm-draw: 400ms;
+  --bm-fold: 300ms;
+  --bm-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --bm-muted: color-mix(in srgb, var(--bm-ink) 62%, transparent);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: min(var(--bm-w), 100%);
+  padding-left: 14px;
+  color: var(--bm-ink);
+  font-family: inherit;
+  font-size: var(--bm-font);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.branched-menu::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  border-radius: 1px;
+  background: linear-gradient(to bottom, var(--bm-line) 0%, var(--bm-line) 55%, transparent 100%);
+}
+
+.branched-menu__marker {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  z-index: 1;
+  width: 2px;
+  height: 16px;
+  border-radius: 1px;
+  background: var(--bm-accent);
+  opacity: 0;
+  transition:
+    top 220ms var(--bm-ease-out),
+    opacity 150ms ease;
+}
+
+.branched-menu__marker[data-on] {
+  opacity: 1;
+}
+
+.branched-menu__section,
+.branched-menu__nested {
+  display: flex;
+  flex-direction: column;
+}
+
+.branched-menu__row {
+  display: block;
+}
+
+/* Shared by section heads (top level) and rows (inside trees), whether <a> or <button>. */
+.branched-menu .branched-menu__head,
+.branched-menu .branched-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  background: none;
+  color: var(--bm-muted);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 200ms ease;
+}
+
+.branched-menu .branched-menu__head {
+  padding: 9px 8px 9px 0;
+  font-size: calc(var(--bm-font) + 1px);
+  font-weight: 500;
+}
+
+.branched-menu .branched-menu__item {
+  min-height: var(--bm-row);
+  padding: 6px 8px 6px var(--bm-indent);
+}
+
+.branched-menu .branched-menu__head[data-open],
+.branched-menu .branched-menu__head[data-path],
+.branched-menu .branched-menu__item[data-path] {
+  color: var(--bm-ink);
+}
+
+.branched-menu .branched-menu__item[data-path] {
+  font-weight: 500;
+}
+
+.branched-menu .branched-menu__head[data-active],
+.branched-menu .branched-menu__item[data-active] {
+  color: var(--bm-accent);
+  font-weight: 500;
+}
+
+.branched-menu .branched-menu__head:hover,
+.branched-menu .branched-menu__item:hover {
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .branched-menu .branched-menu__head:hover,
+  .branched-menu .branched-menu__item:hover {
+    color: var(--bm-ink);
+  }
+
+  .branched-menu .branched-menu__head[data-active]:hover,
+  .branched-menu .branched-menu__item[data-active]:hover {
+    color: var(--bm-accent);
+  }
+}
+
+/* Keyboard users get a visible focus ring (the original removes all outlines). */
+.branched-menu .branched-menu__head:focus-visible,
+.branched-menu .branched-menu__item:focus-visible {
+  outline: 2px solid var(--bm-accent);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+.branched-menu__label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.branched-menu__icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.branched-menu__chevron {
+  flex: none;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.6;
+  transition: transform var(--bm-fold) var(--bm-ease-out);
+}
+
+[aria-expanded='true'] > .branched-menu__chevron {
+  transform: rotate(90deg);
+}
+
+/* Folding */
+
+.branched-menu__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--bm-fold) var(--bm-ease-out);
+}
+
+.branched-menu__body[data-open] {
+  grid-template-rows: 1fr;
+}
+
+.branched-menu__body--nested {
+  margin-left: var(--bm-indent);
+}
+
+.branched-menu__fold {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.branched-menu__tree {
+  position: relative;
+  padding: 6px 0;
+  box-sizing: border-box;
+}
+
+/* Lines */
+
+.branched-menu__lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.branched-menu__lines[data-open] {
+  opacity: 1;
+  transition: opacity 250ms ease 100ms;
+}
+
+.branched-menu__base,
+.branched-menu__reach {
+  fill: none;
+  stroke-width: var(--bm-line-w);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.branched-menu__base {
+  stroke: var(--bm-line);
+}
+
+.branched-menu__reach {
+  stroke: var(--bm-accent);
+  transition: stroke-dashoffset var(--bm-draw) var(--bm-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branched-menu__marker {
+    transition: opacity 150ms ease;
+  }
+
+  .branched-menu__body,
+  .branched-menu__reach,
+  .branched-menu__chevron {
+    transition: none;
+  }
+}

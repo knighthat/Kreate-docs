@@ -1,0 +1,25 @@
+/* Copied from @docusaurus/theme-classic 3.10.2 DocSidebar/Desktop/Content, plus the BranchedMenu fit. */
+
+@media (min-width: 997px) {
+  .menu {
+    flex-grow: 1;
+    padding: 0.5rem;
+  }
+  @supports (scrollbar-gutter: stable) {
+    .menu {
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      scrollbar-gutter: stable;
+    }
+  }
+
+  .menuWithAnnouncementBar {
+    margin-bottom: var(--docusaurus-announcement-bar-height);
+  }
+}
+
+/* Fill the sidebar instead of shrinking to content, so the whole row width is clickable. */
+.branchedMenu:global(.branched-menu) {
+  width: auto;
+  max-width: none;
+  margin: 0.25rem 0 1rem 0.25rem;
+}

@@ -1,0 +1,51 @@
+name: New blog post
+
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**/*.md'
+      - 'blog/**/*.mdx'
+
+  # Allow manual trigger (posts the latest blog post)
+  workflow_dispatch:
+
+
+jobs:
+  notify:
+    name: Announce on Discord
+    runs-on: ubuntu-latest
+
+    env:
+      DISCORD_WEBHOOK_BLOGS: ${{ secrets.DISCORD_WEBHOOK_BLOGS }}
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      # Only posts that were ADDED by this push, not edited ones
+      - name: Find new posts
+        id: posts
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            files=$(ls blog/*.md blog/*.mdx 2>/dev/null | sort | tail -n 1)
+          else
+            files=$(git diff --diff-filter=A --name-only \
+              "${{ github.event.before }}" "${{ github.sha }}" -- 'blog/*.md' 'blog/*.mdx')
+          fi
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$files" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Post to Discord
+        if: steps.posts.outputs.files != ''
+        run: python .github/scripts/blog_webhook.py ${{ steps.posts.outputs.files }}

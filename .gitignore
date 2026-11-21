@@ -32,3 +32,6 @@ swizzle.txt
 # nektos/act
 .secrets
 .vars
+
+# Scripts
+**__pycache__/

@@ -17,7 +17,7 @@ jobs:
     env:
       CROWDIN_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
       CROWDIN_PROJECT_ID: ${{ vars.CROWDIN_PROJECT_ID }}
-      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      DISCORD_WEBHOOK_CROWDIN: ${{ secrets.DISCORD_WEBHOOK_CROWDIN }}
 
     steps:
       - uses: actions/checkout@v5
@@ -40,4 +40,4 @@ jobs:
           curl -sf \
             -F 'payload_json={"embeds":[{"title":"Translation progress","color":9321923,"image":{"url":"attachment://chart.png"}}]}' \
             -F 'files[0]=@chart.png' \
-            "$DISCORD_WEBHOOK_URL"
+            "$DISCORD_WEBHOOK_CROWDIN"

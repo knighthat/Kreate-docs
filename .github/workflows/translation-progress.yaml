@@ -1,0 +1,43 @@
+name: Translation progress
+
+
+on:
+  schedule:
+    - cron: '0 13 * * 1'   # Every Monday at 1 PM UTC
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+
+jobs:
+  post-progress:
+    name: Post progress to Discord
+    runs-on: ubuntu-latest
+
+    env:
+      CROWDIN_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+      CROWDIN_PROJECT_ID: ${{ vars.CROWDIN_PROJECT_ID }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install pillow
+          sudo apt-get install -y --no-install-recommends fonts-noto-core
+
+      - name: Render chart
+        run: python .github/scripts/translation_chart.py chart.png
+
+      # Uploads the PNG as an attachment and shows it inside the embed
+      - name: Post to Discord
+        run: |
+          curl -sf \
+            -F 'payload_json={"embeds":[{"title":"Translation progress","color":9321923,"image":{"url":"attachment://chart.png"}}]}' \
+            -F 'files[0]=@chart.png' \
+            "$DISCORD_WEBHOOK_URL"
